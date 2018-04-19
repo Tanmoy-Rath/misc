@@ -8,6 +8,8 @@
 ##                      (3)  If it is not a square matrix, then inverse is not calculated.
 ##                      (4)  If it is a square-matrix, then inverse is calculated and stored in memory.
 ##		get_INVERSE() : gets the inverse from the memory cache
+## In makeCacheMatrix() , if calcin is TRUE , then inverse is calculated along with the matrix
+## Same goes for calinv in setm()
 
 makeCacheMatrix <- function(MTRX = matrix(), calcin = FALSE, ...) {
         
