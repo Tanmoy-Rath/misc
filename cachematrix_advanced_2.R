@@ -34,7 +34,7 @@ makeCacheMatrix <- function(MTRX = matrix(), calcin = FALSE, ...) {
                         return(NULL)
                 }
                 else {
-                        message(paste0("Determinant is ",DT,". Proceeding to inverse calculation...", sep="", collapse=NULL))
+                        message(paste0("Determinant is ",DT,". Proceeding to inverse calculation.....", sep="", collapse=NULL))
                         INV <<- solve(MTRX, ...)
                         message("Calculation finished. Inverse can now be cached from memory.")
                         return(NULL)
