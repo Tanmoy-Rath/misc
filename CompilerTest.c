@@ -15,5 +15,6 @@ int main(void) {
         printf("  %d : %d\n",Q,SRR[Q]);
         ++Q;
     }
-  return 0;
+
+    return 0;
 }
