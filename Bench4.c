@@ -494,7 +494,7 @@ float* Radix_5_ac_float(float *A, size_t N, int *Tmp2){
             *(--Z1[(*b) & 255] + Tmp2) = *b ;
         }
         Aa = Tmp2 ;
-        Tmp2 = b ;
+        Tmp2 = b+1;
     }
 
     // 2nd LSB byte sort
@@ -511,7 +511,7 @@ float* Radix_5_ac_float(float *A, size_t N, int *Tmp2){
             *(--Z2[(*b >> 8) & 255] + Tmp2) = *b ;
         }
         Aa = Tmp2 ;
-        Tmp2 = b ;
+        Tmp2 = b+1;
     }
 
     // 3rd LSB byte sort
@@ -528,7 +528,7 @@ float* Radix_5_ac_float(float *A, size_t N, int *Tmp2){
             *(--Z3[(*b >> 16) & 255] + Tmp2) = *b ;
         }
         Aa = Tmp2 ;
-        Tmp2 = b ;
+        Tmp2 = b+1;
     }
 
     // 4th LSB byte sort and -ve numbers sort
@@ -556,7 +556,7 @@ float* Radix_5_ac_float(float *A, size_t N, int *Tmp2){
 
     return (float *)Aa ;
 }
-float* Radix_51_ac_float(float *A, size_t N, int *Tmp2){
+float* Radix_temporalcoherence_ac_float(float *A, size_t N, int *Tmp2){
 
     int Z1[256] ;
     int Z2[256] ;
@@ -698,9 +698,9 @@ size_t ln = sizeof(arr)/sizeof(arr[0]) ;
 int TempAr[ln];
 int * Temp_Two = TempAr ;
 printf("\n%u====output=====%d\n",sizeof(int),ln) ;
-ar = Radix_51_ac_float(arr,ln,Temp_Two) ;
+ar = Radix_5_ac_float(arr,ln,Temp_Two) ;
 PRINT(ar,ln);
-getch();
+return 0;
 
 
     // 16
