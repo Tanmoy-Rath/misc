@@ -1,6 +1,6 @@
 # The functions of the apply family
 
-### 1. apply(array or a matrix, the diemension(rows or columns) over which the function is applied, anonymous or built-in function, ...)
+### 1. apply(array/matrix, diemension(rows or columns) over which the function is applied, anonymous/built-in function, ...)
 
 ### 2. lapply() -- same as apply() but returns a list
     _ Create a list of matrices
@@ -11,3 +11,5 @@
     _
     _ Extract the 1st row from `MyList`
     _ lapply(MyList,"[", 1, )
+
+### 3. sapply()
