@@ -13,3 +13,15 @@
     _ lapply(MyList,"[", 1, )
 
 ### 3. sapply()
+
+### mapply()
+
+### vapply()
+
+### tapply()
+
+### rapply()
+
+### eapply()
+
+sweep() by() aggregate() aplit() subset() outer() dendrapply() environment()
