@@ -21,6 +21,10 @@
 
 // Temporal Coherence : If input is fully sorted, a flag tells whether or not to do sorting
 
+// dnchbnl is base-26 of (2^32)-1 , all 31 1s
+// 11kp8nlh is base-26 of (2^33) - 1 , all 32 1s
+
+
 #include <time.h>
 #include <float.h>
 #include <conio.h>
@@ -451,7 +455,7 @@ float* Radix_5_ac_float(float *A, size_t N, int *Tmp2){
     int Jump, Jump2, Jump3, Jump4 ;
 
     int * Aa = (int *)A ;
-    if( (*Aa >> 31) & 1 )
+    if(*Aa >> 31)
     {
         *Aa = (~(*Aa)) | -2147483648 ;
     }
@@ -471,7 +475,7 @@ float* Radix_5_ac_float(float *A, size_t N, int *Tmp2){
     int * b = Aa + N ;
     for( ; --b != Aa ; )
     {
-        if((*b >> 31) & 1){
+        if(*b >> 31){
             *b = (~(*b)) | -2147483648 ;
         }
         ++Z1[(*b) & 255] ;
@@ -549,7 +553,7 @@ float* Radix_5_ac_float(float *A, size_t N, int *Tmp2){
         for( b = Aa + N ; b-- != Aa ; )
         {
             // Getting back original -ve values
-            *(--Z4[(*b >> 24) & 255] + Tmp2) = ((*b >> 31) & 1) ? ((~(*b)) | -2147483648) : *b ;
+            *(--Z4[(*b >> 24) & 255] + Tmp2) = (*b >> 31) ? ((~(*b)) | -2147483648) : *b ;
         }
         return (float *)Tmp2 ;
     }
@@ -571,7 +575,7 @@ float* Radix_temporalcoherence_ac_float(float *A, size_t N, int *Tmp2){
     int *swp ;
     *swp = 1 ;
     if(*Aa < *(Aa+1)){ ++(*swp) ; }
-    if( (*Aa >> 31) & 1 )
+    if(*Aa >> 31)
     {
         *Aa = (~(*Aa)) | -2147483648 ;
     }
@@ -598,7 +602,7 @@ float* Radix_temporalcoherence_ac_float(float *A, size_t N, int *Tmp2){
     for( ; --b != Aa ; )
     {
         if(*(b-1) < *b){ ++(*swp) ; }
-        if((*b >> 31) & 1){
+        if(*b >> 31){
             *b = (~(*b)) | -2147483648 ;
         }
         ++Z1[(*b) & 255] ;
@@ -679,7 +683,7 @@ float* Radix_temporalcoherence_ac_float(float *A, size_t N, int *Tmp2){
         for( b = Aa + N ; b-- != Aa ; )
         {
             // Getting back original -ve values
-            *(--Z4[(*b >> 24) & 255] + Tmp2) = ((*b >> 31) & 1) ? ((~(*b)) | -2147483648) : *b ;
+            *(--Z4[(*b >> 24) & 255] + Tmp2) = (*b >> 31) ? ((~(*b)) | -2147483648) : *b ;
         }
         return (float *)Tmp2 ;
     }
