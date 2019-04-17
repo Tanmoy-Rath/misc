@@ -10,6 +10,7 @@ https://help.github.com/en/articles/basic-writing-and-formatting-syntax
 |...|optional arguments to FUN.|
 
 apply(array/matrix, diemension(rows or columns) over which the function is applied, anonymous/built-in function, ...)
+
 ---
 
 
@@ -124,6 +125,7 @@ lapply() -- same as apply() but returns a list
     _
     _ Extract the 1st row from `MyList`
     _ lapply(MyList,"[", 1, )
+
 ---
 
 
@@ -168,6 +170,7 @@ lapply() -- same as apply() but returns a list
     [4,]  2.5  3.5    4  5.0  5.5  6.5    7
     [5,]  3.0  4.0    5  6.0  7.0  8.0    9
 </details>
+
 ---
 
 
@@ -183,6 +186,7 @@ lapply() -- same as apply() but returns a list
 |FUN.VALUE|a (generalized) vector; a template for the return value from FUN. See ‘Details’.|
 |...|optional arguments to FUN.|
 |USE.NAMES|logical; if TRUE and if X is character, use X as names for the result unless it had names already. Since this argument follows ... its name cannot be abbreviated.|
+
 ---
 
 
