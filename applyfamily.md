@@ -11,7 +11,7 @@ https://help.github.com/en/articles/basic-writing-and-formatting-syntax
 
 apply(array/matrix, diemension(rows or columns) over which the function is applied, anonymous/built-in function, ...)
 
-### 2. lapply(X, FUN, ...)    -- return a "list"
+### 2. lapply(X, FUN, ...) -- returns a "list"
 |Parameter|Description|
 |---|---|
 |X|a vector (atomic or list) or an expression object. Other objects (including classed objects) will be coerced by base::as.list.|
@@ -53,7 +53,7 @@ lapply() -- same as apply() but returns a list
     _ Extract the 1st row from `MyList`
     _ lapply(MyList,"[", 1, )
 
-### 3. sapply(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE) -- returns "matrix"
+### 3. sapply(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE) -- returns a "matrix"
 |Parameter|Description|
 |---|---|
 |X|a vector (atomic or list) or an expression object. Other objects (including classed objects) will be coerced by base::as.list.|
