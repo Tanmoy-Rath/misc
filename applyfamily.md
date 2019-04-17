@@ -61,9 +61,7 @@ lapply() -- same as apply() but returns a list
 |simplify|logical or character string; should the result be simplified to a vector, matrix or higher dimensional array if possible? For sapply it must be named and not abbreviated. The default value, TRUE, returns a vector or matrix if appropriate, whereas if simplify = "array" the result may be an array of “rank” (=length(dim(.))) one higher than the result of FUN(X[[i]]).|
 |USE.NAMES|logical; if TRUE and if X is character, use X as names for the result unless it had names already. Since this argument follows ... its name cannot be abbreviated.|
 
-### mapply()
-
-### vapply(X, FUN, FUN.VALUE, ..., USE.NAMES = TRUE)
+### 4. vapply(X, FUN, FUN.VALUE, ..., USE.NAMES = TRUE)
 |Parameter|Description|
 |---|---|
 |X|a vector (atomic or list) or an expression object. Other objects (including classed objects) will be coerced by base::as.list.|
@@ -71,6 +69,8 @@ lapply() -- same as apply() but returns a list
 |FUN.VALUE|a (generalized) vector; a template for the return value from FUN. See ‘Details’.|
 |...|optional arguments to FUN.|
 |USE.NAMES|logical; if TRUE and if X is character, use X as names for the result unless it had names already. Since this argument follows ... its name cannot be abbreviated.|
+
+### mapply()
 
 ### tapply()
 
