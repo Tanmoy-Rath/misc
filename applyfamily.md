@@ -2,6 +2,7 @@
 
 ### 1. apply(X, MARGIN, FUN, ...)
 |X|an array, including a matrix.|
+|---|---|
 |MARGIN|a vector giving the subscripts which the function will be applied over. E.g., for a matrix 1 indicates rows, 2 indicates columns, c(1, 2) indicates rows and columns. Where X has named dimnames, it can be a character vector selecting dimension names.|
 |FUN|the function to be applied: see ‘Details’. In the case of functions like +, %*%, etc., the function name must be backquoted or quoted.|
 |...|optional arguments to FUN.|
