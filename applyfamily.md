@@ -8,11 +8,31 @@ https://help.github.com/en/articles/basic-writing-and-formatting-syntax
 |MARGIN|a vector giving the subscripts which the function will be applied over. E.g., for a matrix 1 indicates rows, 2 indicates columns, c(1, 2) indicates rows and columns. Where X has named dimnames, it can be a character vector selecting dimension names.|
 |FUN|the function to be applied: see ‘Details’. In the case of functions like +, %*%, etc., the function name must be backquoted or quoted.|
 |...|optional arguments to FUN.|
-    x <- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
-    # compute the list mean for each list element
-    lapply(x, mean)
-    # median and quartiles for each list element
-    lapply(x, quantile, probs = 1:3/4)
+    > x <- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
+    > # compute the list mean for each list element
+    > lapply(x, mean)
+    $a
+    [1] 5.5
+    
+    $beta
+    [1] 4.535125
+    
+    $logic
+    [1] 0.5
+    
+    > # median and quartiles for each list element
+    > lapply(x, quantile, probs = 1:3/4)
+    $a
+     25%  50%  75% 
+    3.25 5.50 7.75 
+    
+    $beta
+          25%       50%       75% 
+    0.2516074 1.0000000 5.0536690 
+    
+    $logic
+    25% 50% 75% 
+    0.0 0.5 1.0
 apply(array/matrix, diemension(rows or columns) over which the function is applied, anonymous/built-in function, ...)
 
 ### 2. lapply(X, FUN, ...)
