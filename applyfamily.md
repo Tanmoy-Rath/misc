@@ -116,7 +116,6 @@ apply(array/matrix, diemension(rows or columns) over which the function is appli
     0.0 0.5 1.0
 </details>
 
-lapply() -- same as apply() but returns a list
     _ Create a list of matrices
     _ MyList <- list(A,B,C)
     _ 
