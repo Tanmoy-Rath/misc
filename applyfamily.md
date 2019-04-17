@@ -26,7 +26,57 @@ apply(array/matrix, diemension(rows or columns) over which the function is appli
 |...|optional arguments to FUN.|
 <details>
   <summary>Examples...Click to expand!!</summary>
-  
+
+    > x <- 1:4
+    > lapply(x, runif)
+    [[1]]
+    [1] 0.2511177
+    
+    [[2]]
+    [1] 0.2150691 0.6094760
+    
+    [[3]]
+    [1] 0.3834446 0.7552710 0.3797362
+    
+    [[4]]
+    [1] 0.7949721 0.9056911 0.9840262 0.5879480
+    
+    > lapply(x, runif, min=100, max=200)
+    [[1]]
+    [1] 100.9464
+    
+    [[2]]
+    [1] 132.0792 155.9457
+    
+    [[3]]
+    [1] 151.4918 108.9712 168.3251
+    
+    [[4]]
+    [1] 170.9972 180.0232 194.4078 118.6646
+    
+    > # Anonymous function
+    > x <- list(a=matrix(1:4,2,2), b=matrix(1:6,3,2))
+    > x
+    $a
+         [,1] [,2]
+    [1,]    1    3
+    [2,]    2    4
+    
+    $b
+         [,1] [,2]
+    [1,]    1    4
+    [2,]    2    5
+    [3,]    3    6
+    
+    > # Select the first column
+    > lapply(x, function(elt) elt[,1])
+    $a
+    [1] 1 2
+    
+    $b
+    [1] 1 2 3
+    
+    # Advanced examples
     > x <- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
     > lapply(x, runif)
     $a
@@ -74,7 +124,8 @@ lapply() -- same as apply() but returns a list
     _ Extract the 1st row from `MyList`
     _ lapply(MyList,"[", 1, )
 
-### 3. sapply(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE) -- returns a "matrix"
+### 3. sapply(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE)
+#### -- returns a "matrix"
 |Parameter|Description|
 |---|---|
 |X|a vector (atomic or list) or an expression object. Other objects (including classed objects) will be coerced by base::as.list.|
