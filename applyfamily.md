@@ -134,9 +134,9 @@ lapply() -- same as apply() but returns a list
 
 
 ### 3. sapply(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE)
-- If the result is a list where every element is length 1, then a **"vector"** is returned.
-- If the result is a list where every element is a vector of same length (>1), then a **"matrix"** is returned.
-- If it can't figure things out, then a **"list"** is returned.
+> If the result is a list where every element is length 1, then a **"vector"** is returned.
+> If the result is a list where every element is a vector of same length (>1), then a **"matrix"** is returned.
+> If it can't figure things out, then a **"list"** is returned.
 
 |Parameter|Description|
 |---|---|
