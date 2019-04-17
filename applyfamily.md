@@ -28,7 +28,14 @@ lapply() -- same as apply() but returns a list
     _ Extract the 1st row from `MyList`
     _ lapply(MyList,"[", 1, )
 
-### 3. sapply()
+### 3. sapply(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE)
+|Parameter|Description|
+|---|---|
+|X|a vector (atomic or list) or an expression object. Other objects (including classed objects) will be coerced by base::as.list.|
+|FUN|the function to be applied to each element of X: see ‘Details’. In the case of functions like +, %*%, the function name must be backquoted or quoted.|
+|...|optional arguments to FUN.|
+|simplify|logical or character string; should the result be simplified to a vector, matrix or higher dimensional array if possible? For sapply it must be named and not abbreviated. The default value, TRUE, returns a vector or matrix if appropriate, whereas if simplify = "array" the result may be an array of “rank” (=length(dim(.))) one higher than the result of FUN(X[[i]]).|
+|USE.NAMES|logical; if TRUE and if X is character, use X as names for the result unless it had names already. Since this argument follows ... its name cannot be abbreviated.|
 
 ### mapply()
 
