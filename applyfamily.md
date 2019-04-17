@@ -152,6 +152,7 @@ lapply() -- same as apply() but returns a list
     > sapply(x, mean)
            a     beta    logic 
     5.500000 4.535125 0.500000
+    # returned a "vector"
     
     > sapply(x, quantile)
              a        beta logic
@@ -160,6 +161,7 @@ lapply() -- same as apply() but returns a list
     50%   5.50  1.00000000   0.5
     75%   7.75  5.05366896   1.0
     100% 10.00 20.08553692   1.0
+    # returned a "matrix"
     
     > i39 <- sapply(3:9, seq) # list of vectors
     > sapply(i39, fivenum)
