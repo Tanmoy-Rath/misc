@@ -1,3 +1,4 @@
+https://help.github.com/en/articles/basic-writing-and-formatting-syntax
 # The functions of the apply family
 
 ### 1. apply(X, MARGIN, FUN, ...)
