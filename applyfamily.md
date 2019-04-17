@@ -16,6 +16,7 @@ apply(array/matrix, diemension(rows or columns) over which the function is appli
 |---|---|
 |X|a vector (atomic or list) or an expression object. Other objects (including classed objects) will be coerced by base::as.list.|
 |FUN|the function to be applied to each element of X: see ‘Details’. In the case of functions like +, %*%, the function name must be backquoted or quoted.|
+|...|optional arguments to FUN.|
 
 lapply() -- same as apply() but returns a list
     _ Create a list of matrices
