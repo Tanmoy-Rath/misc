@@ -28,6 +28,16 @@ apply(array/matrix, diemension(rows or columns) over which the function is appli
   <summary>Examples...Click to expand!!</summary>
   
     > x <- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
+    > lapply(x, runif)
+    $a
+     [1] 0.32122467 0.06019516 0.04345645 0.05505382 0.62554280 0.96447029 0.82730287 0.31502824 0.21302545 0.73249612
+     
+    $beta
+    [1] 0.49924102 0.72977197 0.08033604 0.43553048 0.23658045 0.79156780 0.25868432
+     
+    $logic
+    [1] 0.9859838 0.7568737 0.9797782 0.2189478
+    
     > # compute the list mean for each list element
     > lapply(x, mean)
     $a
