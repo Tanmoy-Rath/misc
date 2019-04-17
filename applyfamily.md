@@ -25,7 +25,7 @@ apply(array/matrix, diemension(rows or columns) over which the function is appli
 |FUN|the function to be applied to each element of X: see ‘Details’. In the case of functions like +, %*%, the function name must be backquoted or quoted.|
 |...|optional arguments to FUN.|
 <details>
-  <summary>Examples...Click to expand!!</summary>
+  <summary>`Examples...Click to expand!!`</summary>
 
     > x <- 1:4
     > lapply(x, runif)
