@@ -53,7 +53,7 @@ lapply() -- same as apply() but returns a list
     _ Extract the 1st row from `MyList`
     _ lapply(MyList,"[", 1, )
 
-### 3. sapply(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE)
+### 3. sapply(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE) -- returns "matrix"
 |Parameter|Description|
 |---|---|
 |X|a vector (atomic or list) or an expression object. Other objects (including classed objects) will be coerced by base::as.list.|
