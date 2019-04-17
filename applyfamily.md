@@ -11,7 +11,14 @@ https://help.github.com/en/articles/basic-writing-and-formatting-syntax
 
 apply(array/matrix, diemension(rows or columns) over which the function is applied, anonymous/built-in function, ...)
 
-### 2. lapply(X, FUN, ...) -- returns a "list"
+
+
+
+
+
+
+### 2. lapply(X, FUN, ...)
+########## -- returns a "list"
 |Parameter|Description|
 |---|---|
 |X|a vector (atomic or list) or an expression object. Other objects (including classed objects) will be coerced by base::as.list.|
