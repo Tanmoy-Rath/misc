@@ -137,7 +137,14 @@ lapply() -- same as apply() but returns a list
 |...|optional arguments to FUN.|
 |simplify|logical or character string; should the result be simplified to a vector, matrix or higher dimensional array if possible? For sapply it must be named and not abbreviated. The default value, TRUE, returns a vector or matrix if appropriate, whereas if simplify = "array" the result may be an array of “rank” (=length(dim(.))) one higher than the result of FUN(X[[i]]).|
 |USE.NAMES|logical; if TRUE and if X is character, use X as names for the result unless it had names already. Since this argument follows ... its name cannot be abbreviated.|
+<details>
+  <summary>Examples...Click to expand!!</summary>
+
     > x <- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
+    > sapply(x, mean)
+           a     beta    logic 
+    5.500000 4.535125 0.500000
+    
     > sapply(x, quantile)
              a        beta logic
     0%    1.00  0.04978707   0.0
@@ -154,6 +161,7 @@ lapply() -- same as apply() but returns a list
     [3,]  2.0  2.5    3  3.5  4.0  4.5    5
     [4,]  2.5  3.5    4  5.0  5.5  6.5    7
     [5,]  3.0  4.0    5  6.0  7.0  8.0    9
+</details>
 
 ### 4. vapply(X, FUN, FUN.VALUE, ..., USE.NAMES = TRUE)
 |Parameter|Description|
