@@ -25,7 +25,7 @@ apply(array/matrix, diemension(rows or columns) over which the function is appli
 |FUN|the function to be applied to each element of X: see ‘Details’. In the case of functions like +, %*%, the function name must be backquoted or quoted.|
 |...|optional arguments to FUN.|
 <details>
-  <summary>Click to expand!</summary>
+  <summary>Examples...Click to expand!!</summary>
   
     > x <- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
     > # compute the list mean for each list element
