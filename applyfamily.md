@@ -196,7 +196,15 @@ lapply() -- same as apply() but returns a list
 
 
 
-### mapply()
+### mapply(FUN, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE)
+|Parameter|Description|
+|---|---|
+|FUN|the function to be applied to each element of X: see ‘Details’. In the case of functions like +, %*%, the function name must be backquoted or quoted.|
+|...|optional arguments to FUN.|
+|MoreArgs|a list of other arguments to FUN.|
+|SIMPLIFY|logical or character string; attempt to reduce the result to a vector, matrix or higher dimensional array; see the simplify argument of sapply.|
+|USE.NAMES|logical; if TRUE and if X is character, use X as names for the result unless it had names already. Since this argument follows ... its name cannot be abbreviated.|
+
 ---
 
 
