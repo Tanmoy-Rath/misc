@@ -24,7 +24,7 @@ apply(array/matrix, diemension(rows or columns) over which the function is appli
 |X|a vector (atomic or list) or an expression object. Other objects (including classed objects) will be coerced by base::as.list.|
 |FUN|the function to be applied to each element of X: see ‘Details’. In the case of functions like +, %*%, the function name must be backquoted or quoted.|
 |...|optional arguments to FUN.|
-`<details>
+<details>
   <summary>Examples...Click to expand!!</summary>
 
     > x <- 1:4
@@ -112,7 +112,7 @@ apply(array/matrix, diemension(rows or columns) over which the function is appli
     $logic
     25% 50% 75% 
     0.0 0.5 1.0
-</details>`
+</details>
 
 lapply() -- same as apply() but returns a list
     _ Create a list of matrices
@@ -125,7 +125,9 @@ lapply() -- same as apply() but returns a list
     _ lapply(MyList,"[", 1, )
 
 ### 3. sapply(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE)
-#### -- returns a "matrix"
+#### -If the result is a list where every element is length 1, then a "vector" is returned
+#### -If the result is a list where every element is a vector of same length (>1), then a "matrix" is returned
+#### -If it can't figure things out, then a "list" is returned
 |Parameter|Description|
 |---|---|
 |X|a vector (atomic or list) or an expression object. Other objects (including classed objects) will be coerced by base::as.list.|
