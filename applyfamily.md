@@ -196,14 +196,14 @@ lapply() -- same as apply() but returns a list
 
 
 
-### mapply(FUN, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE)
+### 5. mapply(FUN, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE)
 |Parameter|Description|
 |---|---|
-|FUN|the function to be applied to each element of X: see ‘Details’. In the case of functions like +, %*%, the function name must be backquoted or quoted.|
-|...|optional arguments to FUN.|
+|FUN|function to apply, found via match.fun.|
+|...|arguments to vectorize over (vectors or lists of strictly positive length, or all of zero length). See also ‘Details’.|
 |MoreArgs|a list of other arguments to FUN.|
 |SIMPLIFY|logical or character string; attempt to reduce the result to a vector, matrix or higher dimensional array; see the simplify argument of sapply.|
-|USE.NAMES|logical; if TRUE and if X is character, use X as names for the result unless it had names already. Since this argument follows ... its name cannot be abbreviated.|
+|USE.NAMES|logical; use names if the first ... argument has names, or if it is a character vector, use that character vector as the names.|
 
 ---
 
@@ -213,7 +213,16 @@ lapply() -- same as apply() but returns a list
 
 
 
-### tapply()
+### 6. tapply(X, INDEX, FUN = NULL, ..., default = NA, simplify = TRUE)
+|Parameter|Description|
+|---|---|
+|X|an atomic object, typically a vector.|
+|INDEX|a list of one or more factors, each of same length as X. The elements are coerced to factors by as.factor.|
+|FUN|the function to be applied, or NULL. In the case of functions like +, %*%, etc., the function name must be backquoted or quoted. If FUN is NULL, tapply returns a vector which can be used to subscript the multi-way array tapply normally produces.|
+|...|optional arguments to FUN. Note: Optional arguments to FUN supplied by the ... argument are not divided into cells. It is therefore inappropriate for FUN to expect additional arguments with the same length as X.|
+|default|(only in the case of simplification to an array) the value with which the array is initialized as array(default, dim = ..). Before R 3.4.0, this was hard coded to array()'s default NA. If it is NA (the default), the missing value of the answer type, e.g. NA_real_, is chosen (as.raw(0) for "raw"). In a numerical case, it may be set, e.g., to FUN(integer(0)), e.g., in the case of FUN = sum to 0 or 0L.|
+|simplify|logical; if FALSE, tapply always returns an array of mode "list"; in other words, a list with a dim attribute. If TRUE (the default), then if FUN always returns a scalar, tapply returns an array with the mode of the scalar.|
+
 ---
 
 
