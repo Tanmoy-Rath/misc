@@ -281,7 +281,7 @@ https://www.rdocumentation.org/packages/memisc/versions/0.99.17.1/topics/Sapply
 
 
 ### 4. mapply(FUN, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE)
->- It is the multi-variate version of lapply().
+>- It is a sort of a multi-variate version of apply that applies a function in parallel over a set of arguments.
 >- It can produce output with vector arguments from functions that do not support vector arguments, hence eliminating for loops.
 
 <details>
