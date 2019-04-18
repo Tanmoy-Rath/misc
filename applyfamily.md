@@ -12,7 +12,7 @@ https://help.github.com/en/articles/basic-writing-and-formatting-syntax
 >- colMeans() = apply(x, 2, mean)
 >- But the shortcut functions are much faster, apparent when used on a large matrix.
 
-|Parameter|Description|
+|Parameter|Description http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply|
 |---|---|
 |X|an array, including a matrix.|
 |MARGIN|a vector giving the subscripts which the function will be applied over. E.g., for a matrix 1 indicates rows, 2 indicates columns, c(1, 2) indicates rows and columns. Where X has named dimnames, it can be a character vector selecting dimension names.|
