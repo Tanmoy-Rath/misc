@@ -57,6 +57,7 @@ https://help.github.com/en/articles/basic-writing-and-formatting-syntax
     [2,] -0.6699911 -1.0847956 -0.4682024  0.7537504 0.4481469
     ###################################################################################################################    
     
+    # c(1,2) preserves the 1st and 2nd dimensions and collapses the 3rd dimension
     > apply(a, c(1,2), mean)
                 [,1]       [,2]        [,3]       [,4]        [,5]
     [1,] -0.56224065 -0.7232797 -0.36594820  0.2048132 -0.09584571
