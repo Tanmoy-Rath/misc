@@ -14,8 +14,8 @@ The apply() can be used to immitate the functions below:<br/>
 
 But the shortcut functions, due to having been designed for specific purpose, are much faster, the difference being apparent only when used on a large matrix.
 
-<a href="http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply" target="_blank">http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply</a>
-<a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html" target="_blank">https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html</a>
+http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply<br/>
+https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
 <details>
   <summary>Argument description Table...Click to expand!!</summary>
 
@@ -94,7 +94,8 @@ But the shortcut functions, due to having been designed for specific purpose, ar
 ### 2. lapply(X, FUN, ...)
 >- returns a **"list"**
 
-https://www.rdocumentation.org/packages/base/versions/3.5.3/topics/lapply
+https://www.rdocumentation.org/packages/base/versions/3.5.3/topics/lapply<br/>
+https://stat.ethz.ch/R-manual/R-patched/library/base/html/lapply.html
 <details>
   <summary>Argument description Table...Click to expand!!</summary>
 
@@ -231,6 +232,7 @@ https://www.rdocumentation.org/packages/base/versions/3.5.3/topics/lapply
 >- If the result is a list where every element is a vector of same length (>1), then a **"matrix"** is returned.
 >- If it can't figure things out, then a **"list"** is returned.
 
+https://www.rdocumentation.org/packages/memisc/versions/0.99.17.1/topics/Sapply
 <details>
   <summary>Argument description Table...Click to expand!!</summary>
 
