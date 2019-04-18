@@ -10,7 +10,8 @@ The apply() can immitate the functions below:<br/>
 - rowSums() = apply(x, 1, sum)<br/>
 - rowMeans() = apply(x, 1, mean)<br/>
 - colSums() = apply(x, 2, sum)<br/>
-- colMeans() = apply(x, 2, mean)<br/>
+- colMeans() = apply(x, 2, mean)
+
 But the shortcut functions, due to having been designed for specific purpose, are much faster, apparent only when used on a large matrix.
 
 http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply<br/>
