@@ -5,6 +5,12 @@ https://help.github.com/en/articles/basic-writing-and-formatting-syntax
 >- It is most often used to apply a function to the rows or columns of a matrix.
 >- It can be used with general arrays, e.g. taking the average of an array of matrices.
 >- It is not really faster than writing a loop, but it works in one line!
+>- apply() can immitate the functions below:
+>- rowSums() = apply(x, 1, sum)
+>- rowMeans() = apply(x, 1, mean)
+>- colSums() = apply(x, 2, sum)
+>- colMeans() = apply(x, 2, mean)
+>- But the shortcut functions are much faster, apparent when used on a large matrix.
 
 |Parameter|Description|
 |---|---|
