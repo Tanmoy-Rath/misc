@@ -9,8 +9,6 @@ https://help.github.com/en/articles/basic-writing-and-formatting-syntax
 |FUN|the function to be applied: see ‘Details’. In the case of functions like +, %*%, etc., the function name must be backquoted or quoted.|
 |...|optional arguments to FUN.|
 
-apply(array/matrix, diemension(rows or columns) over which the function is applied, anonymous/built-in function, ...)
-
 ---
 
 
@@ -71,6 +69,7 @@ apply(array/matrix, diemension(rows or columns) over which the function is appli
     [1,]    1    4
     [2,]    2    5
     [3,]    3    6
+    ###################################################################################################################
     
     > # Select the first column
     > lapply(x, function(elt) elt[,1])
@@ -79,6 +78,7 @@ apply(array/matrix, diemension(rows or columns) over which the function is appli
     
     $b
     [1] 1 2 3
+    ###################################################################################################################
     
     > # Select the 1st row
     > lapply(x, "[", 1,)
@@ -87,6 +87,7 @@ apply(array/matrix, diemension(rows or columns) over which the function is appli
     
     $b
     [1] 1 4
+    ###################################################################################################################
     
     > # Select the 2nd column
     > lapply(x, "[", ,2)
@@ -108,6 +109,7 @@ apply(array/matrix, diemension(rows or columns) over which the function is appli
      
     $logic
     [1] 0.9859838 0.7568737 0.9797782 0.2189478
+    ###################################################################################################################
     
     > # compute the list mean for each list element
     > lapply(x, mean)
@@ -119,6 +121,7 @@ apply(array/matrix, diemension(rows or columns) over which the function is appli
     
     $logic
     [1] 0.5
+    ###################################################################################################################
     
     > # median and quartiles for each list element
     > lapply(x, quantile, probs = 1:3/4)
