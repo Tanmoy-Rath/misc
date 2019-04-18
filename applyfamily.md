@@ -11,6 +11,7 @@ https://help.github.com/en/articles/basic-writing-and-formatting-syntax
 >- colSums() = apply(x, 2, sum)
 >- colMeans() = apply(x, 2, mean)
 >- But the shortcut functions are much faster, apparent when used on a large matrix.
+
 http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply
 <details>
   <summary>Argument description...Click to expand!!</summary>
