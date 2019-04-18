@@ -2,6 +2,10 @@ https://help.github.com/en/articles/basic-writing-and-formatting-syntax
 # The functions of the apply family
 
 ### 1. apply(X, MARGIN, FUN, ...)
+>- It is most often used to apply a function to the rows or columns of a matrix.
+>- It can be used with general arrays, e.g. taking the average of an array of matrices.
+>- It is not really faster than writing a loop, but it works in one line!
+
 |Parameter|Description|
 |---|---|
 |X|an array, including a matrix.|
