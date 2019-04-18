@@ -42,6 +42,7 @@ apply(array/matrix, diemension(rows or columns) over which the function is appli
     
     [[4]]
     [1] 0.7949721 0.9056911 0.9840262 0.5879480
+    ###################################################################################################################
     
     > lapply(x, runif, min=100, max=200)
     [[1]]
@@ -55,6 +56,7 @@ apply(array/matrix, diemension(rows or columns) over which the function is appli
     
     [[4]]
     [1] 170.9972 180.0232 194.4078 118.6646
+    ###################################################################################################################
     
     > # Anonymous function
     > x <- list(a=matrix(1:4,2,2), b=matrix(1:6,3,2))
@@ -77,6 +79,23 @@ apply(array/matrix, diemension(rows or columns) over which the function is appli
     
     $b
     [1] 1 2 3
+    
+    > # Select the 1st row
+    > lapply(x, "[", 1,)
+    $a
+    [1] 1 3
+    
+    $b
+    [1] 1 4
+    
+    > # Select the 2nd column
+    > lapply(x, "[", ,2)
+    $a
+    [1] 3 4
+    
+    $b
+    [1] 4 5 6
+    ###################################################################################################################
     
     # Advanced examples
     > x <- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
@@ -115,15 +134,6 @@ apply(array/matrix, diemension(rows or columns) over which the function is appli
     25% 50% 75% 
     0.0 0.5 1.0
 </details>
-
-    _ Create a list of matrices
-    _ MyList <- list(A,B,C)
-    _ 
-    _ Extract the 2nd column from `MyList` with the selection operator `[` with `lapply()`
-    _ lapply(MyList,"[", , 2)
-    _
-    _ Extract the 1st row from `MyList`
-    _ lapply(MyList,"[", 1, )
 
 ---
 
