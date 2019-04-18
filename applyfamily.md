@@ -17,8 +17,8 @@ But the shortcut functions, due to having been designed for specific purpose, ar
 http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply<br/>
 https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
 <details>
-  <summary>Argument description...Click to expand!!</summary>
-  
+  <summary>Argument description Table...Click to expand!!</summary>
+
 |Argument|Description|
 |---|---|
 |X|an array, including a matrix.|
@@ -96,8 +96,8 @@ https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
 
 https://www.rdocumentation.org/packages/base/versions/3.5.3/topics/lapply
 <details>
-  <summary>Argument description...Click to expand!!</summary>
-  
+  <summary>Argument description Table...Click to expand!!</summary>
+
 |Argument|Description|
 |---|---|
 |X|a vector (atomic or list) or an expression object. Other objects (including classed objects) will be coerced by base::as.list.|
@@ -231,13 +231,18 @@ https://www.rdocumentation.org/packages/base/versions/3.5.3/topics/lapply
 >- If the result is a list where every element is a vector of same length (>1), then a **"matrix"** is returned.
 >- If it can't figure things out, then a **"list"** is returned.
 
-|Parameter|Description|
+<details>
+  <summary>Argument description Table...Click to expand!!</summary>
+
+|Argument|Description|
 |---|---|
 |X|a vector (atomic or list) or an expression object. Other objects (including classed objects) will be coerced by base::as.list.|
 |FUN|the function to be applied to each element of X: see ‘Details’. In the case of functions like +, %*%, the function name must be backquoted or quoted.|
 |...|optional arguments to FUN.|
 |simplify|logical or character string; should the result be simplified to a vector, matrix or higher dimensional array if possible? For sapply it must be named and not abbreviated. The default value, TRUE, returns a vector or matrix if appropriate, whereas if simplify = "array" the result may be an array of “rank” (=length(dim(.))) one higher than the result of FUN(X[[i]]).|
 |USE.NAMES|logical; if TRUE and if X is character, use X as names for the result unless it had names already. Since this argument follows ... its name cannot be abbreviated.|
+</details>
+
 <details>
   <summary>Examples...Click to expand!!</summary>
 
@@ -277,13 +282,18 @@ https://www.rdocumentation.org/packages/base/versions/3.5.3/topics/lapply
 >- It is the multi-variate version of lapply().
 >- It can produce output with vector arguments from functions that do not support vector arguments, hence eliminating for loops.
 
-|Parameter|Description|
+<details>
+  <summary>Argument description Table...Click to expand!!</summary>
+
+|Argument|Description|
 |---|---|
 |FUN|function to apply, found via match.fun.|
 |...|arguments to vectorize over (vectors or lists of strictly positive length, or all of zero length). See also ‘Details’.|
 |MoreArgs|a list of other arguments to FUN.|
 |SIMPLIFY|logical or character string; attempt to reduce the result to a vector, matrix or higher dimensional array; see the simplify argument of sapply.|
 |USE.NAMES|logical; use names if the first ... argument has names, or if it is a character vector, use that character vector as the names.|
+</details>
+
 <details>
   <summary>Examples...Click to expand!!</summary>
     
