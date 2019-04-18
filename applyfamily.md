@@ -266,6 +266,70 @@ https://help.github.com/en/articles/basic-writing-and-formatting-syntax
 |MoreArgs|a list of other arguments to FUN.|
 |SIMPLIFY|logical or character string; attempt to reduce the result to a vector, matrix or higher dimensional array; see the simplify argument of sapply.|
 |USE.NAMES|logical; use names if the first ... argument has names, or if it is a character vector, use that character vector as the names.|
+<details>
+  <summary>Examples...Click to expand!!</summary>
+    
+    > mapply(rep, 1:4, 4:1)
+    [[1]]
+    [1] 1 1 1 1
+    
+    [[2]]
+    [1] 2 2 2
+    
+    [[3]]
+    [1] 3 3
+    
+    [[4]]
+    [1] 4
+    
+    > mapply(rep, times = 1:4, x = 4:1)
+    [[1]]
+    [1] 4
+    
+    [[2]]
+    [1] 3 3
+    
+    [[3]]
+    [1] 2 2 2
+    
+    [[4]]
+    [1] 1 1 1 1
+    
+    > mapply(rep, times = 1:4, MoreArgs = list(x = 42))
+    [[1]]
+    [1] 42
+    
+    [[2]]
+    [1] 42 42
+    
+    [[3]]
+    [1] 42 42 42
+    
+    [[4]]
+    [1] 42 42 42 42
+    
+    > mapply(function(x, y) seq_len(x) + y,
+            c(a =  1, b = 2, c = 3),  # names from first
+            c(A = 10, B = 0, C = -10))
+    $a
+    [1] 11
+
+    $b
+    [1] 1 2
+    
+    $c
+    [1] -9 -8 -7
+    
+    > word <- function(C, k) paste(rep.int(C, k), collapse = "")
+    > utils::str(mapply(word, LETTERS[1:6], 6:1, SIMPLIFY = FALSE))
+    List of 6
+     $ A: chr "AAAAAA"
+     $ B: chr "BBBBB"
+     $ C: chr "CCCC"
+     $ D: chr "DDD"
+     $ E: chr "EE"
+     $ F: chr "F"
+</details>
 
 ---
 
