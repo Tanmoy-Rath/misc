@@ -12,7 +12,7 @@ https://help.github.com/en/articles/basic-writing-and-formatting-syntax
 >- colMeans() = apply(x, 2, mean)
 >- But the shortcut functions are much faster, apparent when used on a large matrix.
 
-http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply
+http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply<br/>
 https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
 <details>
   <summary>Argument description...Click to expand!!</summary>
