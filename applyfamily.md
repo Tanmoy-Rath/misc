@@ -12,6 +12,28 @@ https://help.github.com/en/articles/basic-writing-and-formatting-syntax
 |MARGIN|a vector giving the subscripts which the function will be applied over. E.g., for a matrix 1 indicates rows, 2 indicates columns, c(1, 2) indicates rows and columns. Where X has named dimnames, it can be a character vector selecting dimension names.|
 |FUN|the function to be applied: see ‘Details’. In the case of functions like +, %*%, etc., the function name must be backquoted or quoted.|
 |...|optional arguments to FUN.|
+<details>
+  <summary>Examples...Click to expand!!</summary>
+
+    > set.seed(18949)
+    > x <- matrix(rnorm(200),20,10)
+    > apply(x, 1, quantile, probs=c(0.25, 0.75))
+              [,1]       [,2]       [,3]      [,4]
+    25% -0.9914692 -0.1908423 -0.4300005 -1.255110
+    75%  0.7904808  0.5512175  0.5697090  0.244837
+              [,5]       [,6]       [,7]       [,8]
+    25% -0.5256669 -0.4636574 -1.3609265 -0.7012947
+    75%  0.4640788  0.3641334  0.1896196  0.8205340
+              [,9]      [,10]      [,11]      [,12]
+    25% -0.8150329 -0.344708  -0.5216225  0.2128561
+    75%  0.7361397  0.813752   0.6109588  0.6443443
+             [,13]      [,14]      [,15]      [,16]
+    25% -0.77378447 0.2209238 -1.1365713 -0.7600171
+    75%  0.08931413 0.7466569 -0.1099666  0.5997105
+             [,17]      [,18]      [,19]      [,20]
+    25% -0.1963744 -0.4609184 -1.1621672 -0.7849068
+    75%  1.0905260  1.0427894 -0.3418321  0.3916902
+</details>
 
 ---
 
