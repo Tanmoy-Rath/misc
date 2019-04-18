@@ -6,13 +6,13 @@ https://help.github.com/en/articles/basic-writing-and-formatting-syntax
 >- It can be used with general arrays, e.g. taking the average of an array of matrices.
 >- It is not really faster than writing a loop, but it works in one line!
 
-The apply() can immitate the functions below:<br/>
+The apply() can be used to immitate the functions below:<br/>
 - rowSums() = apply(x, 1, sum)<br/>
 - rowMeans() = apply(x, 1, mean)<br/>
 - colSums() = apply(x, 2, sum)<br/>
 - colMeans() = apply(x, 2, mean)
 
-But the shortcut functions, due to having been designed for specific purpose, are much faster, apparent only when used on a large matrix.
+But the shortcut functions, due to having been designed for specific purpose, are much faster, the difference being apparent only when used on a large matrix.
 
 http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply<br/>
 https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
