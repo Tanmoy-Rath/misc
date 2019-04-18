@@ -14,8 +14,8 @@ The apply() can be used to immitate the functions below:<br/>
 
 But the shortcut functions, due to having been designed for specific purpose, are much faster, the difference being apparent only when used on a large matrix.
 
-http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply<br/>
-https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
+<a href="http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply" target="_blank">http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply</a>
+<a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html" target="_blank">https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html</a>
 <details>
   <summary>Argument description Table...Click to expand!!</summary>
 
