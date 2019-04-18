@@ -227,8 +227,8 @@ https://www.rdocumentation.org/packages/base/versions/3.5.3/topics/lapply
 
 
 ### 3. sapply(X, FUN, ..., simplify = TRUE, USE.NAMES = TRUE)
->- If the result is a list where every element is length 1, then a **"vector"** is returned.<br/>
->- If the result is a list where every element is a vector of same length (>1), then a **"matrix"** is returned.<br/>
+>- If the result is a list where every element is length 1, then a **"vector"** is returned.
+>- If the result is a list where every element is a vector of same length (>1), then a **"matrix"** is returned.
 >- If it can't figure things out, then a **"list"** is returned.
 
 |Parameter|Description|
@@ -274,6 +274,9 @@ https://www.rdocumentation.org/packages/base/versions/3.5.3/topics/lapply
 
 
 ### 4. mapply(FUN, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE)
+>- It is the multi-variate version of lapply().
+>- It can produce output with vector arguments from functions that do not support vector arguments, hence eliminating for loops.
+
 |Parameter|Description|
 |---|---|
 |FUN|function to apply, found via match.fun.|
