@@ -18,7 +18,7 @@ http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply<br/>
 https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
 
 <details>
-  <summary>**Details...**Click to expand!!</summary>
+  <summary><b>Details...</b>Click to expand!!</summary>
 
 |Argument|Description|
 |---|---|
