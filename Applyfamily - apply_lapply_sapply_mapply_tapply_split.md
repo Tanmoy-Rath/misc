@@ -12,7 +12,7 @@ The apply() can be used to immitate the functions below:<br/>
 - colSums() = apply(x, 2, sum)<br/>
 - colMeans() = apply(x, 2, mean)
 
-But the shortcut functions, due to having been designed for specific purpose, are much faster, the difference being apparent only when used on a large matrix.
+But the shortcut functions, due to having been designed for specific purpose, are faster than their apply() counterparts, the difference being apparent only when used on a large matrix.
 
 http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply<br/>
 https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
