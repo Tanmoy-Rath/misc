@@ -17,6 +17,9 @@ But the shortcut functions, due to having been designed for specific purpose, ar
 http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply<br/>
 https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
 
+<details>
+  <summary>**Details...**Click to expand!!</summary>
+
 |Argument|Description|
 |---|---|
 |X|an array, including a matrix.|
@@ -78,6 +81,8 @@ https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
 [1,] -0.56224065 -0.7232797 -0.36594820  0.2048132 -0.09584571
 [2,]  0.05288237 -0.1369139  0.07564341 -0.4311350  0.33356231
 ```
+</details>
+
 ---
 
 
