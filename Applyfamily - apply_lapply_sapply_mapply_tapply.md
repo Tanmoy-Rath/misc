@@ -391,3 +391,68 @@ List of 6
 </details>
 
 ---
+
+
+
+
+
+
+
+### 5. tapply(X, INDEX, FUN = NULL, ..., default = NA, simplify = TRUE)
+
+https://www.rdocumentation.org/packages/base/versions/3.5.3/topics/tapply<br/>
+https://stat.ethz.ch/R-manual/R-devel/library/base/html/tapply.html
+<details>
+  <summary>Argument description Table...Click to expand!!</summary>
+
+|Argument|Description|
+|---|---|
+|X|an atomic object, typically a vector.|
+|INDEX|a list of one or more factors, each of same length as X. The elements are coerced to factors by as.factor.|
+|FUN|the function to be applied, or NULL. In the case of functions like +, %*%, etc., the function name must be backquoted or quoted. If FUN is NULL, tapply returns a vector which can be used to subscript the multi-way array tapply normally produces.|
+|...|optional arguments to FUN. Note: Optional arguments to FUN supplied by the ... argument are not divided into cells. It is therefore inappropriate for FUN to expect additional arguments with the same length as X.|
+|default|(only in the case of simplification to an array) the value with which the array is initialized as array(default, dim = ..). Before R 3.4.0, this was hard coded to array()'s default NA. If it is NA (the default), the missing value of the answer type, e.g. NA_real_, is chosen (as.raw(0) for "raw"). In a numerical case, it may be set, e.g., to FUN(integer(0)), e.g., in the case of FUN = sum to 0 or 0L.|
+|simplify|logical; if FALSE, tapply always returns an array of mode "list"; in other words, a list with a dim attribute. If TRUE (the default), then if FUN always returns a scalar, tapply returns an array with the mode of the scalar.|
+</details>
+
+---
+
+
+
+
+
+
+split()
+### 6. vapply(X, FUN, FUN.VALUE, ..., USE.NAMES = TRUE)
+|Parameter|Description|
+|---|---|
+|X|a vector (atomic or list) or an expression object. Other objects (including classed objects) will be coerced by base::as.list.|
+|FUN|the function to be applied to each element of X: see ‘Details’. In the case of functions like +, %*%, the function name must be backquoted or quoted.|
+|FUN.VALUE|a (generalized) vector; a template for the return value from FUN. See ‘Details’.|
+|...|optional arguments to FUN.|
+|USE.NAMES|logical; if TRUE and if X is character, use X as names for the result unless it had names already. Since this argument follows ... its name cannot be abbreviated.|
+
+---
+
+
+
+
+
+
+### rapply()
+---
+
+
+
+
+
+
+### eapply()
+---
+
+
+
+
+
+
+sweep() by() aggregate() subset() slice() outer() dendrapply() environment()
