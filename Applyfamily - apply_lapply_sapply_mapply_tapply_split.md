@@ -436,12 +436,7 @@ Levels: 1 2 3
 -0.2894621  0.4532899  1.7577554
 ################################################################################################
 
-> # Even if you don't simplify, still then you get a list if it is possible
-> tapply(x, f, mean, SIMPLIFY = FALSE)
-         1          2          3 
--0.2894621  0.4532899  1.7577554 
-
-> # This also gives a list
+# This gives a list
 > tapply(x, f, range)
 $`1`
 [1] -1.637156  1.673481
@@ -452,7 +447,7 @@ $`2`
 $`3`
 [1] 0.6466761 3.0822887
 
-
+# This also gives a list
 > tapply(x, f, quantile, probs = 1:3/4)
 $`1`
        25%        50%        75% 
