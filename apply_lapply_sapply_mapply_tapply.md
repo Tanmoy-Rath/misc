@@ -16,8 +16,6 @@ But the shortcut functions, due to having been designed for specific purpose, ar
 
 http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply<br/>
 https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
-<details>
-  <summary>Argument description Table...Click to expand!!</summary>
 
 |Argument|Description|
 |---|---|
@@ -25,10 +23,6 @@ https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
 |MARGIN|a vector giving the subscripts which the function will be applied over. E.g., for a matrix 1 indicates rows, 2 indicates columns, c(1, 2) indicates rows and columns. Where X has named dimnames, it can be a character vector selecting dimension names.|
 |FUN|the function to be applied: see ‘Details’. In the case of functions like +, %*%, etc., the function name must be backquoted or quoted.|
 |...|optional arguments to FUN.|
-</details>
-
-<details>
-  <summary>Examples...Click to expand!!</summary>
 
 ```R
 > set.seed(18949)
@@ -84,8 +78,6 @@ https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
 [1,] -0.56224065 -0.7232797 -0.36594820  0.2048132 -0.09584571
 [2,]  0.05288237 -0.1369139  0.07564341 -0.4311350  0.33356231
 ```
-</details>
-
 ---
 
 
