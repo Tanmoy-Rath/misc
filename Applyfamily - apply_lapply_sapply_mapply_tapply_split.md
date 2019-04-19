@@ -400,11 +400,12 @@ List of 6
 
 ### 5. tapply(X, INDEX, FUN = NULL, ..., default = NA, simplify = TRUE)
 >- It is used to apply a function over subsets of a vector.
+>- It however needs a vector of factor levels to do this.
 
 https://www.rdocumentation.org/packages/base/versions/3.5.3/topics/tapply<br/>
 https://stat.ethz.ch/R-manual/R-devel/library/base/html/tapply.html
 <details>
-  <summary>Argument description Table...Click to expand!!</summary>
+  <summary><b>Details...</b>click to expand!!</summary>
 
 |Argument|Description|
 |---|---|
@@ -414,6 +415,70 @@ https://stat.ethz.ch/R-manual/R-devel/library/base/html/tapply.html
 |...|optional arguments to FUN. Note: Optional arguments to FUN supplied by the ... argument are not divided into cells. It is therefore inappropriate for FUN to expect additional arguments with the same length as X.|
 |default|(only in the case of simplification to an array) the value with which the array is initialized as array(default, dim = ..). Before R 3.4.0, this was hard coded to array()'s default NA. If it is NA (the default), the missing value of the answer type, e.g. NA_real_, is chosen (as.raw(0) for "raw"). In a numerical case, it may be set, e.g., to FUN(integer(0)), e.g., in the case of FUN = sum to 0 or 0L.|
 |simplify|logical; if FALSE, tapply always returns an array of mode "list"; in other words, a list with a dim attribute. If TRUE (the default), then if FUN always returns a scalar, tapply returns an array with the mode of the scalar.|
+```R
+> set.seed(14657)
+> x <- c(rnorm(10), runif(10), rnorm(10,1))
+> x
+ [1] -1.2892994  1.6734810 -0.3615852  0.1937537 -1.6371557  0.2596941 -0.7552847
+ [8]  0.4357292  0.1230147 -1.5369686  0.7955234  0.4814413  0.3173244  0.5735813
+[15]  0.3353314  0.3980635  0.5082634  0.3929499  0.4615895  0.2688306  1.9067960
+[22]  1.4941630  2.0046694  2.7300762  1.3405568  1.8557122  1.2624954  1.2541206
+[29]  0.6466761  3.0822887
+> f <- gl(3, 10)
+> f
+ [1] 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3
+Levels: 1 2 3
+> tapply(x, f, mean)
+         1          2          3 
+-0.2894621  0.4532899  1.7577554 
+> 
+> # If you don't simplify, then you get a list
+> tapply(x, f, mean, SIMPLIFY = FALSE)
+         1          2          3 
+-0.2894621  0.4532899  1.7577554 
+> 
+> # This also gives a list
+> tapply(x, f, range)
+$`1`
+[1] -1.637156  1.673481
+
+$`2`
+[1] 0.2688306 0.7955234
+
+$`3`
+[1] 0.6466761 3.0822887
+
+> 
+> tapply(x, f, quantile, probs = 1:3/4)
+$`1`
+       25%        50%        75% 
+-1.1557957 -0.1192853  0.2432090 
+
+$`2`
+      25%       50%       75% 
+0.3497361 0.4298265 0.5015579 
+
+$`3`
+     25%      50%      75% 
+1.282011 1.674938 1.980201 
+
+> tapply(x, f, summary)
+$`1`
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+-1.6372 -1.1558 -0.1193 -0.2895  0.2432  1.6735 
+
+$`2`
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.2688  0.3497  0.4298  0.4533  0.5016  0.7955 
+
+$`3`
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.6467  1.2820  1.6749  1.7578  1.9802  3.0823
+
+
+
+
+```
 </details>
 
 ---
