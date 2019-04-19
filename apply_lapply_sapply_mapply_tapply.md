@@ -251,29 +251,31 @@ https://www.rdocumentation.org/packages/memisc/versions/0.99.17.1/topics/Sapply
 <details>
   <summary>Examples...Click to expand!!</summary>
 
-    > x <- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
-    > sapply(x, mean)
-           a     beta    logic 
-    5.500000 4.535125 0.500000
-    # returned a "vector"
-    
-    > sapply(x, quantile)
-             a        beta logic
-    0%    1.00  0.04978707   0.0
-    25%   3.25  0.25160736   0.0
-    50%   5.50  1.00000000   0.5
-    75%   7.75  5.05366896   1.0
-    100% 10.00 20.08553692   1.0
-    # returned a "matrix"
-    
-    > i39 <- sapply(3:9, seq) # list of vectors
-    > sapply(i39, fivenum)
-         [,1] [,2] [,3] [,4] [,5] [,6] [,7]
-    [1,]  1.0  1.0    1  1.0  1.0  1.0    1
-    [2,]  1.5  1.5    2  2.0  2.5  2.5    3
-    [3,]  2.0  2.5    3  3.5  4.0  4.5    5
-    [4,]  2.5  3.5    4  5.0  5.5  6.5    7
-    [5,]  3.0  4.0    5  6.0  7.0  8.0    9
+```R
+> x <- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
+> sapply(x, mean)
+       a     beta    logic 
+5.500000 4.535125 0.500000
+# returned a "vector"
+
+> sapply(x, quantile)
+         a        beta logic
+0%    1.00  0.04978707   0.0
+25%   3.25  0.25160736   0.0
+50%   5.50  1.00000000   0.5
+75%   7.75  5.05366896   1.0
+100% 10.00 20.08553692   1.0
+# returned a "matrix"
+
+> i39 <- sapply(3:9, seq) # list of vectors
+> sapply(i39, fivenum)
+     [,1] [,2] [,3] [,4] [,5] [,6] [,7]
+[1,]  1.0  1.0    1  1.0  1.0  1.0    1
+[2,]  1.5  1.5    2  2.0  2.5  2.5    3
+[3,]  2.0  2.5    3  3.5  4.0  4.5    5
+[4,]  2.5  3.5    4  5.0  5.5  6.5    7
+[5,]  3.0  4.0    5  6.0  7.0  8.0    9
+```
 </details>
 
 ---
