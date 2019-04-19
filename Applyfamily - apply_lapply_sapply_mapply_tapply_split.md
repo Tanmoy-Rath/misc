@@ -401,7 +401,7 @@ List of 6
 ### 5. tapply(X, INDEX, FUN = NULL, ..., default = NA, simplify = TRUE)
 >- It is used to apply a function over subsets of a vector.
 >- It however needs a vector of factor levels to do this. However it can also be a simple numeric vector.
->- Since the factor variable is a vector of factor levels, tapply() can work only on **"vectors"**. It cannot work on **"lists"** or anything else.
+>- Since the factor variable is a vector, tapply() can work only on **"vectors"**. It cannot work on **"lists"** or anything else.
 
 https://www.rdocumentation.org/packages/base/versions/3.5.3/topics/tapply<br/>
 https://stat.ethz.ch/R-manual/R-devel/library/base/html/tapply.html
