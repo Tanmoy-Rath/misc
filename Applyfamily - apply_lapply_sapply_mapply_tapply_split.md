@@ -399,6 +399,7 @@ List of 6
 
 
 ### 5. tapply(X, INDEX, FUN = NULL, ..., default = NA, simplify = TRUE)
+>- It is used to apply a function over subsets of a vector.
 
 https://www.rdocumentation.org/packages/base/versions/3.5.3/topics/tapply<br/>
 https://stat.ethz.ch/R-manual/R-devel/library/base/html/tapply.html
