@@ -476,8 +476,25 @@ $`3`
  0.6467  1.2820  1.6749  1.7578  1.9802  3.0823
 ################################################################################################
 
+# My function to generate factor levels of differing frequencies
+generate_factor_levels <- function(n, t){
+        # 'n' take a numeric vector of required factor levels
+        # 't' takes a numeric vecor of corresponding frequencies for each factor level in 'n'
+        # Both 'n' and 't' must be of same length
+        if(length(n) == length(t)){
+                factor(unlist(mapply(rep, n, t)))
+        }
+        else{
+                stop("'n' and 't' must be of same length")
+        }
+}
 
+> a <- c(4,0,1,5)
+> b <- c(2,9,3,2)
 
+> generate_factor_levels(a,b)
+ [1] 4 4 0 0 0 0 0 0 0 0 0 1 1 1 5 5
+Levels: 0 1 4 5
 ```
 </details>
 
