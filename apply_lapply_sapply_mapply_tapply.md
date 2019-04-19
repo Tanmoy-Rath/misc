@@ -228,7 +228,7 @@ $logic
 
 https://www.rdocumentation.org/packages/memisc/versions/0.99.17.1/topics/Sapply
 <details>
-  <summary>Argument description Table...Click to expand!!</summary>
+  <summary><b>Details...</b>click to expand!!</summary>
 
 |Argument|Description|
 |---|---|
@@ -237,11 +237,6 @@ https://www.rdocumentation.org/packages/memisc/versions/0.99.17.1/topics/Sapply
 |...|optional arguments to FUN.|
 |simplify|logical or character string; should the result be simplified to a vector, matrix or higher dimensional array if possible? For sapply it must be named and not abbreviated. The default value, TRUE, returns a vector or matrix if appropriate, whereas if simplify = "array" the result may be an array of “rank” (=length(dim(.))) one higher than the result of FUN(X[[i]]).|
 |USE.NAMES|logical; if TRUE and if X is character, use X as names for the result unless it had names already. Since this argument follows ... its name cannot be abbreviated.|
-</details>
-
-<details>
-  <summary>Examples...Click to expand!!</summary>
-
 ```R
 > x <- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
 > sapply(x, mean)
