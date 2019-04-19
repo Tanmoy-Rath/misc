@@ -18,7 +18,7 @@ http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply<br/>
 https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
 
 <details>
-  <summary><b>Details...</b>Click to expand!!</summary>
+  <summary><b>Details...</b>click to expand!!</summary>
 
 |Argument|Description|
 |---|---|
@@ -26,7 +26,6 @@ https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
 |MARGIN|a vector giving the subscripts which the function will be applied over. E.g., for a matrix 1 indicates rows, 2 indicates columns, c(1, 2) indicates rows and columns. Where X has named dimnames, it can be a character vector selecting dimension names.|
 |FUN|the function to be applied: see ‘Details’. In the case of functions like +, %*%, etc., the function name must be backquoted or quoted.|
 |...|optional arguments to FUN.|
-
 ```R
 > set.seed(18949)
 > x <- matrix(rnorm(200),20,10)
@@ -96,18 +95,13 @@ https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
 https://www.rdocumentation.org/packages/base/versions/3.5.3/topics/lapply<br/>
 https://stat.ethz.ch/R-manual/R-patched/library/base/html/lapply.html
 <details>
-  <summary>Argument description Table...Click to expand!!</summary>
+  <summary><b>Details...</b>click to expand!!</summary>
 
 |Argument|Description|
 |---|---|
 |X|a vector (atomic or list) or an expression object. Other objects (including classed objects) will be coerced by base::as.list.|
 |FUN|the function to be applied to each element of X: see ‘Details’. In the case of functions like +, %*%, the function name must be backquoted or quoted.|
 |...|optional arguments to FUN.|
-</details>
-
-<details>
-  <summary>Examples...Click to expand!!</summary>
-
 ```R
 > x <- 1:4
 > lapply(x, runif)
