@@ -580,7 +580,7 @@ $`3`
 0.5379471 0.6931781 0.6958302 
 ################################################################################################
 
-# This example demonstrates the combined power of split() and sapply()
+# This example demonstrates the combined power of sapply() with anonymous function.
 > head(airquality)
   Ozone Solar.R Wind Temp Month Day
 1    41     190  7.4   67     5   1
