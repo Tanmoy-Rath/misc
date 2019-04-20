@@ -541,10 +541,21 @@ $`4`
 
 
 ### 6. split(x, f, drop = FALSE, ...)
->- split() divides the data in the vector "**x**" into the groups defined by f, a vector of factor levels.
+### S3 method (default): split(x, f, drop = FALSE, sep = ".", lex.order = FALSE, ...)
+>- split() divides the data in the vector "**x**" into the groups defined by f, a "**list**" of factor levels.
+>- If you specify "**f**" as a list, then "**interaction()**" is called internally to combine the factor levels.
 <details>
   <summary><b>Details...</b>click to expand!!</summary>
 
+|Argument|Description|
+|---|---|
+|x|vector or data frame containing values to be divided into groups.|
+|f|a ‘factor’ in the sense that as.factor(f) defines the grouping, or a list of such factors in which case their interaction is used for the grouping.|
+|drop|logical indicating if levels that do not occur should be dropped (if f is a factor or a list).|
+|value|a list of vectors or data frames compatible with a splitting of x. Recycling applies if the lengths do not match.|
+|sep|character string, passed to interaction in the case where f is a list.|
+|lex.order|logical, passed to interaction when f is a list.|
+|...|further potential arguments passed to methods.|
 ```R
 > x <- c(rnorm(10), runif(10), rnorm(10,1))
 > f <- gl(3,10)
