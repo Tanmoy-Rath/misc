@@ -540,4 +540,8 @@ $`4`
 
 
 
-split()
+### 6. split(x, f, drop = FALSE, ...)
+>- split() divides the data in the vector "**x**" into the groups defined by f, a vector of factor levels.
+
+
+
