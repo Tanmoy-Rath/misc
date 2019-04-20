@@ -559,6 +559,7 @@ $`2`
 $`3`
  [1]  3.93247213  0.48364955  0.13147744  1.22116363 -0.02540756  0.99815180 -1.02639942  1.57687136
  [9] -0.26233866 -0.07133822
+################################################################################################
 
 > lapply(split(x,f), mean)# This way is rarely used. tapply or sapply are preferred.
 $`1`
@@ -577,5 +578,52 @@ $`3`
 > sapply(split(x,f), mean)
         1         2         3 
 0.5379471 0.6931781 0.6958302 
+################################################################################################
+
+# This example demonstrates the combined power of split() and sapply()
+> head(airquality)
+  Ozone Solar.R Wind Temp Month Day
+1    41     190  7.4   67     5   1
+2    36     118  8.0   72     5   2
+3    12     149 12.6   74     5   3
+4    18     313 11.5   62     5   4
+5    NA      NA 14.3   56     5   5
+6    28      NA 14.9   66     5   6
+
+> s <- split(airquality, airquality$Month)
+> lapply(  s, function(x) colMeans(x[,c("Ozone","Solar.R","Wind")])  )
+$`5`
+   Ozone  Solar.R     Wind 
+      NA       NA 11.62258 
+
+$`6`
+    Ozone   Solar.R      Wind 
+       NA 190.16667  10.26667 
+
+$`7`
+     Ozone    Solar.R       Wind 
+        NA 216.483871   8.941935 
+
+$`8`
+   Ozone  Solar.R     Wind 
+      NA       NA 8.793548 
+
+$`9`
+   Ozone  Solar.R     Wind 
+      NA 167.4333  10.1800 
+
+# sapply() will give a more compact form
+> sapply(  s, function(x) colMeans(x[,c("Ozone","Solar.R","Wind")])  )
+               5         6          7        8        9
+Ozone         NA        NA         NA       NA       NA
+Solar.R       NA 190.16667 216.483871       NA 167.4333
+Wind    11.62258  10.26667   8.941935 8.793548  10.1800
+
+# If you want to remove NAs...
+> sapply(  s, function(x) colMeans(x[,c("Ozone","Solar.R","Wind")],na.rm=TRUE)  )
+                5         6          7          8         9
+Ozone    23.61538  29.44444  59.115385  59.961538  31.44828
+Solar.R 181.29630 190.16667 216.483871 171.857143 167.43333
+Wind     11.62258  10.26667   8.941935   8.793548  10.18000
 ```
 </details>
