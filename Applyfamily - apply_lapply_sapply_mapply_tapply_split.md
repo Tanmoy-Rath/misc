@@ -746,7 +746,9 @@ List of 6
 |...|optional arguments to FUN.|
 |USE.NAMES|logical; if TRUE and if X is character, use X as names for the result unless it had names already. Since this argument follows ... its name cannot be abbreviated.|
 ```R
-
-
+> count_by_spray <- with(InsectSprays, split(count, spray))
+> vapply(count_by_spray, mean, numeric(1))
+        A         B         C         D         E         F 
+14.500000 15.333333  2.083333  4.916667  3.500000 16.666667 
 ```
 </details>
