@@ -110,6 +110,26 @@ https://www.r-bloggers.com/a-quick-primer-on-split-apply-combine-problems/
 
 ### Technique-3
 ```R
+> by(InsectSprays$count, InsectSprays$spray, mean)
+InsectSprays$spray: A
+[1] 14.5
+--------------------------------------------------------------------------- 
+InsectSprays$spray: B
+[1] 15.33333
+--------------------------------------------------------------------------- 
+InsectSprays$spray: C
+[1] 2.083333
+--------------------------------------------------------------------------- 
+InsectSprays$spray: D
+[1] 4.916667
+--------------------------------------------------------------------------- 
+InsectSprays$spray: E
+[1] 3.5
+--------------------------------------------------------------------------- 
+InsectSprays$spray: F
+[1] 16.66667
+
+# same as
 > with(InsectSprays, by(count, spray, mean))
 spray: A
 [1] 14.5
