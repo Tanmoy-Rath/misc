@@ -735,3 +735,16 @@ List of 6
 
 ### 7. vapply(X, FUN, FUN.VALUE, ..., USE.NAMES = TRUE)
 >- It is similar to sapply, but has a pre-specified type of return value, so it can be safer (and sometimes faster) to use.
+<details>
+  <summary><b>Details...</b>click to expand!!</summary>
+
+|Argument|Description|
+|---|---|
+|X|a vector (atomic or list) or an expression object. Other objects (including classed objects) will be coerced by base::as.list.|
+|f|the function to be applied to each element of X: see ‘Details’. In the case of functions like +, %\*%, the function name must be backquoted or quoted.|
+|drop|logical indicating if levels that do not occur should be dropped (if f is a factor or a list).|
+|value|a list of vectors or data frames compatible with a splitting of x. Recycling applies if the lengths do not match.|
+|sep|character string, passed to interaction in the case where f is a list.|
+|lex.order|logical, passed to interaction when f is a list.|
+|...|further potential arguments passed to methods.|
+</details>
