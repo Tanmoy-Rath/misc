@@ -751,3 +751,58 @@ List of 6
 14.500000 15.333333  2.083333  4.916667  3.500000 16.666667 
 ```
 </details>
+
+---
+
+
+
+
+
+
+### 8. by(data, INDICES, FUN, ..., simplify = TRUE)
+>- Function by is an object-oriented wrapper for tapply applied to data frames.
+<details>
+  <summary><b>Details...</b>click to expand!!</summary>
+
+|Argument|Description|
+|---|---|
+|data|an R object, normally a data frame, possibly a matrix.|
+|INDICES|a factor or a list of factors, each of length nrow(data).|
+|FUN|a function to be applied to (usually data-frame) subsets of data.|
+|...|further arguments to FUN.|
+|simplify|logical: see tapply.|
+```R
+> by(InsectSprays$count, InsectSprays$spray, mean)
+InsectSprays$spray: A
+[1] 14.5
+--------------------------------------------------------------------------- 
+InsectSprays$spray: B
+[1] 15.33333
+--------------------------------------------------------------------------- 
+InsectSprays$spray: C
+[1] 2.083333
+--------------------------------------------------------------------------- 
+InsectSprays$spray: D
+[1] 4.916667
+--------------------------------------------------------------------------- 
+InsectSprays$spray: E
+[1] 3.5
+--------------------------------------------------------------------------- 
+InsectSprays$spray: F
+[1] 16.66667
+
+
+
+
+
+
+
+
+
+> count_by_spray <- with(InsectSprays, split(count, spray))
+> vapply(count_by_spray, mean, numeric(1))
+        A         B         C         D         E         F 
+14.500000 15.333333  2.083333  4.916667  3.500000 16.666667 
+```
+</details>
+
