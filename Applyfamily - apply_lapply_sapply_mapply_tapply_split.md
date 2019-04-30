@@ -91,7 +91,7 @@ https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
 
 ### 2. lapply(X, FUN, ...)
 >- returns a **"list"** from input list **"X"**.
->- each element of output is the result of applying FUN to the corresponding element of **"X"**.
+>- each element of output list is the result of applying FUN to the corresponding element of **"X"**.
 
 https://www.rdocumentation.org/packages/base/versions/3.5.3/topics/lapply<br/>
 https://stat.ethz.ch/R-manual/R-patched/library/base/html/lapply.html
