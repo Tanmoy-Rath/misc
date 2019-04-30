@@ -16,7 +16,6 @@ But the shortcut functions, due to having been designed for specific purpose, ar
 
 http://www.rdocumentation.org/packages/base/versions/3.5.3/topics/apply<br/>
 https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
-
 <details>
   <summary><b>Details...</b>click to expand!!</summary>
 
