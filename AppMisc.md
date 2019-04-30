@@ -93,3 +93,10 @@ https://www.r-bloggers.com/a-quick-primer-on-split-apply-combine-problems/
         A         B         C         D         E         F 
 14.500000 15.333333  2.083333  4.916667  3.500000 16.666667 
 ```
+
+### Technique-2
+```R
+> with(InsectSprays, tapply(count, spray, mean))
+        A         B         C         D         E         F 
+14.500000 15.333333  2.083333  4.916667  3.500000 16.666667 
+```
