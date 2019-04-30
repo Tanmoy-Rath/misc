@@ -544,7 +544,7 @@ $`4`
 
 ### 6. split(x, f, drop = FALSE, ...)
 ### S3 method (default): split(x, f, drop = FALSE, sep = ".", lex.order = FALSE, ...)
->- split() divides the data in the vector "**x**" into the groups defined by f, a "**list**" of factor levels.
+>- split() divides the data in the vector "**x**" into the groups defined by f; f is a "**list**" of factor levels.
 >- If you specify "**f**" as a list, then "**interaction()**" is called internally to combine the factor levels.
 
 https://www.rdocumentation.org/packages/base/versions/3.5.3/topics/split<br/>
