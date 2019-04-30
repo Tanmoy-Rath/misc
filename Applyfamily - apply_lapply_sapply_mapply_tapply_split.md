@@ -725,3 +725,13 @@ List of 6
  $ 2.5: num [1:2] 0.123 -1.537
 ```
 </details>
+
+---
+
+
+
+
+
+
+### 7. vapply(X, FUN, FUN.VALUE, ..., USE.NAMES = TRUE)
+>- It is similar to sapply, but has a pre-specified type of return value, so it can be safer (and sometimes faster) to use.
