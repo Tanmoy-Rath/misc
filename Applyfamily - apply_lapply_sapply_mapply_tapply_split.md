@@ -790,19 +790,5 @@ InsectSprays$spray: E
 --------------------------------------------------------------------------- 
 InsectSprays$spray: F
 [1] 16.66667
-
-
-
-
-
-
-
-
-
-> count_by_spray <- with(InsectSprays, split(count, spray))
-> vapply(count_by_spray, mean, numeric(1))
-        A         B         C         D         E         F 
-14.500000 15.333333  2.083333  4.916667  3.500000 16.666667 
 ```
 </details>
-
