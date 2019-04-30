@@ -84,6 +84,8 @@ https://www.r-bloggers.com/a-quick-primer-on-split-apply-combine-problems/
 ### Technique-1
 ```R
 > X <- split(InsectSprays$count,InsectSprays$spray)
+
+# using sapply()
 > sapply(X, mean)
         A         B         C         D         E         F 
 14.500000 15.333333  2.083333  4.916667  3.500000 16.666667
