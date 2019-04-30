@@ -92,7 +92,7 @@ https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html
 ### 2. lapply(X, FUN, ...)
 >- returns a **"list"** from input list **"X"**.
 >- each element of output list is the result of applying FUN to the corresponding element of **"X"**.
->- input data-frames are converted to lists first before any processing.
+>- input data-frames (or any other R objects) are converted to lists first before any processing.
 
 https://www.rdocumentation.org/packages/base/versions/3.5.3/topics/lapply<br/>
 https://stat.ethz.ch/R-manual/R-patched/library/base/html/lapply.html
