@@ -79,3 +79,15 @@ https://www.r-bloggers.com/a-quick-primer-on-split-apply-combine-problems/
 71    24     F
 72    13     F
 ```
+### Technique-1
+```R
+> X <- split(InsectSprays$count,InsectSprays$spray)
+> sapply(X, mean)
+        A         B         C         D         E         F 
+14.500000 15.333333  2.083333  4.916667  3.500000 16.666667
+
+# using vapply()
+> vapply(X, mean, numeric(1))
+        A         B         C         D         E         F 
+14.500000 15.333333  2.083333  4.916667  3.500000 16.666667 
+```
