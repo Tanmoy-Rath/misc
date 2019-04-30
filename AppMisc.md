@@ -80,6 +80,7 @@ https://www.r-bloggers.com/a-quick-primer-on-split-apply-combine-problems/
 72    13     F
 ```
 </details>
+
 ### Technique-1
 ```R
 > X <- split(InsectSprays$count,InsectSprays$spray)
