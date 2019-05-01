@@ -168,6 +168,7 @@ library(plyr)
 
 ### Technique-7
 ```R
+library(plyr)
 > dlply(InsectSprays, .(spray), summarise, mean.count = mean(count))
 $A
   mean.count
