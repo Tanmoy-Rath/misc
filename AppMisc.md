@@ -161,3 +161,29 @@ spray: F
 5     E  3.500000
 6     F 16.666667
 ```
+
+### Technique-5
+```R
+library(plyr)
+> ddply(InsectSprays, .(spray), summarize, ave=mean(count))
+  spray       ave
+1     A 14.500000
+2     B 15.333333
+3     C  2.083333
+4     D  4.916667
+5     E  3.500000
+6     F 16.666667
+
+
+> library(dplyr)
+> summarise(  group_by(InsectSprays, spray), ave=mean(count)  )
+# A tibble: 6 x 2
+  spray   ave
+  <fct> <dbl>
+1 A     14.5 
+2 B     15.3 
+3 C      2.08
+4 D      4.92
+5 E      3.5 
+6 F     16.7 
+```
