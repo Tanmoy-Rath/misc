@@ -863,7 +863,7 @@ for (i in 1:cols)
 
 ## Density Plots
 ####For numeric & integer outliers<br>
-```{r, echo=FALSE}
+# ```{r, echo=FALSE}
 par(mfrow = c(2,3))
 cols <- dim(DataSet)[2]
 col_names <- colnames(DataSet)
@@ -876,7 +876,7 @@ for (i in 1:cols)
                 polygon(dens, col="#7F7FFF", border="black")
         }
 }
-```
+# ```
 
 
 if(  class(DataSet[,i]) %in% c("numeric","integer","factor")  )
