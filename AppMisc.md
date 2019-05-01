@@ -148,8 +148,10 @@ library(plyr)
 4     D  4.916667
 5     E  3.500000
 6     F 16.666667
+```
 
-
+### Technique-6
+```R
 > library(dplyr)
 > summarise(  group_by(InsectSprays, spray), ave=mean(count)  )
 # A tibble: 6 x 2
