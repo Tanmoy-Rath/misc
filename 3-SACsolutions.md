@@ -1,4 +1,5 @@
 https://www.r-bloggers.com/a-quick-primer-on-split-apply-combine-problems/
+https://vita.had.co.nz/papers/plyr.pdf
 # Solutions to S-A-C problems (split-apply-combine)
 <details>
   <summary><b>InsectSprays data...</b>click to expand!!</summary>
