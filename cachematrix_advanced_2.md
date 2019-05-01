@@ -1,3 +1,4 @@
+```R
 ## makeCacheMatrix() : Creates a matrix data type and returns a list containing its inbuilt functions
 ##	It has 4 inbuilt functions setm() , getm() , setinv(), getinv()
 ##		set_MATRIX() : resets the matrix to new values
@@ -119,3 +120,4 @@ mm$get_INVERSE() %*% mm$get_MATRIX()
 mm$get_INVERSE()
 mm$set_MATRIX(matrix(c(1,8,4,3,9,6,5,4,7), 3,3))
 mm$get_INVERSE()
+```
