@@ -164,3 +164,42 @@ library(plyr)
 5 E      3.5 
 6 F     16.7 
 ```
+
+### Technique-7
+```R
+> dlply(InsectSprays, .(spray), summarise, mean.count = mean(count))
+$A
+  mean.count
+1       14.5
+
+$B
+  mean.count
+1   15.33333
+
+$C
+  mean.count
+1   2.083333
+
+$D
+  mean.count
+1   4.916667
+
+$E
+  mean.count
+1        3.5
+
+$F
+  mean.count
+1   16.66667
+
+attr(,"split_type")
+[1] "data.frame"
+attr(,"split_labels")
+  spray
+1     A
+2     B
+3     C
+4     D
+5     E
+6     F
+```
