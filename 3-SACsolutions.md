@@ -1,4 +1,4 @@
-https://www.r-bloggers.com/a-quick-primer-on-split-apply-combine-problems/
+https://www.r-bloggers.com/a-quick-primer-on-split-apply-combine-problems/<br/>
 https://vita.had.co.nz/papers/plyr.pdf
 # Solutions to S-A-C problems (split-apply-combine)
 <details>
