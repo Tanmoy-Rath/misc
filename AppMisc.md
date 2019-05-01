@@ -1,5 +1,5 @@
 https://www.r-bloggers.com/a-quick-primer-on-split-apply-combine-problems/
-# Solutions to SAC problems (split-apply-combine)
+# Solutions to S-A-C problems (split-apply-combine)
 <details>
   <summary><b>InsectSprays data...</b>click to expand!!</summary>
 
