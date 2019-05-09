@@ -1,6 +1,6 @@
 https://www.r-bloggers.com/a-quick-primer-on-split-apply-combine-problems/<br/>
 https://vita.had.co.nz/papers/plyr.pdf
-# Solutions to S-A-C problems (split-apply-combine)
+# S-A-C solutions (advanced)
 
 ### Technique-1
 <details>
