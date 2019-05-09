@@ -4,7 +4,7 @@ https://vita.had.co.nz/papers/plyr.pdf
 
 ### Technique-1
 <details>
-  <summary><b>s <- split(airquality, airquality$Month)</b>click to expand!!</summary>
+  <summary><b>s <- split(airquality, airquality$Month)</b> click to expand structure of <b>s</b>!!</summary>
   
 ```R
 > s
