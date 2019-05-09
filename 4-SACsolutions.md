@@ -198,6 +198,19 @@ Temp     65.54839  79.10000  83.903226  83.967742  76.90000
 
 ### Technique-2
 ```R
+> s <- split(airquality, airquality$Month)
+> do.call(   rbind, lapply(  s, function(x) colMeans(x[,c("Ozone","Solar.R","Wind","Temp")],na.rm=TRUE)  )   )
+     Ozone  Solar.R      Wind     Temp
+5 23.61538 181.2963 11.622581 65.54839
+6 29.44444 190.1667 10.266667 79.10000
+7 59.11538 216.4839  8.941935 83.90323
+8 59.96154 171.8571  8.793548 83.96774
+9 31.44828 167.4333 10.180000 76.90000
+```
+
+
+### Technique-3
+```R
 > vapply(  s, function(x) colMeans(x[,c("Ozone","Solar.R","Wind","Temp")],na.rm=TRUE), numeric(4)  )
                 5         6          7          8         9
 Ozone    23.61538  29.44444  59.115385  59.961538  31.44828
