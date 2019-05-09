@@ -177,6 +177,7 @@ $`9`
 153    20     223 11.5   68     9  30
 ```
 </details>
+
 ```R
 > s <- split(airquality, airquality$Month)
 > sapply(  s, function(x) colMeans(x[,c("Ozone","Solar.R","Wind")])  )
