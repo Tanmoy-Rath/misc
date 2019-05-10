@@ -1,4 +1,4 @@
-<a href="https://www.stat.berkeley.edu/~s133/Docall.html">original page</a><br/>
+<a href="https://www.stat.berkeley.edu/~s133/Docall.html">original page. . .</a><br/>
 
 The do.call function<br/>
 R has an interesting function called do.call. This function allows you to call any R function, but instead of writing out the arguments one by one, you can use a list to hold the arguments of the function. While it may not seem useful on the surface, a simple example will help to show how powerful do.call is.<br/>
