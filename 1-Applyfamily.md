@@ -812,3 +812,17 @@ InsectSprays$spray: F
 |args|a list of arguments to the function call. The names attribute of args gives the argument names.|
 |quote|a logical value indicating whether to quote the arguments.|
 |envir|an environment within which to evaluate the call. This will be most useful if what is a character string and the arguments are symbols or quoted expressions.|
+```R
+> spl <- split(airquality, airquality$Month)
+> do.call(rbind,
+          lapply(  spl, function(x) colMeans(x[,c("Ozone","Solar.R","Wind","Temp")],na.rm=TRUE)  )
+)
+     Ozone  Solar.R      Wind     Temp
+5 23.61538 181.2963 11.622581 65.54839
+6 29.44444 190.1667 10.266667 79.10000
+7 59.11538 216.4839  8.941935 83.90323
+8 59.96154 171.8571  8.793548 83.96774
+9 31.44828 167.4333 10.180000 76.90000
+```
+
+</details>
