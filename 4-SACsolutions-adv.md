@@ -273,4 +273,96 @@ $`9`
      Ozone Solar.R Wind Temp
 [1,]     7      14  2.8   63
 [2,]    96     259 16.6   93
+
+
+
+> lapply(   spl,   function(x)   sapply(  x[,c("Ozone","Solar.R","Wind","Temp")],  summary  )   )
+$`5`
+$`5`$Ozone
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   1.00   11.00   18.00   23.62   31.50  115.00       5 
+
+$`5`$Solar.R
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+    8.0    72.0   194.0   181.3   284.5   334.0       4 
+
+$`5`$Wind
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   5.70    8.90   11.50   11.62   14.05   20.10 
+
+$`5`$Temp
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  56.00   60.00   66.00   65.55   69.00   81.00 
+
+
+$`6`
+$`6`$Ozone
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  12.00   20.00   23.00   29.44   37.00   71.00      21 
+
+$`6`$Solar.R
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   31.0   127.0   188.5   190.2   270.8   332.0 
+
+$`6`$Wind
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.70    8.00    9.70   10.27   11.50   20.70 
+
+$`6`$Temp
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  65.00   76.00   78.00   79.10   82.75   93.00 
+
+
+$`7`
+$`7`$Ozone
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   7.00   36.25   60.00   59.12   79.75  135.00       5 
+
+$`7`$Solar.R
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    7.0   175.0   253.0   216.5   273.0   314.0 
+
+$`7`$Wind
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  4.100   6.900   8.600   8.942  10.900  14.900 
+
+$`7`$Temp
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   73.0    81.5    84.0    83.9    86.0    92.0 
+
+
+$`8`
+$`8`$Ozone
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   9.00   28.75   52.00   59.96   82.50  168.00       5 
+
+$`8`$Solar.R
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   24.0   107.0   197.5   171.9   231.0   273.0       3 
+
+$`8`$Wind
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  2.300   6.600   8.600   8.794  11.200  15.500 
+
+$`8`$Temp
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  72.00   79.00   82.00   83.97   88.50   97.00 
+
+
+$`9`
+$`9`$Ozone
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   7.00   16.00   23.00   31.45   36.00   96.00       1 
+
+$`9`$Solar.R
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   14.0   116.8   192.0   167.4   234.5   259.0 
+
+$`9`$Wind
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   2.80    7.55   10.30   10.18   12.32   16.60 
+
+$`9`$Temp
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   63.0    71.0    76.0    76.9    81.0    93.0 
 ```
