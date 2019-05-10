@@ -792,3 +792,22 @@ InsectSprays$spray: F
 [1] 16.66667
 ```
 </details>
+
+---
+
+
+
+
+
+
+### 9. do.call(what, args, quote = FALSE, envir = parent.frame())
+>-  This function allows you to call any R function, but instead of writing out the arguments one by one, you can use a list to hold the arguments of the function.
+<details>
+  <summary><b>Details...</b>click to expand!!</summary>
+
+|Argument|Description|
+|---|---|
+|what|either a function or a non-empty character string naming the function to be called.|
+|args|a list of arguments to the function call. The names attribute of args gives the argument names.|
+|quote|a logical value indicating whether to quote the arguments.|
+|envir|an environment within which to evaluate the call. This will be most useful if what is a character string and the arguments are symbols or quoted expressions.|
