@@ -248,29 +248,29 @@ airquality$Month: 9
 ### combo Technique
 ```R
 > spl <- split(airquality, airquality$Month)
-> lapply(   spl,   function(x)   sapply(  x,  function(x)  range(x,na.rm=TRUE)  )   )
+> lapply(   spl,   function(x)   sapply(  x[,c("Ozone","Solar.R","Wind","Temp")],  function(x)  range(x,na.rm=TRUE)  )   )
 $`5`
-     Ozone Solar.R Wind Temp Month Day
-[1,]     1       8  5.7   56     5   1
-[2,]   115     334 20.1   81     5  31
+     Ozone Solar.R Wind Temp
+[1,]     1       8  5.7   56
+[2,]   115     334 20.1   81
 
 $`6`
-     Ozone Solar.R Wind Temp Month Day
-[1,]    12      31  1.7   65     6   1
-[2,]    71     332 20.7   93     6  30
+     Ozone Solar.R Wind Temp
+[1,]    12      31  1.7   65
+[2,]    71     332 20.7   93
 
 $`7`
-     Ozone Solar.R Wind Temp Month Day
-[1,]     7       7  4.1   73     7   1
-[2,]   135     314 14.9   92     7  31
+     Ozone Solar.R Wind Temp
+[1,]     7       7  4.1   73
+[2,]   135     314 14.9   92
 
 $`8`
-     Ozone Solar.R Wind Temp Month Day
-[1,]     9      24  2.3   72     8   1
-[2,]   168     273 15.5   97     8  31
+     Ozone Solar.R Wind Temp
+[1,]     9      24  2.3   72
+[2,]   168     273 15.5   97
 
 $`9`
-     Ozone Solar.R Wind Temp Month Day
-[1,]     7      14  2.8   63     9   1
-[2,]    96     259 16.6   93     9  30
+     Ozone Solar.R Wind Temp
+[1,]     7      14  2.8   63
+[2,]    96     259 16.6   93
 ```
