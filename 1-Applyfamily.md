@@ -814,8 +814,9 @@ InsectSprays$spray: F
 |envir|an environment within which to evaluate the call. This will be most useful if what is a character string and the arguments are symbols or quoted expressions.|
 ```R
 > spl <- split(airquality, airquality$Month)
-> do.call(rbind,
-          lapply(  spl, function(x) colMeans(x[,c("Ozone","Solar.R","Wind","Temp")],na.rm=TRUE)  )
+> do.call(
+    rbind,
+    lapply(  spl,  function(x)  colMeans( x[,c("Ozone","Solar.R","Wind","Temp")], na.rm=TRUE)  )
 )
      Ozone  Solar.R      Wind     Temp
 5 23.61538 181.2963 11.622581 65.54839
