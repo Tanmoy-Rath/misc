@@ -1,13 +1,14 @@
-<a href"https://www.stat.berkeley.edu/~s133/Docall.html">original page</a>
-The do.call function
-R has an interesting function called do.call. This function allows you to call any R function, but instead of writing out the arguments one by one, you can use a list to hold the arguments of the function. While it may not seem useful on the surface, a simple example will help to show how powerful do.call is.
+<a href"https://www.stat.berkeley.edu/~s133/Docall.html">original page</a><br/>
+
+The do.call function<br/>
+R has an interesting function called do.call. This function allows you to call any R function, but instead of writing out the arguments one by one, you can use a list to hold the arguments of the function. While it may not seem useful on the surface, a simple example will help to show how powerful do.call is.<br/>
 Suppose we have three comma-separated text files that have information on the same three variables. Here's a look at the first few lines in one of the files:
 
-a,b,x,y
-b,B,2.49778634403711,-0.351307445767206
-b,A,-0.594683138631719,1.19629936975021
-b,D,1.14857619580259,0.653315728121014
-c,A,0.957476532595248,0.935608419299617
+>- a,b,x,y
+>- b,B,2.49778634403711,-0.351307445767206
+>- b,A,-0.594683138631719,1.19629936975021
+>- b,D,1.14857619580259,0.653315728121014
+>- c,A,0.957476532595248,0.935608419299617
 
 It's easy to read each one in with read.csv, and then to call the rbind (combine by rows) function to make one big data frame. (Remember that rbind will only work if all the data frames being combined have the same variable names.)
 
