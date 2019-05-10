@@ -801,7 +801,8 @@ InsectSprays$spray: F
 
 
 ### 9. do.call(what, args, quote = FALSE, envir = parent.frame())
->-  This function allows you to call any R function, but instead of writing out the arguments one by one, you can use a list to hold the arguments of the function.
+>- This function allows you to call any R function, but instead of writing out the arguments one by one, you can use a list to hold the arguments of the function.
+>- <a href="https://www.stat.berkeley.edu/~s133/Docall.html">Read more...</a>
 <details>
   <summary><b>Details...</b>click to expand!!</summary>
 
