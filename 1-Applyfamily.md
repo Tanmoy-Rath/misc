@@ -827,3 +827,19 @@ InsectSprays$spray: F
 ```
 
 </details>
+
+---
+
+
+
+
+
+
+### 9. aggregate()
+- <b>aggregate(x, ...)</b> default S3 method
+- <b>aggregate(x, by, FUN, ..., simplify = TRUE, drop = TRUE)</b> S3 method for class 'data.frame'
+- <b>aggregate(formula, data, FUN, ..., subset, na.action = na.omit)</b> S3 method for class 'formula'
+- <b>aggregate(x, nfrequency = 1, FUN = sum, ndeltat = 1, ts.eps = getOption("ts.eps"), ...)</b> S3 method for class 'ts'
+
+
+
