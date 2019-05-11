@@ -209,7 +209,19 @@ Temp     65.54839  79.10000  83.903226  83.967742  76.90000
 ```
 
 
-### Technique-3
+### Technique 3
+```R
+> aggregate(airquality[,c("Ozone","Solar.R","Wind","Temp")], list(Month=airquality$Month), mean, na.rm=TRUE)
+  Month    Ozone  Solar.R      Wind     Temp
+1     5 23.61538 181.2963 11.622581 65.54839
+2     6 29.44444 190.1667 10.266667 79.10000
+3     7 59.11538 216.4839  8.941935 83.90323
+4     8 59.96154 171.8571  8.793548 83.96774
+5     9 31.44828 167.4333 10.180000 76.90000
+```
+
+
+### Technique #
 ```R
 > vapply(  s, function(x) colMeans(x[,c("Ozone","Solar.R","Wind","Temp")],na.rm=TRUE), numeric(4)  )
                 5         6          7          8         9
