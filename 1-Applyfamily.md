@@ -836,10 +836,22 @@ InsectSprays$spray: F
 
 
 ### 9. aggregate()
-- <b>aggregate(x, ...)</b> default S3 method
-- <b>aggregate(x, by, FUN, ..., simplify = TRUE, drop = TRUE)</b> S3 method for class 'data.frame'
-- <b>aggregate(formula, data, FUN, ..., subset, na.action = na.omit)</b> S3 method for class 'formula'
-- <b>aggregate(x, nfrequency = 1, FUN = sum, ndeltat = 1, ts.eps = getOption("ts.eps"), ...)</b> S3 method for class 'ts'
+- <b>aggregate(x, ...)</b> ; Default S3 method
+- <b>aggregate(x, by, FUN, ..., simplify = TRUE, drop = TRUE)</b> ; S3 method for class 'data.frame'
+- <b>aggregate(formula, data, FUN, ..., subset, na.action = na.omit)</b> ; S3 method for class 'formula'
+- <b>aggregate(x, nfrequency = 1, FUN = sum, ndeltat = 1, ts.eps = getOption("ts.eps"), ...)</b> ; S3 method for class 'ts'
+>- Splits the data into subsets, computes summary statistics for each, and returns the result in a convenient form.
+<details>
+  <summary><b>Details...</b>click to expand!!</summary>
 
-
+|Argument|Description|
+|---|---|
+|x|an R object.|
+|by|a list of grouping elements, each as long as the variables in the data frame x. The elements are coerced to factors before use.|
+|FUN|a function to compute the summary statistics which can be applied to all data subsets.|
+|simplify|a logical indicating whether results should be simplified to a vector or matrix if possible.|
+|drop|a logical indicating whether to drop unused combinations of grouping values. The non-default case drop=FALSE has been available since R 3.3.0, and may change in some cases where unused combinations are still dropped.|
+|formula|a formula, such as y ~ x or cbind(y1, y2) ~ x1 + x2, where the y variables are numeric data to be split into groups according to the grouping x variables (usually factors).|
+|data|a data frame (or list) from which the variables in formula should be taken.|
+</details>
 
