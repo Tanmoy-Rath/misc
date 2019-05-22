@@ -9,8 +9,8 @@ NA_Data <- function( Dataset ){
    max_is <- max(sapply(NA_list, length))
    as.data.frame(sapply(    NA_list,    function(x)    c(   x,   rep("",max_is-length(x))   )    ))
 }
-
-
+```
+```R
 > NA_Data(airquality)
          0 4.57516339869281 24.1830065359477
 1  Wind[3]       Solar.R[2]         Ozone[1]
