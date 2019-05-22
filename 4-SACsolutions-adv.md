@@ -1,5 +1,6 @@
 https://www.r-bloggers.com/a-quick-primer-on-split-apply-combine-problems/<br/>
-https://vita.had.co.nz/papers/plyr.pdf
+https://vita.had.co.nz/papers/plyr.pdf<br/>
+A wonderful article: https://stat545.com/block024_group-nest-split-map.html<br/>
 # S-A-C solutions (advanced)
 
 ### Technique-1
