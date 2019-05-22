@@ -32,4 +32,20 @@ NA_Data <- function( Dataset ){
 # My analysis: sapply returns a vector only when returns from list components are of single length.
 # If return lengths are > 1, a matrix is returned if all return lengths are same.
 # A matrix is returned even if sapply operates only on a single component of a list, as is the case with gapminder.
+# Same goes for diamonds dataset
+
+> library(ggplot2)
+> data(diamonds)
+> NA_Data(diamonds)
+            0
+1    carat[1]
+2      cut[2]
+3    color[3]
+4  clarity[4]
+5    depth[5]
+6    table[6]
+7    price[7]
+8        x[8]
+9        y[9]
+10      z[10]
 ```
