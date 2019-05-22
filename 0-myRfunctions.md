@@ -30,6 +30,6 @@ NA_Data <- function( Dataset ){
 5       pop[5]
 6 gdpPercap[6]
 # My analysis: sapply returns a vector only when returns from list components are of single length.
-If return lengths are > 1, a matrix is returned if all return lengths are same.
-A matrix is returned even if sapply operates only on a single component of a list, as is the case with gapminder.
+# If return lengths are > 1, a matrix is returned if all return lengths are same.
+# A matrix is returned even if sapply operates only on a single component of a list, as is the case with gapminder.
 ```
