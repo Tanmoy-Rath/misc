@@ -7,7 +7,7 @@ NA_Data <- function( Dataset ){
    NA_list <- tapply(NAS, as.factor(NAS), function(x) paste0(names(x),"[",match(names(x),colnems),"]"), simplify = FALSE)
    #NA_list <- tapply(NAS, as.factor(NAS), names, simplify = FALSE)
    max_is <- max(sapply(NA_list, length))
-   sapply(    NA_list,    function(x)    c(   x,   rep("",max_is-length(x))   )    )
+   as.data.frame(sapply(    NA_list,    function(x)    c(   x,   rep("",max_is-length(x))   )    ))
 }
 
 
@@ -18,7 +18,7 @@ NA_Data <- function( Dataset ){
 [3,] "Month[5]" ""               ""              
 [4,] "Day[6]"   ""               ""              
 
-# Strange thing about gapminder is, a matrix is returned, not a vector which should have been
+# Strange thing about gapminder is, a data.frame is returned, not a vector which should have been returned
 > NA_Data(gapminder)
      0             
 [1,] "country[1]"  
