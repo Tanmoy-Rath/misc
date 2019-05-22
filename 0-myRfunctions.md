@@ -1,4 +1,4 @@
-### Shows % of NA's per column
+### Shows % of NA's per column with column numbers in []
 
 ```R
 NA_Data <- function( Dataset ){
