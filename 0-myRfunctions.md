@@ -8,4 +8,10 @@ NA_Data <- function( Dataset ){
         sapply(    NA_list,    function(x)    c(   x,   rep("",max_is - length(x))   )    )
 }
 
+> NA_Data(airquality)
+     0          4.57516339869281 24.1830065359477
+[1,] "Wind[3]"  "Solar.R[2]"     "Ozone[1]"      
+[2,] "Temp[4]"  ""               ""              
+[3,] "Month[5]" ""               ""              
+[4,] "Day[6]"   ""               ""              
 ```
