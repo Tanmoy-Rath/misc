@@ -18,6 +18,7 @@ NA_Data <- function( Dataset ){
 [3,] "Month[5]" ""               ""              
 [4,] "Day[6]"   ""               ""              
 
+# Strange thing about gapminder is, a matrix is returned, not a vector which should have been
 > NA_Data(gapminder)
      0             
 [1,] "country[1]"  
