@@ -1,14 +1,13 @@
 ### Shows % of NA's per column(as column name) with column numbers in []
 
 ```R
-NA_Data <- function( Dataset )
-{
-colnems <- colnames(Dataset)
-NAS <- sapply(Dataset, function(x) 100*sum(is.na(x))/length(x))
-NA_list <- tapply(NAS, as.factor(NAS), function(x) paste0(names(x),"[",match(names(x),colnems),"]"), simplify=FALSE)
-#NA_list <- tapply(NAS, as.factor(NAS), names, simplify = FALSE)
-max_is <- max(sapply(NA_list, length))
-as.data.frame(sapply(    NA_list,    function(x)    c(   x,   rep("",max_is-length(x))   )    ))
+NA_Data <- function( Dataset ){
+   colnems <- colnames(Dataset)
+   NAS <- sapply(Dataset, function(x) 100*sum(is.na(x))/length(x))
+   NA_list <- tapply(NAS, as.factor(NAS), function(x) paste0(names(x),"[",match(names(x),colnems),"]"), simplify=FALSE)
+   #NA_list <- tapply(NAS, as.factor(NAS), names, simplify = FALSE)
+   max_is <- max(sapply(NA_list, length))
+   as.data.frame(sapply(    NA_list,    function(x)    c(   x,   rep("",max_is-length(x))   )    ))
 }
 ```
 <details>
