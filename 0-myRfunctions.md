@@ -11,7 +11,7 @@ NA_Data <- function( Dataset ){
 }
 ```
 <details>
-  <b>Details...</b>click to expand!!
+  <summary><b>Details...</b>click to expand!!</summary>
 
 ```R
 > NA_Data(airquality)
