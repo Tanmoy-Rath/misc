@@ -1,6 +1,6 @@
 # Working with Dates
-#### (d1 <- date())
-#### class(d1)<br/>
+<b>(d1 <- date())
+ class(d1)<br/>
 
 #### (d2 <- Sys.Date())
 #### class(d2)<br/>
@@ -33,7 +33,7 @@ OlsonNames() ## around six hundred names<br/>
 http://www.r-statistics.com/2012/03/do-more-with-dates-and-times-in-r-with-lubridate-1-1-0/<br/>
 http://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html<br/>
 
-?POSIXlt
+?POSIXlt</b>
 ```R
 > (d1 <- date())
 [1] "Fri May 24 19:15:32 2019"
