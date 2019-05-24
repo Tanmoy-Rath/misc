@@ -4,7 +4,7 @@ class(d1)
 <details>
   <summary>...</summary>
     
-```R>
+```R
 (d1 <- date())
 [1] "Fri May 24 19:15:32 2019"
 > class(d1)
