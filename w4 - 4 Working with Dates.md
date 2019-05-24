@@ -1,6 +1,6 @@
 # Working with Dates
 <b>(d1 <- date())<br/>
-class(d1)<br/>
+class(d1)
 <details>
   <summary>...</summary>
     
