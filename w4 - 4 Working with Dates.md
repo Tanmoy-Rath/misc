@@ -1,3 +1,4 @@
+# Working with Dates
 ```R
 > (d1 <- date())
 [1] "Fri May 24 19:15:32 2019"
@@ -56,5 +57,5 @@ The following object is masked from ‘package:base’:
 [1] "2014-01-08 10:15:03 NZDT"
 > ?timezone
 > Sys.timezone()
-[1] "Asia/Calcutta"
+[1] "Pacific/Auckland"
 ```
