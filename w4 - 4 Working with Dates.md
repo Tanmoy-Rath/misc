@@ -1,4 +1,39 @@
 # Working with Dates
+(d1 <- date())<br/>
+class(d1)<br/>
+
+(d2 <- Sys.Date())<br/>
+class(d2)<br/>
+
+format(d2,"%a %d %b %Y")<br/>
+class(format(d2,"%a %d %b %Y"))<br/>
+
+x <- c("1jan1960","2jan1960","31mar1960","30jul1960")<br/>
+(z <- as.Date(x, "%d%b%Y"))<br/>
+z[1] - z[2]<br/>
+class(z[1] - z[2])<br/>
+as.numeric(z[1] - z[2])<br/>
+
+weekdays(d2)<br/>
+months(d2)<br/>
+julian(d2)<br/>
+
+library(lubridate)<br/>
+ymd("20140108")<br/>
+mdy("08/04/2013")<br/>
+dmy("03-04-2013")<br/>
+
+ymd_hms("20140108101503")<br/>
+ymd_hms("2014-01-08 10:15:03")<br/>
+ymd_hms("2014-01-08 10:15:03", tz="Pacific/Auckland")<br/>
+?timezone<br/>
+Sys.timezone()<br/>
+OlsonNames() ## around six hundred names<br/>
+
+http://www.r-statistics.com/2012/03/do-more-with-dates-and-times-in-r-with-lubridate-1-1-0/<br/>
+http://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html<br/>
+
+?POSIXlt
 ```R
 > (d1 <- date())
 [1] "Fri May 24 19:15:32 2019"
