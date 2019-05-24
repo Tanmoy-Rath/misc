@@ -1,18 +1,18 @@
 # Working with Dates
-#### (d1 <- date())<br/>
-### class(d1)<br/>
+#### (d1 <- date())
+#### class(d1)<br/>
 
-### (d2 <- Sys.Date())<br/>
-### class(d2)<br/>
+#### (d2 <- Sys.Date())
+#### class(d2)<br/>
 
-### format(d2,"%a %d %b %Y")<br/>
-### class(format(d2,"%a %d %b %Y"))<br/>
+#### format(d2,"%a %d %b %Y")
+#### class(format(d2,"%a %d %b %Y"))<br/>
 
-### x <- c("1jan1960","2jan1960","31mar1960","30jul1960")<br/>
-### (z <- as.Date(x, "%d%b%Y"))<br/>
-### z[1] - z[2]<br/>
-### class(z[1] - z[2])<br/>
-### as.numeric(z[1] - z[2])<br/>
+#### x <- c("1jan1960","2jan1960","31mar1960","30jul1960")
+#### (z <- as.Date(x, "%d%b%Y"))
+#### z[1] - z[2]
+#### class(z[1] - z[2])
+#### as.numeric(z[1] - z[2])
 
 weekdays(d2)<br/>
 months(d2)<br/>
