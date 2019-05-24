@@ -1,16 +1,6 @@
 # Working with Dates
 <b>(d1 <- date())<br/>
-class(d1)
-<details>
-  <summary>...</summary>
-    
-```R
-(d1 <- date())
-[1] "Fri May 24 19:15:32 2019"
-> class(d1)
-[1] "character"
-```
-</details>
+class(d1)<br/>
 
 (d2 <- Sys.Date())<br/>
 class(d2)<br/>
