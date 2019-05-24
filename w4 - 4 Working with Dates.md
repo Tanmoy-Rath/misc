@@ -92,5 +92,5 @@ The following object is masked from ‘package:base’:
 [1] "2014-01-08 10:15:03 NZDT"
 > ?timezone
 > Sys.timezone()
-[1] "Pacific/Auckland"
+[1] "Asia/Calcutta"
 ```
