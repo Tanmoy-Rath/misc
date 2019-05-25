@@ -3,7 +3,7 @@
 ```R
 NA_Data <- function( Dataset ){
    colnems <- colnames(Dataset)
-   NAS <- sapply(Dataset, function(x) 100*sum(is.na(x))/length(x) )
+   NAS <- vapply(Dataset, function(x) 100*sum(is.na(x))/length(x), numeric(1))
    NA_list <- tapply(NAS, as.factor(NAS), function(x) paste0(names(x),"[",match(names(x),colnems),"]"), simplify=FALSE)
    max_is <- max(vapply(NA_list, length, numeric(1)))
    as.data.frame(vapply(NA_list, function(x) c(x, rep("",max_is-length(x)) ), character(max_is)))
