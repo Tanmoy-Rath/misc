@@ -96,7 +96,8 @@ You want to turn the numeric vector to a factor variable but you also want the n
 <details>
   <summary><b>open...</b></summary>
    
-```R> factor(activity_labels$V2[y_train$V1])
+```R
+> factor(activity_labels[long_vector])
    [1] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
    [8] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
   [15] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
