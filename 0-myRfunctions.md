@@ -92,6 +92,157 @@ You have a character vector of activity labels and a long numeric vector represe
 </details>
 
 You want to turn the numeric vector to a factor variable but you also want the numbers in it to represent the corresponding factor levels in the activity_labels. Simply writing **factor(activity_labels[long_vector])** will represent the same factor levels but change the underlying numbers. This is because it assigns factors based on alphabetical order.
+<details>
+  <summary><b>open...</b></summary>
+   
+```R> factor(activity_labels$V2[y_train$V1])
+   [1] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+   [8] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+  [15] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+  [22] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           SITTING           
+  [29] SITTING            SITTING            SITTING            SITTING            SITTING            SITTING            SITTING           
+  [36] SITTING            SITTING            SITTING            SITTING            SITTING            SITTING            SITTING           
+  [43] SITTING            SITTING            SITTING            SITTING            SITTING            SITTING            SITTING           
+  [50] SITTING            SITTING            LAYING             LAYING             LAYING             LAYING             LAYING            
+  [57] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+  [64] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+  [71] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+  [78] LAYING             WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+  [85] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+  [92] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+  [99] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [106] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [113] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [120] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING_DOWNSTAIRS
+ [127] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [134] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [141] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [148] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [155] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [162] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [169] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [176] WALKING_UPSTAIRS   STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [183] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [190] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [197] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           SITTING           
+ [204] SITTING            SITTING            SITTING            SITTING            SITTING            SITTING            SITTING           
+ [211] SITTING            SITTING            SITTING            LAYING             LAYING             LAYING             LAYING            
+ [218] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+ [225] LAYING             SITTING            SITTING            SITTING            SITTING            SITTING            SITTING           
+ [232] SITTING            SITTING            SITTING            SITTING            SITTING            SITTING            LAYING            
+ [239] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+ [246] LAYING             LAYING             LAYING             WALKING            WALKING            WALKING            WALKING           
+ [253] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [260] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [267] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [274] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [281] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [288] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [295] WALKING            WALKING            WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [302] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [309] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [316] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [323] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [330] WALKING_UPSTAIRS   WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [337] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [344] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS STANDING           STANDING           STANDING          
+ [351] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [358] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [365] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [372] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [379] SITTING            SITTING            SITTING            SITTING            SITTING            SITTING            SITTING           
+ [386] SITTING            SITTING            SITTING            SITTING            SITTING            SITTING            SITTING           
+ [393] SITTING            SITTING            SITTING            SITTING            SITTING            SITTING            SITTING           
+ [400] SITTING            SITTING            SITTING            SITTING            SITTING            LAYING             LAYING            
+ [407] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+ [414] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+ [421] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+ [428] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+ [435] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [442] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [449] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [456] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [463] WALKING            WALKING            WALKING            WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [470] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [477] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [484] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [491] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [498] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [505] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [512] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [519] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   STANDING           STANDING           STANDING          
+ [526] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [533] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [540] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [547] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           SITTING           
+ [554] SITTING            SITTING            SITTING            SITTING            SITTING            SITTING            SITTING           
+ [561] SITTING            SITTING            SITTING            SITTING            SITTING            SITTING            SITTING           
+ [568] SITTING            SITTING            SITTING            SITTING            SITTING            SITTING            SITTING           
+ [575] SITTING            SITTING            SITTING            SITTING            LAYING             LAYING             LAYING            
+ [582] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+ [589] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+ [596] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+ [603] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+ [610] LAYING             WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [617] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [624] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [631] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [638] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [645] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [652] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [659] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [666] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [673] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [680] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [687] WALKING_UPSTAIRS   WALKING_UPSTAIRS   STANDING           STANDING           STANDING           STANDING           STANDING          
+ [694] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [701] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [708] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [715] STANDING           STANDING           SITTING            SITTING            SITTING            SITTING            SITTING           
+ [722] SITTING            SITTING            SITTING            SITTING            SITTING            SITTING            SITTING           
+ [729] SITTING            SITTING            SITTING            SITTING            SITTING            SITTING            SITTING           
+ [736] SITTING            SITTING            SITTING            SITTING            LAYING             LAYING             LAYING            
+ [743] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+ [750] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+ [757] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+ [764] LAYING             LAYING             LAYING             LAYING             WALKING            WALKING            WALKING           
+ [771] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [778] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [785] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [792] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING_DOWNSTAIRS
+ [799] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [806] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [813] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [820] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [827] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [834] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [841] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [848] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [855] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [862] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [869] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [876] SITTING            SITTING            SITTING            SITTING            SITTING            SITTING            SITTING           
+ [883] SITTING            SITTING            SITTING            SITTING            SITTING            SITTING            SITTING           
+ [890] SITTING            SITTING            SITTING            SITTING            SITTING            SITTING            SITTING           
+ [897] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+ [904] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+ [911] LAYING             LAYING             LAYING             LAYING             LAYING             LAYING             LAYING            
+ [918] LAYING             LAYING             LAYING             WALKING            WALKING            WALKING            WALKING           
+ [925] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [932] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [939] WALKING            WALKING            WALKING            WALKING            WALKING            WALKING            WALKING           
+ [946] WALKING            WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [953] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [960] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS
+ [967] WALKING_DOWNSTAIRS WALKING_DOWNSTAIRS WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [974] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [981] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
+ [988] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   STANDING           STANDING           STANDING           STANDING          
+ [995] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [ reached getOption("max.print") -- omitted 6352 entries ]
+Levels: LAYING SITTING STANDING WALKING WALKING_DOWNSTAIRS WALKING_UPSTAIRS
+```
+</details>
 
 wwefwe
 ```R
@@ -240,5 +391,6 @@ Labels <- factor(activity_labels[test], levels=activity_labels)
  [981] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS  
  [988] WALKING_UPSTAIRS   WALKING_UPSTAIRS   WALKING_UPSTAIRS   STANDING           STANDING           STANDING           STANDING          
  [995] STANDING           STANDING           STANDING           STANDING           STANDING           STANDING          
+ [ reached getOption("max.print") -- omitted 6352 entries ]
 Levels: WALKING WALKING_UPSTAIRS WALKING_DOWNSTAIRS SITTING STANDING LAYING
 ```
