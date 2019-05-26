@@ -65,6 +65,9 @@ NA_Data <- function( Dataset ){
 New_data <- factor(activity_labels[long_vector], levels=activity_labels)
 ```
 You have a character vector of activity labels and a long numeric vector representing those labels.
+<details>
+  <summary><b>open...</b></summary>
+
 ```R
 > activity_labels
 [1] "WALKING"            "WALKING_UPSTAIRS"   "WALKING_DOWNSTAIRS" "SITTING"           
@@ -86,6 +89,8 @@ You have a character vector of activity labels and a long numeric vector represe
  [901] 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 2 2 2 2 2 2 2
  [976] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 5 5 5 5 5 5 5 5 5 5
 ```
+</details>
+
 You want to turn the numeric vector to a factor variable but you also want the numbers in it to represent the corresponding factor-level in activity_labels
 
 wwefwe
