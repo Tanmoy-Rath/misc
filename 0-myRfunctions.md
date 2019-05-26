@@ -91,7 +91,7 @@ You have a character vector of activity labels and a long numeric vector represe
 ```
 </details>
 
-You want to turn the numeric vector to a factor variable but you also want the numbers in it to represent the corresponding factor-level in activity_labels
+You want to turn the numeric vector to a factor variable but you also want the numbers in it to represent the corresponding factor levels in the activity_labels. Simply writing **factor(activity_labels[long_vector])** will represent the same factor levels but change the underlying numbers. This is because it assigns factors based on alphabetical order.
 
 wwefwe
 ```R
