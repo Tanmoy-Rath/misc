@@ -198,6 +198,7 @@ Temp     65.54839  79.10000  83.903226  83.967742  76.90000
 
 
 ### Technique-2
+**READ FIRST**:https://stackoverflow.com/questions/2851327/convert-a-list-of-data-frames-into-one-data-frame
 ```R
 > s <- split(airquality, airquality$Month)
 > do.call(   rbind, lapply(  s, function(x) colMeans(x[,c("Ozone","Solar.R","Wind","Temp")],na.rm=TRUE)  )   )
