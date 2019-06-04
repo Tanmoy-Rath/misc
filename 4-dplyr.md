@@ -1,4 +1,4 @@
-<img src="https://github.com/Tanmoy-Rath/misc/blob/master/4-dplyr.browserling.com.tools.bmp-to-jpg.jpg" width="1089px" height="3956px">
+![|1089x3956,100%](https://github.com/Tanmoy-Rath/misc/blob/master/4-dplyr.browserling.com.tools.bmp-to-jpg.jpg)
 
 ```R
 > # dplyr
