@@ -1,4 +1,4 @@
-![alt text](https://github.com/Tanmoy-Rath/misc/blob/master/4-dplyr.bmp)
+![alt text](https://github.com/Tanmoy-Rath/misc/blob/master/4-dplyr.jpg)
 
 ```R
 > # dplyr
