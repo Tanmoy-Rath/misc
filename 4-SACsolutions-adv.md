@@ -234,17 +234,18 @@ Temp     65.54839  79.10000  83.903226  83.967742  76.90000
 ### Technique 4
 ```R
 > library(dplyr)
+> airquality %>% group_by(Month) %>% summarise_at(vars(Ozone, Solar.R, Wind, Temp), mean, na.rm=TRUE)
+# A tibble: 5 x 5
+  Month Ozone Solar.R  Wind  Temp
+  <int> <dbl>   <dbl> <dbl> <dbl>
+1     5  23.6    181. 11.6   65.5
+2     6  29.4    190. 10.3   79.1
+3     7  59.1    216.  8.94  83.9
+4     8  60.0    172.  8.79  84.0
+5     9  31.4    167. 10.2   76.9
+# You dont need to specify the grouping variable in the vars() list
 
-Attaching package: ‘dplyr’
-
-The following objects are masked from ‘package:stats’:
-
-    filter, lag
-
-The following objects are masked from ‘package:base’:
-
-    intersect, setdiff, setequal, union
-
+> # if you want to summarize all the columns
 > airquality %>% group_by(Month) %>% summarise_all(mean, na.rm=TRUE)
 # A tibble: 5 x 6
   Month Ozone Solar.R  Wind  Temp   Day
