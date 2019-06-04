@@ -1,4 +1,4 @@
-![alt text](https://github.com/Tanmoy-Rath/misc/blob/master/4-dplyr.jpg)
+![](https://github.com/Tanmoy-Rath/misc/blob/master/4-dplyr.browserling.com.tools.bmp-to-jpg.jpg)
 
 ```R
 > # dplyr
