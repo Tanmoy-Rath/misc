@@ -1,3 +1,5 @@
+![alt text](https://github.com/Tanmoy-Rath/misc/blob/master/4-dplyr.bmp)
+
 ```R
 > # dplyr
 > library(dplyr)
