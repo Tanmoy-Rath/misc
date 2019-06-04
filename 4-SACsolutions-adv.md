@@ -255,6 +255,10 @@ Temp     65.54839  79.10000  83.903226  83.967742  76.90000
 5     9  31.4    167. 10.2   76.9
 # You dont need to specify the grouping variable in the vars() list
 
+# But it doesn't work with multiple output functions, such as range()
+> airquality %>% group_by(Month) %>% summarise_at(vars(Ozone, Solar.R, Wind, Temp), range, na.rm=TRUE)
+Error: Column `Ozone` must be length 1 (a summary value), not 2
+
 > # if you want to summarize all the columns
 > airquality %>% group_by(Month) %>% summarise_all(mean, na.rm=TRUE)
 # A tibble: 5 x 6
