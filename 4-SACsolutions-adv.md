@@ -231,7 +231,34 @@ Temp     65.54839  79.10000  83.903226  83.967742  76.90000
 ```
 
 
-### Technique #
+### Technique 4
+```R
+> library(dplyr)
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+> airquality %>% group_by(Month) %>% summarise_all(mean, na.rm=TRUE)
+# A tibble: 5 x 6
+  Month Ozone Solar.R  Wind  Temp   Day
+  <int> <dbl>   <dbl> <dbl> <dbl> <dbl>
+1     5  23.6    181. 11.6   65.5  16  
+2     6  29.4    190. 10.3   79.1  15.5
+3     7  59.1    216.  8.94  83.9  16  
+4     8  60.0    172.  8.79  84.0  16  
+5     9  31.4    167. 10.2   76.9  15.5
+> 
+```
+
+
+### Technique
 ```R
 > vapply(  s, function(x) colMeans(x[,c("Ozone","Solar.R","Wind","Temp")],na.rm=TRUE), numeric(4)  )
                 5         6          7          8         9
