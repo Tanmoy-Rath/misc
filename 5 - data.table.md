@@ -1,5 +1,5 @@
 ```R
-> # data.table() , i written in C, hence is much much faster subsetting, grouping, updating
+# data.table() , i written in C, hence is much much faster subsetting, grouping, updating
 > set.seed(12345)
 > library(data.table)
 data.table 1.12.2 using 2 threads (see ?getDTthreads).  Latest news: r-datatable.com
@@ -12,8 +12,8 @@ data.table 1.12.2 using 2 threads (see ?getDTthreads).  Latest news: r-datatable
 1  0.5855288 a -0.9193220
 2  0.7094660 a -0.1162478
 3 -0.1093033 a  1.8173120
-> 
-> 
+ 
+ 
 > set.seed(12345)
 > DT <- data.table(x=rnorm(9),
 +                  y=rep(c("a","b","c"),each=3),
@@ -24,14 +24,14 @@ data.table 1.12.2 using 2 threads (see ?getDTthreads).  Latest news: r-datatable
 1:  0.5855288 a -0.9193220
 2:  0.7094660 a -0.1162478
 3: -0.1093033 a  1.8173120
-> 
-> 
+ 
+ 
 > data.table::tables()
    NAME NROW NCOL MB  COLS KEY
 1:   DT    9    3  0 x,y,z    
 Total: 0MB
-> 
-> 
+ 
+ 
 > # subset by rows and column values
 > DT[2,]
           x y          z
@@ -41,12 +41,14 @@ Total: 0MB
 1:  0.5855288 a -0.9193220
 2:  0.7094660 a -0.1162478
 3: -0.1093033 a  1.8173120
-> 
+
+
 > # subsetting by single index
 > DT[c(2,5)]# subset by rows
            x y          z
 1: 0.7094660 a -0.1162478
 2: 0.6058875 b  0.5202165
+
 > DT[,c(1,3)]# subset by columns
             x          z
 1:  0.5855288 -0.9193220
@@ -58,27 +60,28 @@ Total: 0MB
 7:  0.6300986  0.8168998
 8: -0.2761841 -0.8863575
 9: -0.2841597 -0.3315776
-> 
-> 
-> # pass a list of functions, they operate on columns
+ 
+ 
+# pass a list of functions, they operate on columns
 > DT[,list(mean(x),sum(z))]
             V1        V2
 1: -0.04556883 0.5210193
+
 > DT[,table(y)]
 y
 a b c 
 3 3 3 
-> 
-> 
+ 
+ 
 > DT[,w:=z^2]# add a new column, very memory efficient, very fast
-> 
-> 
+ 
+ 
 > DT[9,] <- list(1,"xyz",3,-6)# works
 > DT[10:=list(1,"xyz",0,-4),]# doesn't work
 Error: Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are defined for use in j, once only and in particular ways. See help(":=").
-> 
-> 
-> # if you create another variable, it still references the first object
+ 
+ 
+# if you create another variable, it still references the first object
 > DT2 <- DT
 > DT[,m:={tmp <- (x+z); log2(tmp+5)}]# you can write multiple statements
 > DT[,a:=x>0]# plyr like operations
@@ -93,17 +96,17 @@ Error: Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are def
 7:  0.6300986   c  0.8168998  0.66732535 2.688628  TRUE
 8: -0.2761841   c -0.8863575  0.78562966 1.940151 FALSE
 9:  1.0000000 xyz  3.0000000 -6.00000000 3.169925  TRUE
-> # if you need a copy of the original, use the copy function
-> 
-> 
-> # takes the mean of x+w where a=True, and places that mean in those rows where a=True
-> # takes the mean of x+w where a=False, and places that mean in those rows where a=False
+# if you need a copy of the original, use the copy function
+ 
+ 
+# takes the mean of x+w where a=True, and places that mean in those rows where a=True
+# takes the mean of x+w where a=False, and places that mean in those rows where a=False
 > DT[,b:=mean(x+w),by=a]
-> # DT[,b:=x+w,by=a]# investigate
-> 
-> 
-> # .N performs the count operation
-> # much faster than doing this with '$' operator with data.frames
+# DT[,b:=x+w,by=a]# investigate
+ 
+ 
+# .N performs the count operation
+# much faster than doing this with '$' operator with data.frames
 > set.seed(123)
 > DT <- data.table(x=sample(letters[1:3],1E5,TRUE))
 > DT[, .N , by=x]
@@ -111,9 +114,9 @@ Error: Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are def
 1: a 33387
 2: c 33201
 3: b 33412
-> 
-> 
-> # Data table displays head and tail on printing(if rows > 10), upto 5 rows by default
+ 
+ 
+# Data table displays head and tail on printing(if rows > 10), upto 5 rows by default
 > DT <- data.table(x=rnorm(108),
 +                  y=rep(c("a","b","c"),each=3),
 +                  z=rnorm(108)
@@ -131,8 +134,8 @@ Error: Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are def
 106:  0.5927161 c  0.4580150
 107: -0.7308481 c -0.8395697
 108:  0.9478600 c  1.7600820
-> 
-> # setting a key and subsetting by the key
+ 
+# setting a key and subsetting by the key
 > DT <- data.table(x=rep(c("a","b","c"),each=100),y=rnorm(300))
 > setkey(DT,x)# sets the key column
 > DT['a']# subsets DT by the key column where value is 'a'
@@ -295,9 +298,9 @@ Error: Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are def
 [281] -0.9945850377  0.4702077546 -0.6000301772  1.1953418199  0.9471484732  0.0635027162  2.2081899521
 [288] -2.1893999927  0.8811761026 -0.9530045029  1.7698857946 -1.1713202721 -0.8006480712 -0.1538689441
 [295]  0.2742700089  0.6679185342 -0.4649730939 -0.4592169873  0.0637037406 -0.2466505103
-> 
-> 
-> # Join 2 tables by keys
+ 
+ 
+# Join 2 tables by keys
 > DT <- data.table(x=c('a','a','b','b','dt1'),y=1:5)
 > DT2 <- data.table(x=c('a','b','b','dt2'),y=5:8)
 > setkey(DT,x);setkey(DT2,x)
@@ -309,21 +312,20 @@ Error: Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are def
 4: b   3   7
 5: b   4   6
 6: b   4   7
-> 
-> 
-> # FAST reading of files from disk
+ 
+ 
+# FAST reading of files from disk
 > big_df <- data.frame(x=rnorm(1E6),y=rnorm(1E6))
 > file1 <- tempfile()
 > write.table(big_df, file = file1, row.names = FALSE, col.names = TRUE, sep="\t", quote = FALSE)
-> 
-> # this is much faster
+ 
+# this is much faster
 > system.time(fread(file1))
    user  system elapsed 
    0.12    0.07    2.23 
-> 
-> # this is much slower
+ 
+# this is much slower
 > system.time(read.table(file1, header=TRUE, sep="\t"))
    user  system elapsed 
    6.88    0.04    6.91 
-> 
 ```
