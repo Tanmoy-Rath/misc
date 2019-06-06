@@ -1,3 +1,4 @@
+### cut() or Hmisc::cut2() help in binning a continuous variable by quantiles or intervals as required
 ```R
 # cuts it into 5 quantile groups
 > table(mergedData$Income.Group, cut2(mergedData$V2, g=5))
