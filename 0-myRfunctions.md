@@ -60,6 +60,21 @@ NA_Data <- function( Dataset ){
 
 
 
+### Bins a continuous variable into separate quantile groups
+```R
+> X <- seq(51, 100, by=0.1)
+> qnts <- quantile(X, probs=seq(0, 1, 0.2))
+
+> Y <- cut(X, breaks=qnts, include.lowest=TRUE, right=TRUE)
+> table(Y)
+Y
+  [51,60.8] (60.8,70.6] (70.6,80.4] (80.4,90.2]  (90.2,100] 
+         99          98          98          98          98 
+```
+
+
+
+
 ### Turns a numeric vector to represent corresponding factor levels of a factor-level character vector
 ```R
 New_data <- factor(activity_labels[long_vector], levels=activity_labels)
