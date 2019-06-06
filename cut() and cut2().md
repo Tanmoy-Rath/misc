@@ -3,30 +3,6 @@
 |---|---|
 
 ```R
-> X <- seq(50,100)
-> qnts <- quantile(X, probs=seq(0, 1, 0.2))
-> qnts
-  0%  20%  40%  60%  80% 100% 
-  50   60   70   80   90  100 
-
-
-> Y <- cut(X, breaks=qnts)
-> table(Y)
-Y
- (50,60]  (60,70]  (70,80]  (80,90] (90,100] 
-      10       10       10       10       10 
-
-
-> Y <- Hmisc::cut2(X, g=5)
-> table(Y)
-Y
-[50, 61) [61, 71) [71, 81) [81, 91) [91,100] 
-      11       10       10       10       10 
-```
-
-<hr>
-
-```R
 # cuts it into 5 quantile groups
 > table(mergedData$Income.Group, cut2(mergedData$V2, g=5))
                       
