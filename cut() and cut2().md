@@ -1,5 +1,5 @@
 ### cut() or Hmisc::cut2() help in binning a continuous variable by quantiles or intervals as required but they differ in the quantile grouping levels they produce
-|![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/nbi.bmp)|![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/nbi.bmp)|
+|![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/1cutcut2.https...www.browserling.com.tools.bmp-to-jpg.jpg)|![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/2cutcut2.https...www.browserling.com.tools.bmp-to-jpg.jpg)|
 |---|---|
 
 ```R
