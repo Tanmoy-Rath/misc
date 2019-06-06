@@ -1,4 +1,6 @@
 ### cut() or Hmisc::cut2() help in binning a continuous variable by quantiles or intervals as required but they differ in the quantile grouping levels they produce
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/nbi.bmp)
+
 ```R
 > X <- seq(50,100)
 > qnts <- quantile(X, probs=seq(0, 1, 0.2))
