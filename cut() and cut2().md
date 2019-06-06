@@ -22,6 +22,10 @@
   Lower middle income        10           9           11            11          13
   Upper middle income         7           5           13             7          13
 
+> quantile(mergedData$V2,probs=seq(0,1,0.20))
+   0%   20%   40%   60%   80%  100% 
+  3.0  41.6  79.2 115.8 153.4 191.0 
+
 
 
 # cuts it into 5 intervals, not 5 quantile groups
