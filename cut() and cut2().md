@@ -1,4 +1,4 @@
-### cut() or Hmisc::cut2() help in binning a continuous variable by quantiles or intervals as required but they differ in the grouping levels they generate
+### cut() or Hmisc::cut2() help in binning a continuous variable by quantiles or intervals as required but they differ in the grouping levels they produce
 ```R
 # cuts it into 5 quantile groups
 > table(mergedData$Income.Group, cut2(mergedData$V2, g=5))
