@@ -62,6 +62,10 @@ NA_Data <- function( Dataset ){
 
 ### Bins a continuous variable into separate quantile groups
 ```R
+cut(X, breaks=quantile(X, probs=seq(0, 1, 0.2)), include.lowest=TRUE, right=TRUE)
+```
+
+```R
 > X <- seq(51, 100, by=0.1)
 > qnts <- quantile(X, probs=seq(0, 1, 0.2))
 
