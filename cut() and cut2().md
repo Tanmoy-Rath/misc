@@ -1,5 +1,5 @@
 ```R
-> # cuts it into 5 quantile groups
+# cuts it into 5 quantile groups
 > table(mergedData$Income.Group, cut2(mergedData$V2, g=5))
                       
                        [  3, 42) [ 42, 80) [ 80,117) [117,155) [155,191]
@@ -10,7 +10,7 @@
   Lower middle income         10         9        11        12        12
   Upper middle income          7         5        14         6        13
 
-> # cuts it into 5 quantile groups
+# cuts it into 5 quantile groups
 > table(mergedData$Income.Group, cut(mergedData$V2, breaks=quantile(mergedData$V2,probs=seq(0,1,0.20)), dig.lab=8))
                       
                        (3,41.6] (41.6,79.2] (79.2,115.8] (115.8,153.4] (153.4,191]
@@ -23,7 +23,7 @@
 
 
 
-> # cuts it into 5 intervals, not 5 quantile groups
+# cuts it into 5 intervals, not 5 quantile groups
 > table(mergedData$Income.Group, cut(mergedData$V2, breaks=5, dig.lab=8))
                       
                        (2.812,40.6] (40.6,78.2] (78.2,115.8] (115.8,153.4] (153.4,191.188]
