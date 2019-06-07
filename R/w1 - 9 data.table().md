@@ -1,5 +1,3 @@
-![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/data.table.https...www.browserling.com.tools.bmp-to-jpg.jpg)
-
 ```R
 # data.table() , i written in C, hence is much much faster subsetting, grouping, updating
 > set.seed(12345)
