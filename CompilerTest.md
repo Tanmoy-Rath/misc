@@ -20,3 +20,4 @@ int main(void) {
     return 0;
 }
 ```
+![](https://github.com/Tanmoy-Rath/misc/blob/master/CompilerTest.jpg)
