@@ -94,3 +94,49 @@ The following object is masked from ‘package:base’:
 > Sys.timezone()
 [1] "Asia/Calcutta"
 ```
+
+```R
+this_day <- today()
+this_day
+# this can be used with year(), month(), day(), wday()
+
+this_moment <- now()
+this_moment
+# this can be used with ymd(), dmy(), hms(), ymd_hms(), etc.
+
+dmy(25081985)
+ymd("1920/1/2")
+ymd("192012")
+
+# hms() for only time
+
+class(ymd("1989-05-17"))
+[1] "Date"
+now(tz="America/New_York")
+
+http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+arrive <- with_tz(arrive, tzone="Asia/Hong_Kong")
+nyc <- now(tz="America/New_York")
+depart <- now()
+depart <- depart + days(2) + hours(5) + minutes(45)
+depart <- update(depart, hours=17, minutes=34)
+
+how_long <- interval(last_time, arrive)
+as.period(how_long)
+
+This is where things get a little tricky. Because of things like leap years,
+leap seconds, and daylight savings time, the length of any given minute, day,
+month, week, or year is relative to when it occurs. In contrast, the length
+of a second is always the same, regardless of when it occurs.
+
+To address these complexities, the authors of lubridate introduce four
+classes of time related objects: instants, intervals, durations, and periods.
+These topics are beyond the scope of this lesson, but you can find a complete
+discussion in the 2011 Journal of Statistical Software paper titled 'Dates
+and Times Made Easy with lubridate'.
+
+
+stopwatch()
+[1] "50M 3.35458612442017S"
+```
