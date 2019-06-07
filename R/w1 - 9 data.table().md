@@ -113,8 +113,19 @@ Error: Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are def
 # takes the mean of x+w where a=True, and places that mean in those rows where a=True
 # takes the mean of x+w where a=False, and places that mean in those rows where a=False
 > DT[,b:=mean(x+w),by=a]
-> DT[,b:=mean(x+w),by=y]
+> DT[,bb:=mean(x+w),by=y]
 # takes the mean those x+w where y has a particular value, and places that mean in those rows where 'y' has that particular value
+> DT
+            x   y          z           w        m     a          b         bb
+1:  0.5855288   a -0.9193220  0.84515294 2.222250  TRUE -0.1344804  1.7823270
+2:  0.7094660   a -0.1162478  0.01351355 2.483679  TRUE -0.1344804  1.7823270
+3: -0.1093033   a  1.8173120  3.30262306 2.745885 FALSE  0.5329939  1.7823270
+4: -0.4534972   b  0.3706279  0.13736501 2.297817 FALSE  0.5329939 -0.2314257
+5:  0.6058875   b  0.5202165  0.27062516 2.614970  TRUE -0.1344804 -0.2314257
+6: -1.8179560   b -0.7505320  0.56329827 1.281854 FALSE  0.5329939 -0.2314257
+7:  0.6300986   c  0.8168998  0.66732535 2.688628  TRUE -0.1344804  0.9034347
+8: -0.2761841   c -0.8863575  0.78562966 1.940151 FALSE  0.5329939  0.9034347
+9:  1.0000000 xyz  3.0000000 -6.00000000 3.169925  TRUE -0.1344804 -5.0000000
 # DT[,b:=x+w,by=a]# investigate := here by=a has no effect/meaning, result is plain x+w
 
 
