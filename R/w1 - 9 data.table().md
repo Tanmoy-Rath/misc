@@ -1,7 +1,7 @@
 https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html
 ```R
 
-# data.table() , i written in C, hence is much much faster subsetting, grouping, updating
+# data.table() , is written in C, hence is much much faster subsetting, grouping, updating
 
 > set.seed(12345)
 
