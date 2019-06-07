@@ -1,9 +1,14 @@
 https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html
 ```R
-> # data.table() , i written in C, hence is much much faster subsetting, grouping, updating
+
+# data.table() , i written in C, hence is much much faster subsetting, grouping, updating
+
 > set.seed(12345)
+
 > library(data.table)
 data.table 1.12.2 using 2 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+
 > DF <- data.frame(x=rnorm(9), y=rep(c("a","b","c"),each=3), z=rnorm(9)  )
 > head(DF,3)
            x y          z
@@ -27,7 +32,7 @@ data.table 1.12.2 using 2 threads (see ?getDTthreads).  Latest news: r-datatable
 Total: 0MB
 
 
-> # subset by rows and column values
+# subset by rows and column values
 > DT[2,]
           x y          z
 1: 0.709466 a -0.1162478
@@ -37,7 +42,8 @@ Total: 0MB
 2:  0.7094660 a -0.1162478
 3: -0.1093033 a  1.8173120
 
-> # subsetting by single index
+
+# subsetting by single index
 > DT[c(2,5)]# subset by rows
            x y          z
 1: 0.7094660 a -0.1162478
@@ -55,7 +61,7 @@ Total: 0MB
 9: -0.2841597 -0.3315776
 
 
-> # pass a list of functions, they operate on columns
+# pass a list of functions, they operate on columns
 > DT[,list(mean(x),sum(z))]
             V1        V2
 1: -0.04556883 0.5210193
@@ -67,6 +73,17 @@ Total: 0MB
 
 
 > DT[,w:=z^2]# add a new column, very memory efficient, very fast
+> DT
+            x y          z          w
+1:  0.5855288 a -0.9193220 0.84515294
+2:  0.7094660 a -0.1162478 0.01351355
+3: -0.1093033 a  1.8173120 3.30262306
+4: -0.4534972 b  0.3706279 0.13736501
+5:  0.6058875 b  0.5202165 0.27062516
+6: -1.8179560 b -0.7505320 0.56329827
+7:  0.6300986 c  0.8168998 0.66732535
+8: -0.2761841 c -0.8863575 0.78562966
+9: -0.2841597 c -0.3315776 0.10994370
 
 
 > DT[9,] <- list(1,"xyz",3,-6)# works
@@ -74,7 +91,7 @@ Total: 0MB
 Error: Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are defined for use in j, once only and in particular ways. See help(":=").
 
 
-> # if you create another variable, it still references the first object
+# if you create another variable, it still references the first object
 > DT2 <- DT
 > DT[,m:={tmp <- (x+z); log2(tmp+5)}]# you can write multiple statements
 > DT[,a:=x>0]# plyr like operations
@@ -89,19 +106,20 @@ Error: Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are def
 7:  0.6300986   c  0.8168998  0.66732535 2.688628  TRUE
 8: -0.2761841   c -0.8863575  0.78562966 1.940151 FALSE
 9:  1.0000000 xyz  3.0000000 -6.00000000 3.169925  TRUE
-> # if you need a copy of the original, use the copy function
+# if you need a copy of the original, use the as.data.table() function
+# setDT() converts a data.frame or lists to data.table by reference, no copy is created
 
 
-> # takes the mean of x+w where a=True, and places that mean in those rows where a=True
-> # takes the mean of x+w where a=False, and places that mean in those rows where a=False
+# takes the mean of x+w where a=True, and places that mean in those rows where a=True
+# takes the mean of x+w where a=False, and places that mean in those rows where a=False
 > DT[,b:=mean(x+w),by=a]
 > DT[,b:=mean(x+w),by=y]
-> # takes the mean those x+w where y has a particular value, and places that mean in those rows where 'y' has that particular value
-> # DT[,b:=x+w,by=a]# investigate := here by=a has no effect/meaning, result is plain x+w
+# takes the mean those x+w where y has a particular value, and places that mean in those rows where 'y' has that particular value
+# DT[,b:=x+w,by=a]# investigate := here by=a has no effect/meaning, result is plain x+w
 
 
-> # .N performs the count operation
-> # much faster than doing this with '$' operator with data.frames
+# .N performs the count operation
+# much faster than doing this with '$' operator with data.frames
 > set.seed(123)
 > DT <- data.table(x=sample(letters[1:3],1E5,TRUE))
 > DT[, .N , by=x]
@@ -111,7 +129,7 @@ Error: Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are def
 3: b 33412
 
 
-> # Data table displays head and tail on printing(if rows > 10), upto 5 rows by default
+# Data table displays head and tail on printing(if rows > 10), upto 5 rows by default
 > DT <- data.table(x=rnorm(108), y=rep(c("a","b","c"),each=3), z=rnorm(108)  )
 > DT
               x y          z
@@ -127,8 +145,7 @@ Error: Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are def
 107: -0.7308481 c -0.8395697
 108:  0.9478600 c  1.7600820
 
-
-> # setting a key and subsetting by the key
+# setting a key and subsetting by the key
 > DT <- data.table(x=rep(c("a","b","c"),each=100), y=rnorm(300))
 > setkey(DT,x)# sets the key column
 > DT['a']# subsets DT by the key column where value is 'a'
@@ -234,58 +251,13 @@ Error: Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are def
  99: a  0.283150573
 100: a -0.337277742
      x            y
-> DT[,x]
-  [1] "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a"
- [34] "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a"
- [67] "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a" "a"
-[100] "a" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b"
-[133] "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b"
-[166] "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b" "b"
-[199] "b" "b" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c"
-[232] "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c"
-[265] "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c" "c"
-[298] "c" "c" "c"
-> DT[,y]
-  [1] -1.3066691393  2.2749165659  0.0618585538 -1.8550721418  0.3384665688 -0.9239764875  1.0971441600 -0.0557026855 -1.7433025203
- [10]  0.4949608740  1.6610668260 -0.0403652908  0.3448918689 -0.7298534473 -0.7474719099 -0.2246140591  0.2727105725 -1.2130549864
- [19] -0.9397850981 -0.1243487326  0.0217873868 -0.3103634950  0.0336369973  0.9289962556  0.7006757850 -0.3682447249 -0.9597865722
- [28] -0.7473606080  0.2189701946  1.7749396397  1.8252955090  0.4378858463  1.4399905561 -0.3012080493 -0.6375888230  0.6954981665
- [37] -1.1636126142 -0.8204623974 -0.9728467291 -0.7510881814  0.4095759584 -1.9174578541  0.5665559384 -0.5006033008 -0.3305917330
- [46] -0.1860263901  1.1963200393 -0.9920551948 -1.7915440253  0.5329886032  0.4684357641  0.1396927087  1.6111874740  1.6199312705
- [55]  0.5985349289  0.1066524856 -0.5777134670 -2.0693764734 -1.5302182430 -0.0997104716  1.2342668632  0.2892195428 -0.4553156193
- [64]  1.2882993936 -0.2967948176  0.0099595622  0.3971103216  1.5965529247 -1.3876077254  2.6645128509  0.1384215266  2.5684245778
- [73] -1.1660161394  1.8164707199  0.5112913813 -0.4235610162 -0.3461151774 -0.7414956685 -1.0096434333  1.6064560882  1.1905644761
- [82] -2.1388180170  0.5035983649 -0.4108656564  0.3065846792  0.3227435073  1.3660792972 -0.5888163026  1.6978318646  0.0563632681
- [91] -0.0995934650 -0.2101989963 -1.8551627352  0.4150033103  0.5025063775 -1.0818128413  2.3017721573  0.8555493850  0.2831505733
-[100] -0.3372777417  1.6197830505  0.6348897172  0.8189881592 -0.5662803644 -0.9475286822  1.6234154487 -0.4112869200  0.4099876955
-[109]  0.8823307895  0.3163219376 -2.2669911606 -0.7591061221  0.8684462914  0.8953069531 -0.7586396780  0.1817942955 -1.1197696967
-[118] -0.7605545773  0.5828068869  0.0025803958 -0.6548194317 -0.5127576744  0.4503826322  1.9010886786  0.6662577483  1.6338127608
-[127]  0.2201097074 -0.2184330016 -1.4475410918 -0.8550549017 -0.3959652438 -1.1606521474  0.2148796554 -0.8612616253 -0.9418143049
-[136]  0.0429049183  0.1820950099  0.3349744655  1.8490056000 -1.0240092443 -0.0009379205  2.1844501007  0.0657423062  0.6971952063
-[145]  0.6865513326  1.1120742755  0.5252092919  1.6837160041 -0.5323529202  1.0442160315 -1.0455212757  0.3104588775 -1.5365689703
-[154] -0.1700026383 -1.0375816017 -1.0984754480  0.3338471589  3.5606890964 -0.3311348306 -1.1031601945 -1.1787666763  0.2424579774
-[163] -1.5041971048 -0.2787652203  1.2311932586 -0.4718706555  0.8938562773  1.5311245622 -0.0971180210 -0.1835404720  1.4344968639
-[172]  0.4882658464  1.3298102956  0.0240819727 -0.1814490595  2.9290890498  2.1401295116  1.5932199688 -0.3662587488 -1.1255218851
-[181] -0.4258622568  1.3178578829  0.4896620707 -0.6096432316 -0.8030141773 -2.4588191792  0.8257386044  2.3774413404 -0.4701073204
-[190] -0.2702097703 -0.3420789691  0.2020807118  1.7295022629 -0.8720154811  1.3342002463  0.8138594107  1.1212207021 -0.5915244819
-[199]  0.5896019017 -1.7125216979 -1.9350719810 -0.1878706886 -0.0605183127 -0.8853270780 -0.6442745752  0.4317350341  0.3611811694
-[208] -0.4564668754  0.1389237754 -0.0969648964  0.5494144921 -0.0415671250 -0.3466156429 -0.2680867549 -0.4880625449  0.3614984252
-[217]  0.7008520983  0.6528990485 -0.0217436368  0.3207930299 -1.4833172258  0.1381206036 -1.3474597948 -0.9912593045 -0.9833597080
-[226]  0.3164425527 -1.5473597918 -0.5332848674 -0.9013228925  0.1167331844  0.6046821378  0.3993246828  1.0350019135 -0.5761986605
-[235]  1.3947357454 -0.9519312633 -0.1626486136 -1.1504871416 -0.9994075329  0.9248807717 -1.0181042881 -0.7084917192 -2.1372157334
-[244]  0.5734023861  2.2176400805 -1.5073002606 -0.7217305418 -0.5834410643  0.9198299130  0.7923937068 -1.1456570076  1.7659585422
-[253] -1.6359104546 -0.0933353041 -0.4899607707  0.2848244628  0.9111976418  0.5218644804 -0.7773383182 -1.2730172331 -0.7145694849
-[262]  1.0723710585 -2.2679000240  1.0336242908 -0.0138913089 -0.1082337497 -0.6714925240  1.3668922785  1.9181031524  1.3378677229
-[271]  0.0484681564 -0.6413631619  0.8006842360 -1.8139046906 -0.3176870617  0.6850355021  0.5739352516  0.2845067950 -0.1383049754
-[280]  1.8447275809 -0.9945850377  0.4702077546 -0.6000301772  1.1953418199  0.9471484732  0.0635027162  2.2081899521 -2.1893999927
-[289]  0.8811761026 -0.9530045029  1.7698857946 -1.1713202721 -0.8006480712 -0.1538689441  0.2742700089  0.6679185342 -0.4649730939
-[298] -0.4592169873  0.0637037406 -0.2466505103
 
 
-> # Join 2 tables by keys
+# Join 2 tables by keys
 > DT <- data.table(x=c('a','a','b','b','dt1'),y=1:5)
 > DT2 <- data.table(x=c('a','b','b','dt2'),y=5:8)
-> setkey(DT,x);setkey(DT2,x)
+> setkey(DT,x)
+> setkey(DT2,x)
 > merge(DT,DT2)
    x y.x y.y
 1: a   1   5
@@ -296,20 +268,20 @@ Error: Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are def
 6: b   4   7
 
 
-> # FAST reading of files from disk
+# FAST reading of files from disk
 > big_df <- data.frame(x=rnorm(1E6),y=rnorm(1E6))
 > file1 <- tempfile()
 > write.table(big_df, file = file1, row.names = FALSE, col.names = TRUE, sep="\t", quote = FALSE)
 
-> # this is much faster
+# this is much faster
 > system.time(fread(file1))
    user  system elapsed 
-   0.55    0.00    0.46 
+   0.66    0.05    0.61 
 
-> # this is much slower
+# this is much slower
 > system.time(read.table(file1, header=TRUE, sep="\t"))
    user  system elapsed 
-  16.80    0.19   17.00 
+  18.50    0.37   19.00 
 ```
 
 https://r-forge.r-project.org/scm/viewvc.php/pkg/NEWS?view=markup&root=datatable
