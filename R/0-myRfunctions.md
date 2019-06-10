@@ -54,9 +54,11 @@ NA_Data <- function( Dataset ){
 </details>
 
 #### Same task but uses data.table, is around 33% faster than above
+WARNING..!! This converts your your input to type **data.table**.
 ```R
 NA_Data_2 <- function( Dataset ){
         library(data.table)
+        setDT(Dataset)
         Dataset[, {
                 colnems <- colnames(Dataset)
                 NAS <- vapply(.SD, function(x) 100*sum(is.na(x))/length(x), numeric(1))
