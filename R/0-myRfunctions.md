@@ -53,14 +53,14 @@ NA_Data <- function( Dataset ){
 ```
 </details>
 
-#### Same task but uses data.table, is around 33% faster than above
+#### Same task but uses data.table, may not be faster than above
 WARNING..!! This converts your input to type **data.table**.
 ```R
 NA_Data_2 <- function( Dataset ){
         library(data.table)
         setDT(Dataset)
         Dataset[, {
-                colnems <- colnames(Dataset)
+                colnems <- colnames(.SD)
                 NAS <- vapply(.SD, function(x) 100*sum(is.na(x))/length(x), numeric(1))
                 NA_list <- tapply(NAS, as.factor(NAS), function(x) paste0(names(x),"[",match(names(x),colnems),"]"), simplify=FALSE)
                 max_is <- max(vapply(NA_list, length, numeric(1)))
