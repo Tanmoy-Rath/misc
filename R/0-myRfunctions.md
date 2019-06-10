@@ -54,7 +54,7 @@ NA_Data <- function( Dataset ){
 </details>
 
 #### Same task but uses data.table, is around 33% faster than above
-WARNING..!! This converts your your input to type **data.table**.
+WARNING..!! This converts your input to type **data.table**.
 ```R
 NA_Data_2 <- function( Dataset ){
         library(data.table)
