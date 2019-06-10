@@ -3,6 +3,7 @@
 ```R
 NA_Data <- function( Dataset ){
    colnems <- colnames(Dataset)
+   # this outputs same as below : NAS <- 100*colSums(is.na(Dataset))/(dim(Dataset)[1])
    NAS <- vapply(Dataset, function(x) 100*sum(is.na(x))/length(x), numeric(1))
    NA_list <- tapply(NAS, as.factor(NAS), function(x) paste0(names(x),"[",match(names(x),colnems),"]"), simplify=FALSE)
    max_is <- max(vapply(NA_list, length, numeric(1)))
