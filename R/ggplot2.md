@@ -13,8 +13,21 @@ Classes ‘tbl_df’, ‘tbl’ and 'data.frame':	234 obs. of  11 variables:
  $ hwy         : int  29 29 31 30 26 26 27 26 25 28 ...
  $ fl          : chr  "p" "p" "p" "p" ...
  $ class       : chr  "compact" "compact" "compact" "compact" ...
+```
+
+```R
 > qplot(displ, hwy, data = mpg)
+```
+
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)01.png)
+
+```R
 > qplot(displ, hwy, data=mpg, color=drv)
+```
+
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)02.png)
+
+```R
 > qplot(displ, hwy, data=mpg, geom=c("point","smooth"))
 `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 > qplot(hwy, data=mpg, fill=drv)
