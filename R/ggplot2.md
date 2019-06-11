@@ -84,18 +84,35 @@ Classes ‘tbl_df’, ‘tbl’ and 'data.frame':	234 obs. of  11 variables:
  $ NocturnalSympt: int  0 0 2 2 2 2 0 1 0 0 ...
  $ bmicat        : Factor w/ 2 levels "normal weight",..: 1 2 2 1 1 1 2 2 2 1 ...
  $ logno2_new    : num  1.62 1.88 1.71 1.46 1.29 ...
-> 
+```
+
+```R
 > qplot(log(eno), data=maacs)
 `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 Warning message:
 Removed 108 rows containing non-finite values (stat_bin). 
+```
+
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)09.png)
+
+```R
 > qplot(log(eno), data=maacs, fill=mopos)
 `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 Warning message:
 Removed 108 rows containing non-finite values (stat_bin). 
+```
+
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)10.png)
+
+```R
 > qplot(log(eno), data=maacs, geom="density")
 Warning message:
 Removed 108 rows containing non-finite values (stat_density). 
+```
+
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)11.png)
+
+```R
 > qplot(log(eno), data=maacs, geom="density", color=mopos)
 Warning message:
 Removed 108 rows containing non-finite values (stat_density). 
