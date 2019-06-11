@@ -17,7 +17,7 @@ Classes ‘tbl_df’, ‘tbl’ and 'data.frame':	234 obs. of  11 variables:
 
 |a|b|
 |---|---|
-|```R qplot(displ, hwy, data = mpg) ```| ```R qplot(displ, hwy, data=mpg, color=drv) ```|
+|qplot(displ, hwy, data = mpg)|qplot(displ, hwy, data=mpg, color=drv)|
 |<img src="https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)01.png">|<img src="https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)02.png">|
 
 
