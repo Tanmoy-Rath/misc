@@ -57,19 +57,19 @@ Classes ‘tbl_df’, ‘tbl’ and 'data.frame':	234 obs. of  11 variables:
 > qplot(displ, hwy, data=mpg, facets=.~drv, color=factor(cyl))
 ```
 
-![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)06.png)
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)extra01.png)
 
 ```R
 > qplot(displ, hwy, data=mpg, facets=.~cyl, color=factor(drv))
 ```
 
-![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)07.png)
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)extra02.png)
 
 ```R
 > qplot(hwy, data=mpg, facets = drv~., binwidth=2)
 ```
 
-![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)08.png)
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)06.png)
 
 ```R
 > load("maacs.rda")
@@ -93,7 +93,7 @@ Warning message:
 Removed 108 rows containing non-finite values (stat_bin). 
 ```
 
-![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)09.png)
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)07.png)
 
 ```R
 > qplot(log(eno), data=maacs, fill=mopos)
@@ -102,7 +102,7 @@ Warning message:
 Removed 108 rows containing non-finite values (stat_bin). 
 ```
 
-![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)10.png)
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)08.png)
 
 ```R
 > qplot(log(eno), data=maacs, geom="density")
@@ -110,7 +110,7 @@ Warning message:
 Removed 108 rows containing non-finite values (stat_density). 
 ```
 
-![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)11.png)
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)09.png)
 
 ```R
 > qplot(log(eno), data=maacs, geom="density", color=mopos)
