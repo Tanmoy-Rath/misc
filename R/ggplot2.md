@@ -36,14 +36,42 @@ Classes ‘tbl_df’, ‘tbl’ and 'data.frame':	234 obs. of  11 variables:
 ```R
 > qplot(displ, hwy, data=mpg, geom=c("point","smooth"))
 `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+```
+
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)03.png)
+
+```R
 > qplot(hwy, data=mpg, fill=drv)
 `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-> 
+```
+
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)04.png)
+
+```R
 > qplot(displ, hwy, data=mpg, facets=.~drv)
+```
+
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)05.png)
+
+```R
 > qplot(displ, hwy, data=mpg, facets=.~drv, color=factor(cyl))
+```
+
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)06.png)
+
+```R
 > qplot(displ, hwy, data=mpg, facets=.~cyl, color=factor(drv))
+```
+
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)07.png)
+
+```R
 > qplot(hwy, data=mpg, facets = drv~., binwidth=2)
-> 
+```
+
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)08.png)
+
+```R
 > load("maacs.rda")
 > str(maacs)
 'data.frame':	750 obs. of  9 variables:
