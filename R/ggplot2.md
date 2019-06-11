@@ -15,6 +15,12 @@ Classes ‘tbl_df’, ‘tbl’ and 'data.frame':	234 obs. of  11 variables:
  $ class       : chr  "compact" "compact" "compact" "compact" ...
 ```
 
+|a|b|
+|---|---|
+|<img src="https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)01.png">|<img src="https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/exploratory/ggplot2%20(part%202)02.png">|
+
+
+
 ```R
 > qplot(displ, hwy, data = mpg)
 ```
