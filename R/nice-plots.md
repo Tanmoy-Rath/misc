@@ -29,4 +29,10 @@ ggplot(data = <DATA>) +
         <FACET_FUNCTION>
 
 
+library(ggplot2)
+world <- map_data("world")
+ggplot()+
+        geom_polygon(data=world, aes(x=long, y=lat, group=group, fill=region), colour = "black")+
+        theme(legend.position = "none")+
+        labs(x=NULL, y=NULL)
 ```
