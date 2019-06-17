@@ -36,3 +36,5 @@ ggplot()+
         theme(legend.position = "none")+
         labs(x=NULL, y=NULL)
 ```
+
+![](https://github.com/Tanmoy-Rath/misc/blob/master/imageshack/index.png)
