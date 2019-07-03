@@ -5,7 +5,7 @@ The general form of data.table syntax is:
 DT[i, j, by]
 
 We have seen so far that,
-####Using i
+#### Using i
 
 - We can subset rows similar to a data.frame- except you don’t have to use DT$ repetitively since columns within the frame of a data.table are seen as if they are variables.
 - We can also sort a data.table using order(), which internally uses data.table’s fast order for performance.
