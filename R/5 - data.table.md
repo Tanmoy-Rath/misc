@@ -1,16 +1,17 @@
-#### Summary
+## Summary
 
 The general form of data.table syntax is:
 
 DT[i, j, by]
 
 We have seen so far that,
-Using i
+####Using i
 
 - We can subset rows similar to a data.frame- except you don’t have to use DT$ repetitively since columns within the frame of a data.table are seen as if they are variables.
 - We can also sort a data.table using order(), which internally uses data.table’s fast order for performance.
 - We can do much more in i by keying a data.table, which allows blazing fast subsets and joins. We will see this in the “Keys and fast binary search based subsets” and “Joins and rolling joins” vignette.
-Using j
+
+#### Using j
 
 - Select columns the data.table way: DT[, .(colA, colB)].
 - Select columns the data.frame way: DT[, c("colA", "colB")].
@@ -18,7 +19,7 @@ Using j
 - Provide names if necessary: DT[, .(sA =sum(colA), mB = mean(colB))].
 - Combine with i: DT[colA > value, sum(colB)].
 
-Using by:
+#### Using by
 
     Using by, we can group by columns by specifying a list of columns or a character vector of column names or even expressions. The flexibility of j, combined with by and i makes for a very powerful syntax.
 
