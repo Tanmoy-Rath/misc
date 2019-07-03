@@ -1,4 +1,4 @@
-
+```R
 
 setDTthreads(0)    # use all available cores (default)
 getDTthreads()     # check how many cores are currently used
@@ -27,3 +27,4 @@ flights <- fread("flights14.csv")
 
 
 
+```
