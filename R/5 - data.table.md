@@ -5,24 +5,18 @@ The general form of data.table syntax is:
 DT[i, j, by]
 
 We have seen so far that,
-Using i:
+Using i
 
-    We can subset rows similar to a data.frame- except you don’t have to use DT$ repetitively since columns within the frame of a data.table are seen as if they are variables.
+- We can subset rows similar to a data.frame- except you don’t have to use DT$ repetitively since columns within the frame of a data.table are seen as if they are variables.
+- We can also sort a data.table using order(), which internally uses data.table’s fast order for performance.
+- We can do much more in i by keying a data.table, which allows blazing fast subsets and joins. We will see this in the “Keys and fast binary search based subsets” and “Joins and rolling joins” vignette.
+Using j
 
-    We can also sort a data.table using order(), which internally uses data.table’s fast order for performance.
-
-We can do much more in i by keying a data.table, which allows blazing fast subsets and joins. We will see this in the “Keys and fast binary search based subsets” and “Joins and rolling joins” vignette.
-Using j:
-
-    Select columns the data.table way: DT[, .(colA, colB)].
-
-    Select columns the data.frame way: DT[, c("colA", "colB")].
-
-    Compute on columns: DT[, .(sum(colA), mean(colB))].
-
-    Provide names if necessary: DT[, .(sA =sum(colA), mB = mean(colB))].
-
-    Combine with i: DT[colA > value, sum(colB)].
+- Select columns the data.table way: DT[, .(colA, colB)].
+- Select columns the data.frame way: DT[, c("colA", "colB")].
+- Compute on columns: DT[, .(sum(colA), mean(colB))].
+- Provide names if necessary: DT[, .(sA =sum(colA), mB = mean(colB))].
+- Combine with i: DT[colA > value, sum(colB)].
 
 Using by:
 
