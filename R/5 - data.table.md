@@ -10,11 +10,11 @@ getOption("datatable.print.nrows")
 [1] 100
 
 DT <- data.table(
-+         ID = c("b","b","b","a","a","c"),
-+         a = 1:6,
-+         b = 7:12,
-+         c = 13:18
-+ )
+         ID = c("b","b","b","a","a","c"),
+         a = 1:6,
+         b = 7:12,
+         c = 13:18
+      )
 
 class(DT$ID)# data.table doesnot create factor variables by default
 [1] "character"
