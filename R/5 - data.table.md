@@ -9,7 +9,7 @@
 |_gives vector: flights[  ,  mean(arr_delay)   ]_<br/>flights[  ,  .(m_arr = mean(arr_delay))   ]<br/>flights[  ,  .(mean(arr_delay), range(dep_delay))   ]<br/>flights[  ,  .(m_arr = mean(arr_delay), m_dep = range(dep_delay))   ]|---|
 |flights[  ,  .(delay_arr = arr_delay, delay_dep = dep_delay)  ]<br/>flights[  ,  .(sum((arr_delay + dep_delay) < 0))  ]<br/>_gives vector: flights[  ,  sum((arr_delay + dep_delay) < 0)  ]_|---|
 |**Operations on Rows**|---|
-|flights[origin == "JFK" & month == 6L, .(.N)]<br/>_gives vector: flights[origin == "JFK" & month == 6L, .N]_<br/>_gives vector: flights[origin == "JFK" & month == 6L, length(dest)]_<br/>flights[ origin == "JFK" & month == 6L,<br/>.(m_arr = mean(arr_delay), m_dep = mean(dep_delay)) ]|---|
+|flights[origin == "JFK" & month == 6L, .(.N)]<br/>_gives vector: flights[origin == "JFK" & month == 6L, .N]_<br/>_gives vector: flights[origin == "JFK" & month == 6L, length(dest)]_<br/>flights[ origin == "JFK" & month == 6L,<br/>&nbsp;&nbsp;&nbsp;&nbsp;.(m_arr = mean(arr_delay), m_dep = mean(dep_delay)) ]|---|
 |---|---|
 |---|---|
 |---|---|
