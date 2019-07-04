@@ -5,8 +5,8 @@
 |**Select Columns**|**Unselect Columns**|
 |_gives vector: flights[  ,  arr_delay   ]_<br/>flights[  ,  .(arr_delay)   ]<br/>flights[  ,  c("arr_delay")   ]<br/>flights[  ,  .(arr_delay, dep_delay)  ]<br/>flights[  ,  c("arr_delay", "dep_delay")  ]<br/>flights[  ,  arr_delay : dep_delay  ]|flights[  ,  !c("arr_delay", "dep_delay")  ]<br/>flights[  ,  -c("arr_delay", "dep_delay")  ]<br/>flights[  ,  -(arr_delay : dep_delay)  ]|
 |select_cols = c("arr_delay", "dep_delay")<br/>flights[  ,  ..select_cols  ]<br/>flights[  ,  select_cols, with=FALSE  ]|---|
-|---|---|
-|---|---|
+|**group 'by'**|---|
+|flights[  ,  .N,  by=origin  ]<br/>flights[  ,  .N,  by=.(origin)  ]<br/>flights[  ,  .N,  by=.(origin, dest)  ]|---|
 |---|---|
 |---|---|
 |---|---|
