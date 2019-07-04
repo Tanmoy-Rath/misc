@@ -1,10 +1,45 @@
 |SELECT|UNSELECT|
 |---|---|
+|flights[1:4]<br/>flights[origin == "JFK" & month == 6L]<br/>flights[order(origin, -dest)]<br/>_order(...) within the frame of a data.table uses data.table’s internal fast radix order forder()_|---|
+|---|---|
+|---|---|
+|---|---|
+|---|---|
+|---|---|
+|---|---|
+|---|---|
+|---|---|
+|---|---|
+|---|---|
+|---|---|
+|---|---|
+|---|---|
+
+
+
+
+
+
+|SELECT|UNSELECT|
+|---|---|
 |Rows||
 |flights[origin == "JFK" & month == 6L]<br/>flights[order(origin, -dest)]<br/>flights[  ,  .(m_arr = mean(arr_delay), m_dep = range(dep_delay))   ]||
 |Columns|---|
-|flights[  ,  .(arr_delay)   ]# gives data.table, not vector<br/><br/>flights[  ,  .(arr_delay)   ]<br/>flights[  ,  .(arr_delay, dep_delay)  ]||
+|_gives vector: flights[  ,  arr_delay   ]_<br/>flights[  ,  .(arr_delay)   ]# gives data.table, not vector<br/><br/>flights[  ,  .(arr_delay)   ]<br/>flights[  ,  .(arr_delay, dep_delay)  ]||
 |flights[  ,  .(m_arr = mean(arr_delay), m_dep = range(dep_delay))   ]||
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
