@@ -8,7 +8,6 @@
 - flights[  ,  .(arr_delay)   ]# gives data.table, not vector
 - _gives vector: flights[  ,  arr_delay   ]_
 - flights[  ,  .(arr_delay, dep_delay)  ]
-- flights[  ,  c("arr_delay", "dep_delay")  ]
 - flights[  ,  -c("arr_delay", "dep_delay")  ]
 - flights[  ,  -(arr_delay : dep_delay)  ]
 - flights[  ,  .(m_arr = mean(arr_delay), m_dep = range(dep_delay))   ]
