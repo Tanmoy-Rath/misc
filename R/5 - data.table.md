@@ -1,3 +1,11 @@
+|SELECT|UNSELECT|
+|---|---|
+|flights[origin == "JFK" & month == 6L]||
+|flights[order(origin, -dest)]||
+|flights[  ,  .(m_arr = mean(arr_delay), m_dep = range(dep_delay))   ]||
+
+
+
 #### SELECT Rows
 - flights[1:4]
 - flights[origin == "JFK" & month == 6L]
