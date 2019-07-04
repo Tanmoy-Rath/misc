@@ -11,7 +11,10 @@
 - flights[  ,  c("arr_delay", "dep_delay")  ]
 - flights[  ,  -c("arr_delay", "dep_delay")  ]
 - flights[  ,  -(arr_delay : dep_delay)  ]
+- flights[  ,  .(m_arr = mean(arr_delay), m_dep = range(dep_delay))   ]
+- flights[  ,  sum((arr_delay + dep_delay) < 0)  ]
 
+#### 
 ```R
 > # SELECT Rows
 > flights[1:4]
