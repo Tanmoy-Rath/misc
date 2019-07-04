@@ -18,6 +18,7 @@
 |**Combined Operation**|---|
 |flights[ carrier == "AA", .N, by = origin ]<br/>flights[ carrier == "AA", .N, by = .(origin,dest) ]<br/>flights[ carrier == "AA",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.(m_arr = mean(arr_delay), m_dep = range(dep_delay)),<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;by = .(origin, dest) ]|---|
 |---|---|
+|**'keyby' operation**|---|
 |flights[  carrier == "AA",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.(mean(arr_delay), mean(dep_delay)),<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;by = .(origin, dest, month)  ]<br/><br/>_original order is preserved in 'by', whereas 'keyby' reorders_<br/>_as per the grouping variables_<br/><br/>flights[  carrier == "AA",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.(mean(arr_delay), mean(dep_delay)),<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keyby = .(origin, dest, month) ]|---|
 |---|---|
 |---|---|
