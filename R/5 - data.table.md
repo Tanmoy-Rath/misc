@@ -1,6 +1,6 @@
 |SELECT|UNSELECT|
 |---|---|
-|flights[origin == "JFK" & month == 6L]||
+|flights[origin == "JFK" & month == 6L]<br/>flights[order(origin, -dest)]<br/>flights[  ,  .(m_arr = mean(arr_delay), m_dep = range(dep_delay))   ]||
 |flights[order(origin, -dest)]||
 |flights[  ,  .(m_arr = mean(arr_delay), m_dep = range(dep_delay))   ]||
 
