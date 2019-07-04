@@ -1,7 +1,9 @@
 |SELECT|UNSELECT|
 |---|---|
+|Rows||
 |flights[origin == "JFK" & month == 6L]<br/>flights[order(origin, -dest)]<br/>flights[  ,  .(m_arr = mean(arr_delay), m_dep = range(dep_delay))   ]||
-|flights[order(origin, -dest)]||
+|Columns|---|
+|flights[  ,  .(arr_delay)   ]# gives data.table, not vector<br/><br/>flights[  ,  .(arr_delay)   ]<br/>flights[  ,  .(arr_delay, dep_delay)  ]||
 |flights[  ,  .(m_arr = mean(arr_delay), m_dep = range(dep_delay))   ]||
 
 
