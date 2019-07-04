@@ -74,7 +74,11 @@ flights <- fread("flights14.csv")
 getOption("datatable.print.nrows")
 ?sort
 ```
-
+#### SELECT Rows
+- flights[1:4]
+- flights[origin == "JFK" & month == 6L]
+- flights[order(origin, -dest)]
+_order(...) within the frame of a data.table uses data.table’s internal fast radix order forder()_
 
 ```R
 > # SELECT Rows
