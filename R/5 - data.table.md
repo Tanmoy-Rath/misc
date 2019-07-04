@@ -17,7 +17,7 @@
 |---|---|
 |---|---|
 |---|---|
-|---|---|
+|flights[carrier == "AA", .N, by = origin]<br/>flights[carrier == "AA", .N, by = .(origin,dest)]<br/>flights[carrier == "AA",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.(m_arr = mean(arr_delay), m_dep = range(dep_delay)),<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;by = .(origin, dest)]|---|
 |---|---|
 |---|---|
 |---|---|
@@ -27,6 +27,7 @@
 |---|---|
 
 
+flights[carrier == "AA", .N, by = origin]<br/>flights[carrier == "AA", .N, by = .(origin,dest)]<br/>flights[carrier == "AA",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.(m_arr = mean(arr_delay), m_dep = range(dep_delay)),<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;by = .(origin, dest)]
 
 
 
