@@ -78,7 +78,36 @@ getOption("datatable.print.nrows")
 - flights[1:4]
 - flights[origin == "JFK" & month == 6L]
 - flights[order(origin, -dest)]
+
 _order(...) within the frame of a data.table uses data.table’s internal fast radix order forder()_
+
+#### SELECT Columnns
+- flights[  ,  .(arr_delay)   ]# gives data.table, not vector
+- flights[  ,  list(arr_delay)   ]# gives data.table, not vector
+- flights[  ,  c("arr_delay")   ]# gives data.table, not vector
+
+_gives vector    flights[  ,  arr_delay   ]_
+
+- flights[  ,  .(arr_delay, dep_delay)  ]
+- flights[  ,  list(arr_delay, dep_delay)  ]
+- flights[  ,  c("arr_delay", "dep_delay")  ]
+
+- select_cols = c("arr_delay", "dep_delay")
+- flights[  ,  ..select_cols  ]
+- flights[  ,  select_cols, with=FALSE  ]
+
+- flights[  ,  -(arr_delay : dep_delay)  ]
+- flights[  ,  c("arr_delay", "dep_delay")  ]# automatically sets with=FALSE
+- flights[  ,  !c("arr_delay", "dep_delay")  ]# automatically sets with=FALSE
+- flights[  ,  -c("arr_delay", "dep_delay")  ]# automatically sets with=FALSE
+
+returns from year to day
+flights[, year:day  ]
+# returns from day to year
+flights[, day:year  ]
+# returns all columns except from year till day
+flights[, -(year:day)  ]
+flights[, !(year:day)  ]
 
 ```R
 > # SELECT Rows
