@@ -5,6 +5,7 @@
 |**Select Columns**|**Unselect Columns**|
 |_gives vector: flights[  ,  arr_delay   ]_<br/>flights[  ,  .(arr_delay)   ]<br/>flights[  ,  .(arr_delay, dep_delay)  ]<br/>flights[  ,  c("arr_delay")   ]<br/>flights[  ,  c("arr_delay", "dep_delay")  ]<br/>flights[  ,  arr_delay : dep_delay  ]|flights[  ,  !c("arr_delay", "dep_delay")  ]<br/>flights[  ,  -c("arr_delay", "dep_delay")  ]<br/>flights[  ,  -(arr_delay : dep_delay)  ]|
 |select_cols = c("arr_delay", "dep_delay")<br/>flights[  ,  ..select_cols  ]<br/>flights[  ,  select_cols, with=FALSE  ]|---|
+|---|---|
 |**Operations on Columns**|---|
 |_gives vector: flights[  ,  mean(arr_delay)   ]_<br/>flights[  ,  .(m_arr = mean(arr_delay))   ]<br/>flights[  ,  .(mean(arr_delay), range(dep_delay))   ]<br/>flights[  ,  .(m_arr = mean(arr_delay), m_dep = range(dep_delay))   ]|---|
 |flights[  ,  .(delay_arr = arr_delay, delay_dep = dep_delay)  ]<br/>flights[  ,  .(sum((arr_delay + dep_delay) < 0))  ]<br/>_gives vector: flights[  ,  sum((arr_delay + dep_delay) < 0)  ]_|---|
