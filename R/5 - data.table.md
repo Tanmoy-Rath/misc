@@ -3,7 +3,7 @@
 |**Select Rows**|**Unselect Rows**|
 |flights[1:4]<br/>flights[origin == "JFK" & month == 6L]<br/>flights[order(origin, -dest)]<br/>_order(...) within the frame of a data.table uses<br/>data.table’s internal fast radix order forder()_|---|
 |**Select Columns**|**Unselect Columns**|
-|_gives vector: flights[  ,  arr_delay   ]_<br/>flights[  ,  .(arr_delay)   ]<br/>flights[  ,  c("arr_delay")   ]<br/>flights[  ,  .(arr_delay, dep_delay)  ]<br/>flights[  ,  c("arr_delay", "dep_delay")  ]<br/>flights[  ,  arr_delay : dep_delay  ]|flights[  ,  !c("arr_delay", "dep_delay")  ]<br/>flights[  ,  -c("arr_delay", "dep_delay")  ]<br/>flights[  ,  -(arr_delay : dep_delay)  ]|
+|_gives vector: flights[  ,  arr_delay   ]_<br/>flights[  ,  .(arr_delay)   ]<br/>flights[  ,  .(arr_delay, dep_delay)  ]<br/>flights[  ,  c("arr_delay")   ]<br/>flights[  ,  c("arr_delay", "dep_delay")  ]<br/>flights[  ,  arr_delay : dep_delay  ]|flights[  ,  !c("arr_delay", "dep_delay")  ]<br/>flights[  ,  -c("arr_delay", "dep_delay")  ]<br/>flights[  ,  -(arr_delay : dep_delay)  ]|
 |select_cols = c("arr_delay", "dep_delay")<br/>flights[  ,  ..select_cols  ]<br/>flights[  ,  select_cols, with=FALSE  ]|---|
 |**column operations**|---|
 |_gives vector: flights[  ,  mean(arr_delay)   ]_<br/>flights[  ,  .(m_arr = mean(arr_delay))   ]<br/>flights[  ,  .(mean(arr_delay), range(dep_delay))   ]|---|
