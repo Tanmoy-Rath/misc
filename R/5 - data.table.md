@@ -13,7 +13,7 @@
 |flights[origin == "JFK" & month == 6L, .(.N)]<br/>_gives vector: flights[origin == "JFK" & month == 6L, .N]_<br/>_gives vector: flights[origin == "JFK" & month == 6L, length(dest)]_<br/>flights[ origin == "JFK" & month == 6L,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.(m_arr = mean(arr_delay), m_dep = range(dep_delay)) ]|---|
 |---|---|
 |**group 'by'**|---|
-|_writing 'by=' is optional_<br/>flights[  ,  .N,  by=origin  ]<br/>flights[  ,  .N,  by=.(origin)  ]<br/>flights[  ,  .N,  by=.(origin, dest)  ]<br/>flights[  ,  .N,  by=.(dep_delayed = dep_delay>0, arr_delayed = arr_delay>0)  ]|---|
+|_writing 'by=' is optional_<br/>flights[  ,  .N,  by=origin  ]<br/>flights[  ,  .N,  by=.(origin)  ]<br/>flights[  ,  .N,  by=.(origin, dest)  ]<br/>**flights[  ,  .N,  by=.(dep_delayed = dep_delay>0, arr_delayed = arr_delay>0)  ]**|---|
 |---|---|
 |**Combined Operation**|---|
 |flights[ carrier == "AA", .N, by = origin ]<br/>flights[ carrier == "AA", .N, by = .(origin,dest) ]<br/>flights[ carrier == "AA",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.(m_arr = mean(arr_delay), m_dep = range(dep_delay)),<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;by = .(origin, dest) ]|---|
