@@ -272,7 +272,7 @@ Kelvin = Celcius+273.15**
    <summary>Show Answer!!</summary>
    
 ```R
-airq[,c("a","b"):= list(celcius <- (Temp-32)*5/9, kelvin <- celcius+273.15)]
+airq[  ,  c("a","b"):=list(celcius <- (Temp-32)*5/9, kelvin <- celcius+273.15)  ]
 airq
      Ozone Solar.R Wind Temp Month Day        a        b
   1:    41     200 17.4   77     5   1 25.00000 298.1500
