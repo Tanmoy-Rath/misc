@@ -1,16 +1,59 @@
 
-Load the iris dataset ,make it a data.table and name it iris_dt ,Print mean of Petal.Length, grouping by first letter of Species from iris_dt .
+**1. Load the iris dataset ,make it a data.table and name it iris_dt ,Print mean of Petal.Length, grouping by first letter of Species from iris_dt.**
 ```R
-> library(data.table)
-> iris_dt <- as.data.table(iris)
+library(data.table)
+iris_dt <- as.data.table(iris)
 
-> iris_dt[  , mean(Petal.Length) ,  by=substring(Species,1,1)  ]
+iris_dt[  , mean(Petal.Length) ,  by=substring(Species,1,1)  ]
    substring    V1
 1:         s 1.462
 2:         v 4.906
 ```
 
+**Load the diamonds dataset from ggplot2 package as dt (a data.table) ,Find mean price for each group of cut and color.**
+```R
+library(ggplot2)
+dt <- as.data.table(diamonds)
 
+dt[  order(cut,color)  , mean(price) ,  by=.(cut,color)  ]
+          cut color       V1
+ 1:      Fair     D 4291.061
+ 2:      Fair     E 3682.312
+ 3:      Fair     F 3827.003
+ 4:      Fair     G 4239.255
+ 5:      Fair     H 5135.683
+ 6:      Fair     I 4685.446
+ 7:      Fair     J 4975.655
+ 8:      Good     D 3405.382
+ 9:      Good     E 3423.644
+10:      Good     F 3495.750
+11:      Good     G 4123.482
+12:      Good     H 4276.255
+13:      Good     I 5078.533
+14:      Good     J 4574.173
+15: Very Good     D 3470.467
+16: Very Good     E 3214.652
+17: Very Good     F 3778.820
+18: Very Good     G 3872.754
+19: Very Good     H 4535.390
+20: Very Good     I 5255.880
+21: Very Good     J 5103.513
+22:   Premium     D 3631.293
+23:   Premium     E 3538.914
+24:   Premium     F 4324.890
+25:   Premium     G 4500.742
+26:   Premium     H 5216.707
+27:   Premium     I 5946.181
+28:   Premium     J 6294.592
+29:     Ideal     D 2629.095
+30:     Ideal     E 2597.550
+31:     Ideal     F 3374.939
+32:     Ideal     G 3720.706
+33:     Ideal     H 3889.335
+34:     Ideal     I 4451.970
+35:     Ideal     J 4918.186
+          cut color       V1
+```
 
 
 
