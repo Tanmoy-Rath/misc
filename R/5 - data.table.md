@@ -15,6 +15,9 @@ iris_dt[  ,  mean(Petal.Length)  ,  by=substring(Species,1,1)  ]
 </details>
 
 **2) Load the diamonds dataset from ggplot2 package as dt (a data.table) ,Find mean price for each group of cut and color.**
+<details>
+   <summary><b>Show Answer!!</b></summary>
+   
 ```R
 library(ggplot2)
 dt <- as.data.table(diamonds)
@@ -58,8 +61,12 @@ dt[  order(cut,color)  , mean(price) ,  by=.(cut,color)  ]
 35:     Ideal     J 4918.186
           cut color       V1
 ```
+</details>
 
 **3) Load the diamonds dataset from ggplot2 package as dt. Now group the dataset by price per carat and print top 5 in terms of count per group. Don't use head, use chaining in data.table to achieve this.**
+<details>
+   <summary><b>Show Answer!!</b></summary>
+   
 ```R
 library(ggplot2)
 dt <- as.data.table(diamonds)
@@ -72,8 +79,12 @@ dt[  ,  .N  ,  .(price/carat)  ][  order(-N)  ][  1:5  ]
 4: 2016.667 157
 5: 2100.000 129
 ```
+</details>
 
 **4) Use the already loaded diamonds dataset and print the last two carat value of each cut.**
+<details>
+   <summary><b>Show Answer!!</b></summary>
+   
 ```R
 dt[  ,  tail(carat,2)  ,  by=cut  ]
           cut   V1
@@ -88,8 +99,12 @@ dt[  ,  tail(carat,2)  ,  by=cut  ]
  9:      Fair 1.04
 10:      Fair 0.71
 ```
+</details>
 
 **5) In the same data set, find median of the columns x,y,z per cut. Use data.table’s methods to achieve this.**
+<details>
+   <summary><b>Show Answer!!</b></summary>
+   
 ```R
 dt[  ,  lapply(.SD,median)  ,  cut  ,  .SDcols=c("x","y","z")  ]
          cut     x    y    z
@@ -99,8 +114,12 @@ dt[  ,  lapply(.SD,median)  ,  cut  ,  .SDcols=c("x","y","z")  ]
 4: Very Good 5.740 5.77 3.56
 5:      Fair 6.175 6.10 3.97
 ```
+</details>
 
 **6) Load the airquality dataset as data.table. Now I want to find Logarithm of wind rate for each month and for days greater than 15.**
+<details>
+   <summary><b>Show Answer!!</b></summary>
+   
 ```R
 airq <- as.data.table(airquality)
 
@@ -186,8 +205,12 @@ airq[  Day>15  ,  .(log10(Wind))  ,  by=Month  ]
 78:     9 1.0606978
     Month        V1
 ```
+</details>
 
 **7) In the same data set, for all the odd rows, update Temp column by adding 10.**
+<details>
+   <summary><b>Show Answer!!</b></summary>
+   
 ```R
 airq[  rep( c(TRUE,FALSE) , length=.N )  ,  Temp:=Temp+10L  ]
 
@@ -205,7 +228,7 @@ airq
 152:    18     131  8.0   76     9  29
 153:    20     223 11.5   78     9  30
 ```
-
+</details>
 
 
 
