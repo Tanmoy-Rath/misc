@@ -1,3 +1,27 @@
+
+Load the iris dataset ,make it a data.table and name it iris_dt ,Print mean of Petal.Length, grouping by first letter of Species from iris_dt .
+```R
+> library(data.table)
+> iris_dt <- as.data.table(iris)
+
+> iris_dt[  , mean(Petal.Length) ,  by=substring(Species,1,1)  ]
+   substring    V1
+1:         s 1.462
+2:         v 4.906
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 |SELECT|UNSELECT|
 |---|---|
 |**Select Rows**|**Unselect Rows**|
