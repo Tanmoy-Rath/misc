@@ -100,7 +100,7 @@ dt[  ,  lapply(.SD,median)  ,  cut  ,  .SDcols=c("x","y","z")  ]
 ```R
 airq <- as.data.table(airquality)
 
-airq[  Day>15  ,   .(log10(Wind))     ,  by=Month  ]
+airq[  Day>15  ,  .(log10(Wind))  ,  by=Month  ]
     Month        V1
  1:     5 1.0606978
  2:     5 1.0791812
