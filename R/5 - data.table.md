@@ -231,6 +231,9 @@ airq
 </details>
 
 **8) data.table comes with a powerful feature of updating column by reference as you have seen in the last exercise. Its even possible to update/create multiple columns. Now to test that in the airquality data.table that you have created previously, add 10 to Solar.R, Wind.**
+<details>
+   <summary>Show Answer!!</summary>
+   
 ```R
 airq[  ,  c("Solar.R","Wind"):=.(Solar.R+10.0,Wind+10.0)  ]
 airq
@@ -250,7 +253,7 @@ airq
 # Alternatively
 airq[  ,  `:=`(Solar.R = Solar.R+10 , Wind = Wind+10)  ]
 ```
-
+</details>
 
 
 
