@@ -264,11 +264,29 @@ airq[  ,  c("Solar.R","Wind","Temp"):=NULL  ]
 ```
 </details>
 
-**10) Load the airquality dataset as data.table again , I want to create two columns a,b which indicates temp in Celcius and Kelvin scale . Write a expression to achieve same:<br/>
+**10) Load the airquality dataset as data.table again , I want to create two columns "a","b" which indicates temp in Celcius and Kelvin scale . Write a expression to achieve same:<br/>
 Celcius = (Temp-32)\*5/9<br/>
 Kelvin = Celcius+273.15**
-
-
+<details>
+   <summary>Show Answer!!</summary>
+   
+```R
+airq[,c("a","b"):= list(celcius <- (Temp-32)*5/9, kelvin <- celcius+273.15)]
+airq
+     Ozone Solar.R Wind Temp Month Day        a        b
+  1:    41     200 17.4   77     5   1 25.00000 298.1500
+  2:    36     128 18.0   72     5   2 22.22222 295.3722
+  3:    12     159 22.6   84     5   3 28.88889 302.0389
+  4:    18     323 21.5   62     5   4 16.66667 289.8167
+  5:    NA      NA 24.3   66     5   5 18.88889 292.0389
+ ---                                                    
+149:    30     203 16.9   80     9  26 26.66667 299.8167
+150:    NA     155 23.2   77     9  27 25.00000 298.1500
+151:    14     201 24.3   85     9  28 29.44444 302.5944
+152:    18     141 18.0   76     9  29 24.44444 297.5944
+153:    20     233 21.5   78     9  30 25.55556 298.7056
+```
+</details>
 
 
 
