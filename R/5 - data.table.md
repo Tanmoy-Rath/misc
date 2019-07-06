@@ -183,8 +183,24 @@ airq[  Day>15  ,  .(log10(Wind))  ,  by=Month  ]
     Month        V1
 ```
 
+**7) In the same data set, for all the odd rows, update Temp column by adding 10.**
+```R
+airq[  rep(c(TRUE,FALSE),length = .N)  ,  Temp:=Temp+10L  ]
 
-
+airq
+     Ozone Solar.R Wind Temp Month Day
+  1:    41     190  7.4   77     5   1
+  2:    36     118  8.0   72     5   2
+  3:    12     149 12.6   84     5   3
+  4:    18     313 11.5   62     5   4
+  5:    NA      NA 14.3   66     5   5
+ ---                                  
+149:    30     193  6.9   80     9  26
+150:    NA     145 13.2   77     9  27
+151:    14     191 14.3   85     9  28
+152:    18     131  8.0   76     9  29
+153:    20     223 11.5   78     9  30
+```
 
 
 
