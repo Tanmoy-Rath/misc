@@ -1,7 +1,7 @@
 
 **1) Load the iris dataset ,make it a data.table and name it iris_dt ,Print mean of Petal.Length, grouping by first letter of Species from iris_dt.**
 <details>
-   <summary><b>Show Answer!!</b></summary>
+   <summary>Show Answer!!</summary>
 
 ```R
 library(data.table)
@@ -16,7 +16,7 @@ iris_dt[  ,  mean(Petal.Length)  ,  by=substring(Species,1,1)  ]
 
 **2) Load the diamonds dataset from ggplot2 package as dt (a data.table) ,Find mean price for each group of cut and color.**
 <details>
-   <summary><b>Show Answer!!</b></summary>
+   <summary>Show Answer!!</summary>
    
 ```R
 library(ggplot2)
@@ -65,7 +65,7 @@ dt[  order(cut,color)  , mean(price) ,  by=.(cut,color)  ]
 
 **3) Load the diamonds dataset from ggplot2 package as dt. Now group the dataset by price per carat and print top 5 in terms of count per group. Don't use head, use chaining in data.table to achieve this.**
 <details>
-   <summary><b>Show Answer!!</b></summary>
+   <summary>Show Answer!!</summary>
    
 ```R
 library(ggplot2)
@@ -83,7 +83,7 @@ dt[  ,  .N  ,  .(price/carat)  ][  order(-N)  ][  1:5  ]
 
 **4) Use the already loaded diamonds dataset and print the last two carat value of each cut.**
 <details>
-   <summary><b>Show Answer!!</b></summary>
+   <summary>Show Answer!!</summary>
    
 ```R
 dt[  ,  tail(carat,2)  ,  by=cut  ]
@@ -103,7 +103,7 @@ dt[  ,  tail(carat,2)  ,  by=cut  ]
 
 **5) In the same data set, find median of the columns x,y,z per cut. Use data.table’s methods to achieve this.**
 <details>
-   <summary><b>Show Answer!!</b></summary>
+   <summary>Show Answer!!</summary>
    
 ```R
 dt[  ,  lapply(.SD,median)  ,  cut  ,  .SDcols=c("x","y","z")  ]
@@ -118,7 +118,7 @@ dt[  ,  lapply(.SD,median)  ,  cut  ,  .SDcols=c("x","y","z")  ]
 
 **6) Load the airquality dataset as data.table. Now I want to find Logarithm of wind rate for each month and for days greater than 15.**
 <details>
-   <summary><b>Show Answer!!</b></summary>
+   <summary>Show Answer!!</summary>
    
 ```R
 airq <- as.data.table(airquality)
@@ -209,7 +209,7 @@ airq[  Day>15  ,  .(log10(Wind))  ,  by=Month  ]
 
 **7) In the same data set, for all the odd rows, update Temp column by adding 10.**
 <details>
-   <summary><b>Show Answer!!</b></summary>
+   <summary>Show Answer!!</summary>
    
 ```R
 airq[  rep( c(TRUE,FALSE) , length=.N )  ,  Temp:=Temp+10L  ]
