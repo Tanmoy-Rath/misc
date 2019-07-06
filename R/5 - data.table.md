@@ -85,8 +85,16 @@ dt[  ,  tail(carat,2)  ,  by=cut  ]
 10:      Fair 0.71
 ```
 
-
-
+**5) In the same data set, find median of the columns x,y,z per cut. Use data.table’s methods to achieve this.**
+```R
+dt[  ,  lapply(.SD,median)  ,  cut  ,  .SDcols=c("x","y","z")  ]
+         cut     x    y    z
+1:     Ideal 5.250 5.26 3.23
+2:   Premium 6.110 6.06 3.72
+3:      Good 5.980 5.99 3.70
+4: Very Good 5.740 5.77 3.56
+5:      Fair 6.175 6.10 3.97
+```
 
 
 
