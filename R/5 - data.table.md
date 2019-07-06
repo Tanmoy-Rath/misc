@@ -69,6 +69,31 @@ dt[  ,  .N  ,  .(price/carat)  ][  order(-N)  ][  1:5  ]
 5: 2100.000 129
 ```
 
+**4) Use the already loaded diamonds dataset and print the last two carat value of each cut.**
+```R
+dt[  ,  tail(carat,2)  ,  by=cut  ]
+          cut   V1
+ 1:     Ideal 0.72
+ 2:     Ideal 0.75
+ 3:   Premium 0.72
+ 4:   Premium 0.86
+ 5:      Good 0.79
+ 6:      Good 0.72
+ 7: Very Good 0.70
+ 8: Very Good 0.70
+ 9:      Fair 1.04
+10:      Fair 0.71
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
