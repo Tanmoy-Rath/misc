@@ -1,5 +1,8 @@
 
 **1) Load the iris dataset ,make it a data.table and name it iris_dt ,Print mean of Petal.Length, grouping by first letter of Species from iris_dt.**
+<details>
+   <summary><b>Show Answer!!</b></summary>
+
 ```R
 library(data.table)
 iris_dt <- as.data.table(iris)
@@ -9,6 +12,7 @@ iris_dt[  ,  mean(Petal.Length)  ,  by=substring(Species,1,1)  ]
 1:         s 1.462
 2:         v 4.906
 ```
+</details>
 
 **2) Load the diamonds dataset from ggplot2 package as dt (a data.table) ,Find mean price for each group of cut and color.**
 ```R
