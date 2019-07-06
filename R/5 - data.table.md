@@ -255,11 +255,18 @@ airq[  ,  `:=`(Solar.R = Solar.R+10 , Wind = Wind+10)  ]
 ```
 </details>
 
+**9) Now you have a fairly good idea of how easy its to create multiple column. Its even possible to use delete multiple column using the same idea. In this exercise, use the same airquality data.table that you have created previously from airquality and delete Solar.R, Wind, Temp using a single expression.**
+<details>
+   <summary>Show Answer!!</summary>
+   
+```R
+airq[  ,  c("Solar.R","Wind","Temp"):=NULL  ]
+```
+</details>
 
-
-
-
-
+**10) Load the airquality dataset as data.table again , I want to create two columns a,b which indicates temp in Celcius and Kelvin scale . Write a expression to achieve same:<br/>
+Celcius = (Temp-32)\*5/9<br/>
+Kelvin = Celcius+273.15**
 
 
 
