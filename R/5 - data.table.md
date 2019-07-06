@@ -1,3 +1,4 @@
+<a href="https://www.r-exercises.com/2017/06/15/data-manipulation-with-data-table-part-1/">https://www.r-exercises.com/2017/06/15/data-manipulation-with-data-table-part-1/</a>
 
 **1) Load the iris dataset ,make it a data.table and name it iris_dt ,Print mean of Petal.Length, grouping by first letter of Species from iris_dt.**
 <details>
@@ -288,7 +289,9 @@ airq
 ```
 </details>
 
+<hr>
 
+<a href="https://www.r-exercises.com/2017/06/29/data-manipulation-with-data-table-part-2/">https://www.r-exercises.com/2017/06/29/data-manipulation-with-data-table-part-2/</a>
 
 
 
