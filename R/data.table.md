@@ -1,14 +1,17 @@
 <a href="https://www.r-exercises.com/2017/06/15/data-manipulation-with-data-table-part-1/">https://www.r-exercises.com/2017/06/15/data-manipulation-with-data-table-part-1/</a>
 
 **1) Load the iris dataset, make it a data.table and name it iris_dt, print mean of Petal.Length, grouping by first letter of Species from iris_dt.**
-<details>
-   <summary>Show Answer!!</summary>
-
 ```R
 library(data.table)
 iris_dt <- as.data.table(iris)
 
 iris_dt[  ,  mean(Petal.Length)  ,  by=substring(Species,1,1)  ]
+```
+
+<details>
+   <summary>Show Output!!</summary>
+
+```R
    substring    V1
 1:         s 1.462
 2:         v 4.906
