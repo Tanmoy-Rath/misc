@@ -263,7 +263,7 @@ library(data.table)
 diam <- as.data.table(diamonds)
 setkey(diam, cut, color)
 
-diam[c("Ideal","Premium"),mult="first"]
+diam[  c("Ideal","Premium")  ,  mult="first"  ]
    carat     cut color clarity depth table price    x    y    z
 1:  0.30   Ideal     D     SI1  62.5    57   552 4.29 4.32 2.69
 2:  0.22 Premium     D     VS2  59.3    62   404 3.91 3.88 2.31
