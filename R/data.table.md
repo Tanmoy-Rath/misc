@@ -257,7 +257,7 @@ airq
 <a href="https://www.r-exercises.com/2017/06/29/data-manipulation-with-data-table-part-2/">https://www.r-exercises.com/2017/06/29/data-manipulation-with-data-table-part-2/</a>
 
 **1) Create a data.table from diamonds dataset, create key using setkey over cut and color. Now select first entry of the groups Ideal and Premium**
-```
+```R
 library(ggplot2)
 library(data.table)
 diam <- as.data.table(diamonds)
