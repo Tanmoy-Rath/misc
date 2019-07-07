@@ -289,3 +289,20 @@ diam[  c("Ideal","Premium")  ,  .SD[c(1,.N)]  ,  by=cut  ]
 ```
 
 **3) Earlier we have seen how we can create/update columns by reference using := . However there is a lower over head, faster alternative in data.table . This is achieved by SET and Loop in data.table , however this is meant for simple operations and will not work in grouped operation. Now take the diamonds data.table and make columns x,y,z value squared. For example if the value is currently 10, the resulting value would be 100. You are awesome if you find out all alternative answer and check the time using system.time .**
+```R
+cols = c("x","y","z")
+for(i in cols) { set(diam, j=i, value=diam[[i]]^2) }
+diam
+       carat   cut color clarity depth table price       x       y       z
+    1:  0.75  Fair     D     SI2  64.6    57  2848 32.9476 32.7184 13.6900
+    2:  0.71  Fair     D     VS2  56.9    65  2858 34.6921 34.1056 11.1556
+    3:  0.90  Fair     D     SI2  66.9    57  2885 36.2404 34.8100 15.9201
+    4:  1.00  Fair     D     SI2  69.3    58  2974 35.5216 34.4569 16.8100
+    5:  1.01  Fair     D     SI2  64.6    56  3003 39.8161 38.9376 16.4025
+   ---                                                                    
+53936:  0.71 Ideal     J     SI1  60.6    57  2700 33.4084 33.9889 12.3904
+53937:  0.81 Ideal     J     VS2  62.1    56  2708 35.0464 35.6409 13.6161
+53938:  0.84 Ideal     J     VS2  61.1    57  2709 37.0881 37.4544 13.9129
+53939:  0.82 Ideal     J     VS2  61.6    56  2741 36.0000 36.4816 13.7641
+53940:  0.83 Ideal     J     VS2  62.3    55  2742 36.1201 36.3609 14.0625
+```
