@@ -7,7 +7,6 @@ iris_dt <- as.data.table(iris)
 
 iris_dt[  ,  mean(Petal.Length)  ,  by=substring(Species,1,1)  ]
 ```
-
 <details>
    <summary>Show Output!!</summary>
 
@@ -19,14 +18,16 @@ iris_dt[  ,  mean(Petal.Length)  ,  by=substring(Species,1,1)  ]
 </details>
 
 **2) Load the diamonds dataset from ggplot2 package as dt (a data.table) ,Find mean price for each group of cut and color.**
-<details>
-   <summary>Show Answer!!</summary>
-   
 ```R
 library(ggplot2)
 dt <- as.data.table(diamonds)
 
 dt[  order(cut,color)  , mean(price) ,  by=.(cut,color)  ]
+```
+<details>
+   <summary>Show Answer!!</summary>
+   
+```R
           cut color       V1
  1:      Fair     D 4291.061
  2:      Fair     E 3682.312
@@ -68,14 +69,17 @@ dt[  order(cut,color)  , mean(price) ,  by=.(cut,color)  ]
 </details>
 
 **3) Load the diamonds dataset from ggplot2 package as dt. Now group the dataset by price per carat and print top 5 in terms of count per group. Don't use head, use chaining in data.table to achieve this.**
-<details>
-   <summary>Show Answer!!</summary>
-   
 ```R
 library(ggplot2)
 dt <- as.data.table(diamonds)
 
 dt[  ,  .N  ,  .(price/carat)  ][  order(-N)  ][  1:5  ]
+```
+
+<details>
+   <summary>Show Answer!!</summary>
+   
+```R
       price   N
 1: 2250.000 331
 2: 1800.000 179
@@ -86,11 +90,14 @@ dt[  ,  .N  ,  .(price/carat)  ][  order(-N)  ][  1:5  ]
 </details>
 
 **4) Use the already loaded diamonds dataset and print the last two carat value of each cut.**
+```R
+dt[  ,  tail(carat,2)  ,  by=cut  ]
+```
+
 <details>
    <summary>Show Answer!!</summary>
    
 ```R
-dt[  ,  tail(carat,2)  ,  by=cut  ]
           cut   V1
  1:     Ideal 0.72
  2:     Ideal 0.75
