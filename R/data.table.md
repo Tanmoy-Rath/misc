@@ -287,3 +287,5 @@ diam[  c("Ideal","Premium")  ,  .SD[c(1,.N)]  ,  by=.EACHI  ]
 #  Alternatively
 diam[  c("Ideal","Premium")  ,  .SD[c(1,.N)]  ,  by=cut  ]
 ```
+
+**3) Earlier we have seen how we can create/update columns by reference using := . However there is a lower over head, faster alternative in data.table . This is achieved by SET and Loop in data.table , however this is meant for simple operations and will not work in grouped operation. Now take the diamonds data.table and make columns x,y,z value squared. For example if the value is currently 10, the resulting value would be 100. You are awesome if you find out all alternative answer and check the time using system.time .**
