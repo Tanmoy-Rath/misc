@@ -61,8 +61,8 @@ dt[  order(cut,color)  , mean(price) ,  by=.(cut,color)  ]
 library(ggplot2)
 dt <- as.data.table(diamonds)
 
-dt[  ,  .N  ,  .(price/carat)  ][  order(-N)  ][  1:5  ]
-      price   N
+dt[  ,  .N  ,  .(ppc=price/carat)  ][  order(-N)  ][  1:5  ]
+        ppc   N
 1: 2250.000 331
 2: 1800.000 179
 3: 4200.000 160
