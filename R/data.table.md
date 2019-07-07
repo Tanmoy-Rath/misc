@@ -251,3 +251,26 @@ airq
 152:    18     141 18.0   76     9  29 24.44444 297.5944
 153:    20     233 21.5   78     9  30 25.55556 298.7056
 ```
+
+<hr>
+
+<a href="https://www.r-exercises.com/2017/06/29/data-manipulation-with-data-table-part-2/">https://www.r-exercises.com/2017/06/29/data-manipulation-with-data-table-part-2/</a>
+
+**1) Create a data.table from diamonds dataset, create key using setkey over cut and color. Now select first entry of the groups Ideal and Premium**
+```
+library(ggplot2)
+library(data.table)
+diam <- as.data.table(diamonds)
+setkey(diam, cut, color)
+
+diam[c("Ideal","Premium"),mult="first"]
+   carat     cut color clarity depth table price    x    y    z
+1:  0.30   Ideal     D     SI1  62.5    57   552 4.29 4.32 2.69
+2:  0.22 Premium     D     VS2  59.3    62   404 3.91 3.88 2.31
+
+#  Alternative way is a bit different
+diam[  c("Ideal","Premium")  ,  head(.SD,1)  ,  by=cut  ]
+       cut carat color clarity depth table price    x    y    z
+1:   Ideal  0.30     D     SI1  62.5    57   552 4.29 4.32 2.69
+2: Premium  0.22     D     VS2  59.3    62   404 3.91 3.88 2.31
+```
