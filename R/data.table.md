@@ -232,7 +232,7 @@ airq[  ,  `:=`(Solar.R = Solar.R+10 , Wind = Wind+10)  ]
 airq[  ,  c("Solar.R","Wind","Temp"):=NULL  ]
 ```
 
-**10) Load the airquality dataset as data.table again , I want to create two columns "a","b" which indicates temp in Celcius and Kelvin scale . Write a expression to achieve same:<br/>
+**10) Load the airquality dataset as data.table again , I want to create two columns "a","b" which indicates temp in Celcius and Kelvin scale. Write a expression to achieve same:<br/>
 Celcius = (Temp-32)\*5/9<br/>
 Kelvin = Celcius+273.15**
 ```R
