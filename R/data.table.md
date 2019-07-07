@@ -274,3 +274,16 @@ diam[  c("Ideal","Premium")  ,  head(.SD,1)  ,  by=cut  ]
 1:   Ideal  0.30     D     SI1  62.5    57   552 4.29 4.32 2.69
 2: Premium  0.22     D     VS2  59.3    62   404 3.91 3.88 2.31
 ```
+
+**2) With the same dataset, select the first and last entry of the groups Ideal and Premium**
+```R
+diam[  c("Ideal","Premium")  ,  .SD[c(1,.N)]  ,  by=.EACHI  ]
+       cut carat color clarity depth table price    x    y    z
+1:   Ideal  0.30     D     SI1  62.5    57   552 4.29 4.32 2.69
+2:   Ideal  0.83     J     VS2  62.3    55  2742 6.01 6.03 3.75
+3: Premium  0.22     D     VS2  59.3    62   404 3.91 3.88 2.31
+4: Premium  0.90     J     SI2  63.0    59  2717 6.14 6.11 3.86
+
+#  Alternatively
+diam[  c("Ideal","Premium")  ,  .SD[c(1,.N)]  ,  by=cut  ]
+```
