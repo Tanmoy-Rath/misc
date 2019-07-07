@@ -290,19 +290,24 @@ diam[  c("Ideal","Premium")  ,  .SD[c(1,.N)]  ,  by=cut  ]
 
 **3) Earlier we have seen how we can create/update columns by reference using := . However there is a lower over head, faster alternative in data.table . This is achieved by SET and Loop in data.table , however this is meant for simple operations and will not work in grouped operation. Now take the diamonds data.table and make columns x,y,z value squared. For example if the value is currently 10, the resulting value would be 100. You are awesome if you find out all alternative answer and check the time using system.time .**
 ```R
+diam <- as.data.table(diamonds)
 cols = c("x","y","z")
+
 for(i in cols) { set(diam, j=i, value=diam[[i]]^2) }
 diam
-       carat   cut color clarity depth table price       x       y       z
-    1:  0.75  Fair     D     SI2  64.6    57  2848 32.9476 32.7184 13.6900
-    2:  0.71  Fair     D     VS2  56.9    65  2858 34.6921 34.1056 11.1556
-    3:  0.90  Fair     D     SI2  66.9    57  2885 36.2404 34.8100 15.9201
-    4:  1.00  Fair     D     SI2  69.3    58  2974 35.5216 34.4569 16.8100
-    5:  1.01  Fair     D     SI2  64.6    56  3003 39.8161 38.9376 16.4025
-   ---                                                                    
-53936:  0.71 Ideal     J     SI1  60.6    57  2700 33.4084 33.9889 12.3904
-53937:  0.81 Ideal     J     VS2  62.1    56  2708 35.0464 35.6409 13.6161
-53938:  0.84 Ideal     J     VS2  61.1    57  2709 37.0881 37.4544 13.9129
-53939:  0.82 Ideal     J     VS2  61.6    56  2741 36.0000 36.4816 13.7641
-53940:  0.83 Ideal     J     VS2  62.3    55  2742 36.1201 36.3609 14.0625
+       carat       cut color clarity depth table price       x       y       z
+    1:  0.23     Ideal     E     SI2  61.5    55   326 15.6025 15.8404  5.9049
+    2:  0.21   Premium     E     SI1  59.8    61   326 15.1321 14.7456  5.3361
+    3:  0.23      Good     E     VS1  56.9    65   327 16.4025 16.5649  5.3361
+    4:  0.29   Premium     I     VS2  62.4    58   334 17.6400 17.8929  6.9169
+    5:  0.31      Good     J     SI2  63.3    58   335 18.8356 18.9225  7.5625
+   ---                                                                        
+53936:  0.72     Ideal     D     SI1  60.8    57  2757 33.0625 33.1776 12.2500
+53937:  0.72      Good     D     SI1  63.1    55  2757 32.3761 33.0625 13.0321
+53938:  0.70 Very Good     D     SI1  62.8    60  2757 32.0356 32.2624 12.6736
+53939:  0.86   Premium     H     SI2  61.0    58  2757 37.8225 37.4544 13.9876
+53940:  0.75     Ideal     D     SI2  62.2    55  2757 33.9889 34.4569 13.2496
+
+#  Alternatively
+diam[  ,  `:=`(x=x^2, y=y^2, z=z^2)  ]    or    diam[  ,  c("x","y","z"):=.(x^2, y^2, z^2)  ]
 ```
