@@ -97,7 +97,7 @@ dt[  ,  lapply(.SD,median)  ,  cut  ,  .SDcols=c("x","y","z")  ]
 5:      Fair 6.175 6.10 3.97
 
 #  Alternatively
-dt[  ,  c("a","b","c"):=.(median(x),median(y),median(z))  ,  by=cut  ]
+dt[  ,  .(x=median(x), y=median(y), z=median(z))  ,  by=cut  ]
 ```
 
 **6) Load the airquality dataset as data.table. Now I want to find Logarithm of wind rate for each month and for days greater than 15.**
