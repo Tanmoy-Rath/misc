@@ -445,7 +445,7 @@ test_dt
 ```
 <br/>
 
-**9) May be you dont want the previous day’s data, you may want to copy the nearest value for day 5. How do we achieve that?**
+**9) May be you dont want the previous day’s data, you may want to copy the nearest value for day 5. How do we achieve that.**
 ```R
 test_dt[  .("a",5)  ,  roll="nearest"  ]
    id day value
@@ -453,4 +453,10 @@ test_dt[  .("a",5)  ,  roll="nearest"  ]
 ```
 <br/>
 
-**10)**
+**10) Now there may be a case when you don’t want to copy any value if the date is beyond last observation. Use your answer for question 8 to find the value for day 5 and 9 for b. Now since 9 falls beyond last observation of 7 you might want to avoid copying it. How do you explicitly tell your data.table to stop when it sees last observation and don’t copy previous value. This may not seem useful since you know that here 9 falls beyond 7, but imagine you have a series of data points and you don’t really want to copy data to observations after your last observation.This might come handy in such cases.**
+```R
+test_dt[  .("b", c(5,9))  ,  roll=TRUE, rollends=FALSE  ]
+   id day value
+1:  b   5    37
+2:  b   9    NA
+```
