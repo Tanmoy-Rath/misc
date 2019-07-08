@@ -357,11 +357,10 @@ diam
 
 **6) If you are not convinced with the powerful intuitive features of data.table till now, I am pretty sure you will by the end of THIS. Suppose I want to have a metric on diamonds where I want to find for each group of cut maximum of x * mean of depth and name it my_int_feature and also I want another metric which is my_int_feature * maximum of y again for each group of cut. This is achievable by chaining but also with a single operation without chaining which is the expected answer.**
 ```R
-diam[  ,  { m= mean(depth)
-            myintf= max(x)*m
-            myintf2 = max(y)*myintf
-            list("my_int_feature" = myintf," my_int_feature_2"=myintf2) }  ,
-        by=cut  ]
+diam[  ,  { m=mean(depth)
+            myintf=max(x)*m
+            myintf2=max(y)*myintf
+            list("my_int_feature" = myintf, "my_int_feature_2"=myintf2) }  ,  by=cut  ]
          cut my_int_feature  my_int_feature_2
 1:     Ideal       595.4957         18936.764
 2:   Premium       621.2238         36590.081
