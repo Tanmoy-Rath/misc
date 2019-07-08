@@ -400,7 +400,7 @@ x <- data.frame( rep(letters[1:2],6), c(1,2,3,4,6,7), sample(100,6) )
 names(x) <- c("id","day","value")
 test_dt <- setDT(x)
 ```
-**Now this mimics a sales data of 7 days for a and b. Notice that day 5 is not present for both a and b. This is not desirable in many situations. A common practise is to use the previous days data. How do we get previous days data for the id a, you should ideally set keys and do it using join features**
+**Now this mimics a sales data of 7 days for a and b. Notice that day 5 is not present for both a and b. This is not desirable in many situations. A common practise is to use the previous days data. How do we get previous days data for the id a, you should ideally set keys and do it using join features.**
 
 **9)**
 
