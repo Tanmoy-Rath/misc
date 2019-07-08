@@ -337,7 +337,7 @@ diam
 53940:  0.75     Ideal     D     SI2  62.2    55  2757 5.83 5.87 3.64
 ```
 
-**5) Reordering column sometimes is necessary, however if your data frame is of several GBs it might be an overhead to create new data frame with new order. Data.Table provides features to overcome this. Now reorder your diamonds data.table’s columns by their names sorted alphabetically.
+**5) Reordering column sometimes is necessary, however if your data frame is of several GBs it might be an overhead to create new data frame with new order. Data.Table provides features to overcome this. Now reorder your diamonds data.table’s columns by their names sorted alphabetically.**
 ```R
 setcolorder(diam, diam[,sort(names(.SD))] )
 diam
