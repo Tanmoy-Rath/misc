@@ -374,7 +374,23 @@ diam[  ,  { m=mean(depth)
 
 **7) Suppose we want to merge iris and airquality, akin to the functionality of rbind. We want to do it fast and want to keep track of the rows with their original dataset, and keep all the columns of both the data set in the merged data set as well. How do we achieve that?**
 ```R
-
+dt2 <- as.data.table(iris)
+dt1 <- as.data.table(airquality)
+my_list <- list("iris"=dt2, "airquality"=dt1)
+X <- rbindlist(my_list, fill=TRUE, idcol="my_list")
+X
+        my_list Sepal.Length Sepal.Width Petal.Length Petal.Width Species Ozone Solar.R Wind Temp Month Day
+  1:       iris          5.1         3.5          1.4         0.2  setosa    NA      NA   NA   NA    NA  NA
+  2:       iris          4.9         3.0          1.4         0.2  setosa    NA      NA   NA   NA    NA  NA
+  3:       iris          4.7         3.2          1.3         0.2  setosa    NA      NA   NA   NA    NA  NA
+  4:       iris          4.6         3.1          1.5         0.2  setosa    NA      NA   NA   NA    NA  NA
+  5:       iris          5.0         3.6          1.4         0.2  setosa    NA      NA   NA   NA    NA  NA
+ ---                                                                                                       
+299: airquality           NA          NA           NA          NA    <NA>    30     193  6.9   70     9  26
+300: airquality           NA          NA           NA          NA    <NA>    NA     145 13.2   77     9  27
+301: airquality           NA          NA           NA          NA    <NA>    14     191 14.3   75     9  28
+302: airquality           NA          NA           NA          NA    <NA>    18     131  8.0   76     9  29
+303: airquality           NA          NA           NA          NA    <NA>    20     223 11.5   68     9  30
 ```
 
 **8)**
