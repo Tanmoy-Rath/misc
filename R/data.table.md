@@ -336,3 +336,21 @@ diam
 53939:  0.86   Premium     H     SI2  61.0    58  2757 6.15 6.12 3.74
 53940:  0.75     Ideal     D     SI2  62.2    55  2757 5.83 5.87 3.64
 ```
+
+**5) Reordering column sometimes is necessary, however if your data frame is of several GBs it might be an overhead to create new data frame with new order. Data.Table provides features to overcome this. Now reorder your diamonds data.table’s columns by their names sorted alphabetically.
+```R
+setcolorder(diam, diam[,sort(names(.SD))] )
+diam
+       carat clarity color       cut depth price table    x    y    z
+    1:  0.23     SI2     E     Ideal  61.5   326    55 3.95 3.98 2.43
+    2:  0.21     SI1     E   Premium  59.8   326    61 3.89 3.84 2.31
+    3:  0.23     VS1     E      Good  56.9   327    65 4.05 4.07 2.31
+    4:  0.29     VS2     I   Premium  62.4   334    58 4.20 4.23 2.63
+    5:  0.31     SI2     J      Good  63.3   335    58 4.34 4.35 2.75
+   ---                                                               
+53936:  0.72     SI1     D     Ideal  60.8  2757    57 5.75 5.76 3.50
+53937:  0.72     SI1     D      Good  63.1  2757    55 5.69 5.75 3.61
+53938:  0.70     SI1     D Very Good  62.8  2757    60 5.66 5.68 3.56
+53939:  0.86     SI2     H   Premium  61.0  2757    58 6.15 6.12 3.74
+53940:  0.75     SI2     D     Ideal  62.2  2757    55 5.83 5.87 3.64
+```
