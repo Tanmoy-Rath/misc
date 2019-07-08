@@ -408,7 +408,7 @@ names(test_dt) <- c("id", "day", "value")
 setDT(test_dt)
 
 setkey(test_dt, id, day)
-test_dt[.("a",5),roll=TRUE]
+test_dt[  .("a",5)  ,  roll=TRUE  ]
    id day value
 1:  a   5    37
 
