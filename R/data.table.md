@@ -393,7 +393,12 @@ X
 303: airquality           NA          NA           NA          NA    <NA>    20     223 11.5   68     9  30
 ```
 
-**8)**
+**8)The Next 3 exercises are on rolling Join like features of data.table ,which is useful in time series like data . Create a data.table with the following:
+set.seed(1024)<br/>
+x <- data.frame(rep(letters[1:2],6),c(1,2,3,4,6,7),sample(100,6))<br/>
+names(x) <- c("id","day","value")<br/>
+test_dt <- setDT(x)<br/>
+Now this mimics a sales data of 7 days for a and b . Notice that day 5 is not present for both a and b .This is not desirable in many situations , A common practise is to use the previous days data .How do we get previous days data for the id a ,You should ideally set keys and do it using join features**
 
 **9)**
 
