@@ -428,7 +428,8 @@ test_dt
 12:  b   7    72
 ```
 
-
-**9)**
+**9) May be you dont want the previous day’s data, you may want to copy the nearest value for day 5. How do we achieve that?**
+```R
+```
 
 **10)**
