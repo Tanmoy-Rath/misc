@@ -1,22 +1,6 @@
 |![](https://github.com/Tanmoy-Rath/misc/blob/master/R/datafiles/iris.bmp)|![](https://github.com/Tanmoy-Rath/misc/blob/master/R/datafiles/diamonds.bmp)|![](https://github.com/Tanmoy-Rath/misc/blob/master/R/datafiles/airquality.bmp)|
 |---|---|---|
 
-```R
-airquality
-     Ozone Solar.R Wind Temp Month Day
-  1:    41     190  7.4   67     5   1
-  2:    36     118  8.0   72     5   2
-  3:    12     149 12.6   74     5   3
-  4:    18     313 11.5   62     5   4
-  5:    NA      NA 14.3   56     5   5
- ---                                  
-149:    30     193  6.9   70     9  26
-150:    NA     145 13.2   77     9  27
-151:    14     191 14.3   75     9  28
-152:    18     131  8.0   76     9  29
-153:    20     223 11.5   68     9  30
-```
-
 <a href="https://www.r-exercises.com/2017/06/15/data-manipulation-with-data-table-part-1/">https://www.r-exercises.com/2017/06/15/data-manipulation-with-data-table-part-1/</a>
 
 **1) Load the iris dataset, make it a data.table and name it iris_dt, print mean of Petal.Length, grouping by first letter of Species from iris_dt.**
