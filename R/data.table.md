@@ -1,3 +1,23 @@
+|||
+|---|---|
+
+```R
+iris
+     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+  1:          5.1         3.5          1.4         0.2    setosa
+  2:          4.9         3.0          1.4         0.2    setosa
+  3:          4.7         3.2          1.3         0.2    setosa
+  4:          4.6         3.1          1.5         0.2    setosa
+  5:          5.0         3.6          1.4         0.2    setosa
+ ---                                                            
+146:          6.7         3.0          5.2         2.3 virginica
+147:          6.3         2.5          5.0         1.9 virginica
+148:          6.5         3.0          5.2         2.0 virginica
+149:          6.2         3.4          5.4         2.3 virginica
+150:          5.9         3.0          5.1         1.8 virginica
+```
+
+
 <a href="https://www.r-exercises.com/2017/06/15/data-manipulation-with-data-table-part-1/">https://www.r-exercises.com/2017/06/15/data-manipulation-with-data-table-part-1/</a>
 
 **1) Load the iris dataset, make it a data.table and name it iris_dt, print mean of Petal.Length, grouping by first letter of Species from iris_dt.**
