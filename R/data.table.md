@@ -1,4 +1,4 @@
-|![](https://github.com/Tanmoy-Rath/misc/blob/master/R/datafiles/iris.bmp)||
+|![](https://github.com/Tanmoy-Rath/misc/blob/master/R/datafiles/iris.bmp)|![](https://github.com/Tanmoy-Rath/misc/blob/master/R/datafiles/diamonds.bmp)|
 |---|---|
 
 ```R
