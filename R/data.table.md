@@ -370,7 +370,10 @@ diam[  ,  { m= mean(depth)
 5:      Fair       687.8076          7249.492
 ```
 
-**7)**
+**7) Suppose we want to merge iris and airquality, akin to the functionality of rbind. We want to do it fast and want to keep track of the rows with their original dataset, and keep all the columns of both the data set in the merged data set as well. How do we achieve that?**
+```R
+
+```
 
 **8)**
 
