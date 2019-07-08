@@ -447,6 +447,9 @@ test_dt
 
 **9) May be you dont want the previous day’s data, you may want to copy the nearest value for day 5. How do we achieve that?**
 ```R
+test_dt[  .("a",5)  ,  roll="nearest"  ]
+   id day value
+1:  a   5    37
 ```
 <br/>
 
