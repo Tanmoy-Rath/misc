@@ -354,3 +354,8 @@ diam
 53939:  0.86     SI2     H   Premium  61.0  2757    58 6.15 6.12 3.74
 53940:  0.75     SI2     D     Ideal  62.2  2757    55 5.83 5.87 3.64
 ```
+
+**6) If you are not convinced with the powerful intuitive features of data.table till now, I am pretty sure you will by the end of THIS. Suppose I want to have a metric on diamonds where I want to find for each group of cut maximum of x * mean of depth and name it my_int_feature and also I want another metric which is my_int_feature * maximum of y again for each group of cut. This is achievable by chaining but also with a single operation without chaining which is the expected answer.
+```R
+
+```
