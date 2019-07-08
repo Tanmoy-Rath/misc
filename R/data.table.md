@@ -411,6 +411,7 @@ setkey(test_dt, id, day)
 test_dt[.("a",5),roll=TRUE]
    id day value
 1:  a   5    37
+
 test_dt
     id day value
  1:  a   1    22
