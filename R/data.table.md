@@ -314,4 +314,7 @@ set(diam, j=c("x","y","z"), value=list( diam[["x"]]^2, diam[["y"]]^2, diam[["z"]
 diam[  ,  `:=`(x=x^2, y=y^2, z=z^2)  ]
 #  or
 diam[  ,  c("x","y","z"):=.(x^2, y^2, z^2)  ]
+
+#  Out of all 4, the fastest is
+set(diam, j=c("x","y","z"), value=list( diam[["x"]]^2, diam[["y"]]^2, diam[["z"]]^2) )
 ```
