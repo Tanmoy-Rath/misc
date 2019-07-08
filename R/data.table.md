@@ -59,6 +59,7 @@ dt[  order(cut,color)  , mean(price) ,  by=.(cut,color)  ]
 35:     Ideal     J 4918.186
           cut color       V1
 ```
+<br/>
 
 **3) Load the diamonds dataset from ggplot2 package as dt. Now group the dataset by price per carat and print top 5 in terms of count per group. Don't use head, use chaining in data.table to achieve this.**
 ```R
@@ -73,6 +74,7 @@ dt[  ,  .N  ,  .(ppc=price/carat)  ][  order(-N)  ][  1:5  ]
 4: 2016.667 157
 5: 2100.000 129
 ```
+<br/>
 
 **4) Use the already loaded diamonds dataset and print the last two carat value of each cut.**
 ```R
@@ -89,6 +91,7 @@ dt[  ,  tail(carat,2)  ,  by=cut  ]
  9:      Fair 1.04
 10:      Fair 0.71
 ```
+<br/>
 
 **5) In the same data set, find median of the columns x,y,z per cut. Use data.table’s methods to achieve this.**
 ```R
@@ -103,6 +106,7 @@ dt[  ,  lapply(.SD,median)  ,  cut  ,  .SDcols=c("x","y","z")  ]
 #  Alternatively
 dt[  ,  .(x=median(x), y=median(y), z=median(z))  ,  by=cut  ]
 ```
+<br/>
 
 **6) Load the airquality dataset as data.table. Now I want to find Logarithm of wind rate for each month and for days greater than 15.**
 ```R
@@ -190,6 +194,7 @@ airq[  Day>15  ,  .(log10(Wind))  ,  by=Month  ]
 78:     9 1.0606978
     Month        V1
 ```
+<br/>
 
 **7) In the same data set, for all the odd rows, update Temp column by adding 10.**
 ```R
@@ -209,6 +214,7 @@ airq
 152:    18     131  8.0   76     9  29
 153:    20     223 11.5   78     9  30
 ```
+<br/>
 
 **8) data.table comes with a powerful feature of updating column by reference as you have seen in the last exercise. Its even possible to update/create multiple columns. Now to test that in the airquality data.table that you have created previously, add 10 to Solar.R, Wind.**
 ```R
@@ -230,11 +236,13 @@ airq
 # Alternatively
 airq[  ,  `:=`(Solar.R = Solar.R+10 , Wind = Wind+10)  ]
 ```
+<br/>
 
 **9) Now you have a fairly good idea of how easy its to create multiple column. Its even possible to use delete multiple column using the same idea. In this exercise, use the same airquality data.table that you have created previously from airquality and delete Solar.R, Wind, Temp using a single expression.**
 ```R
 airq[  ,  c("Solar.R","Wind","Temp"):=NULL  ]
 ```
+<br/>
 
 **10) Load the airquality dataset as data.table again , I want to create two columns "a","b" which indicates temp in Celcius and Kelvin scale. Write a expression to achieve same:<br/>
 Celcius = (Temp-32)\*5/9<br/>
@@ -278,6 +286,7 @@ diam[  c("Ideal","Premium")  ,  head(.SD,1)  ,  by=cut  ]
 1:   Ideal  0.30     D     SI1  62.5    57   552 4.29 4.32 2.69
 2: Premium  0.22     D     VS2  59.3    62   404 3.91 3.88 2.31
 ```
+<br/>
 
 **2) With the same dataset, select the first and last entry of the groups Ideal and Premium**
 ```R
@@ -291,6 +300,7 @@ diam[  c("Ideal","Premium")  ,  .SD[c(1,.N)]  ,  by=.EACHI  ]
 #  Alternatively
 diam[  c("Ideal","Premium")  ,  .SD[c(1,.N)]  ,  by=cut  ]
 ```
+<br/>
 
 **3) Earlier we have seen how we can create/update columns by reference using := . However there is a lower over head, faster alternative in data.table . This is achieved by SET and Loop in data.table , however this is meant for simple operations and will not work in grouped operation. Now take the diamonds data.table and make columns x,y,z value squared. For example if the value is currently 10, the resulting value would be 100. You are awesome if you find out all alternative answer and check the time using system.time .**
 ```R
@@ -322,6 +332,7 @@ diam[  ,  c("x","y","z"):=.(x^2, y^2, z^2)  ]
 #  Out of all 4, the fastest is
 set(diam, j=c("x","y","z"), value=list( diam[["x"]]^2, diam[["y"]]^2, diam[["z"]]^2) )
 ```
+<br/>
 
 **4) In the same dataset, capitalize first letter of column names.**
 ```R
@@ -340,6 +351,7 @@ diam
 53939:  0.86   Premium     H     SI2  61.0    58  2757 6.15 6.12 3.74
 53940:  0.75     Ideal     D     SI2  62.2    55  2757 5.83 5.87 3.64
 ```
+<br/>
 
 **5) Reordering column sometimes is necessary, however if your data frame is of several GBs it might be an overhead to create new data frame with new order. Data.Table provides features to overcome this. Now reorder your diamonds data.table’s columns by their names sorted alphabetically.**
 ```R
@@ -358,6 +370,7 @@ diam
 53939:  0.86     SI2     H   Premium  61.0  2757    58 6.15 6.12 3.74
 53940:  0.75     SI2     D     Ideal  62.2  2757    55 5.83 5.87 3.64
 ```
+<br/>
 
 **6) If you are not convinced with the powerful intuitive features of data.table till now, I am pretty sure you will by the end of THIS. Suppose I want to have a metric on diamonds where I want to find for each group of cut maximum of x * mean of depth and name it my_int_feature and also I want another metric which is my_int_feature * maximum of y again for each group of cut. This is achievable by chaining but also with a single operation without chaining which is the expected answer.**
 ```R
@@ -372,6 +385,7 @@ diam[  ,  { m=mean(depth)
 4: Very Good       618.8009          6150.881
 5:      Fair       687.8076          7249.492
 ```
+<br/>
 
 **7) Suppose we want to merge iris and airquality, akin to the functionality of rbind. We want to do it fast and want to keep track of the rows with their original dataset, and keep all the columns of both the data set in the merged data set as well. How do we achieve that?**
 ```R
@@ -393,6 +407,7 @@ X
 302: airquality           NA          NA           NA          NA    <NA>    18     131  8.0   76     9  29
 303: airquality           NA          NA           NA          NA    <NA>    20     223 11.5   68     9  30
 ```
+<br/>
 
 **8) The Next 3 exercises are on rolling Join like features of data.table, which is useful in time series like data. Create a data.table with the following:**
 ```R
@@ -428,9 +443,11 @@ test_dt
 11:  b   6     3
 12:  b   7    72
 ```
+<br/>
 
 **9) May be you dont want the previous day’s data, you may want to copy the nearest value for day 5. How do we achieve that?**
 ```R
 ```
+<br/>
 
 **10)**
