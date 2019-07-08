@@ -13,7 +13,7 @@ iris_dt[  ,  mean(Petal.Length)  ,  by=substring(Species,1,1)  ]
 1:         s 1.462
 2:         v 4.906
 ```
-
+<br/>
 **2) Load the diamonds dataset from ggplot2 package as dt (a data.table). Find mean price for each group of cut and color.**
 ```R
 library(ggplot2)
