@@ -403,42 +403,27 @@ test_dt <- setDT(x)
 **Now this mimics a sales data of 7 days for a and b. Notice that day 5 is not present for both a and b. This is not desirable in many situations. A common practise is to use the previous days data. How do we get previous days data for the id a, you should ideally set keys and do it using join features.**
 ```R
 set.seed(1024)
-x <- data.frame( rep(letters[1:2],6), c(1,2,3,4,6,7), sample(100,6) )
-names(x) <- c("id","day","value")
+x <- data.frame( sort(rep(letters[1:2],6)), c(1,2,3,4,6,7), sample(100,6) )
+names(x) <- c("id", "day", "value")
 test_dt <- setDT(x)
-test_dt
-    id day value
- 1:  a   1    22
- 2:  b   2    98
- 3:  a   3    35
- 4:  b   4    37
- 5:  a   6     3
- 6:  b   7    72
- 7:  a   1    22
- 8:  b   2    98
- 9:  a   3    35
-10:  b   4    37
-11:  a   6     3
-12:  b   7    72
 
 setkey(test_dt, id, day)
 test_dt[.("a",5),roll=TRUE]
    id day value
-1:  a   5    35
-
+1:  a   5    37
 test_dt
     id day value
  1:  a   1    22
- 2:  a   1    22
+ 2:  a   2    98
  3:  a   3    35
- 4:  a   3    35
+ 4:  a   4    37
  5:  a   6     3
- 6:  a   6     3
- 7:  b   2    98
+ 6:  a   7    72
+ 7:  b   1    22
  8:  b   2    98
- 9:  b   4    37
+ 9:  b   3    35
 10:  b   4    37
-11:  b   7    72
+11:  b   6     3
 12:  b   7    72
 ```
 
