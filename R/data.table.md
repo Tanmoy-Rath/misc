@@ -1,4 +1,4 @@
-|![](https://github.com/Tanmoy-Rath/misc/blob/master/R/datafiles/iris.bmp)|![](https://github.com/Tanmoy-Rath/misc/blob/master/R/datafiles/diamonds.bmp)|![](https://github.com/Tanmoy-Rath/misc/blob/master/R/datafiles/airquality.bmp)|
+|![](https://github.com/Tanmoy-Rath/misc/blob/master/R/datafiles/iris.bmp)|![](https://github.com/Tanmoy-Rath/misc/blob/master/R/datafiles/airquality.bmp)|![](https://github.com/Tanmoy-Rath/misc/blob/master/R/datafiles/diamonds.bmp)|
 |---|---|---|
 
 <a href="https://www.r-exercises.com/2017/06/15/data-manipulation-with-data-table-part-1/">https://www.r-exercises.com/2017/06/15/data-manipulation-with-data-table-part-1/</a>
