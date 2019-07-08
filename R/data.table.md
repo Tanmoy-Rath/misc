@@ -309,5 +309,9 @@ diam
 53940:  0.75     Ideal     D     SI2  62.2    55  2757 33.9889 34.4569 13.2496
 
 #  Alternatively
-diam[  ,  `:=`(x=x^2, y=y^2, z=z^2)  ]    or    diam[  ,  c("x","y","z"):=.(x^2, y^2, z^2)  ]
+set(diam, j=c("x","y","z"), value=list( diam[["x"]]^2, diam[["y"]]^2, diam[["z"]]^2) )
+#  or
+diam[  ,  `:=`(x=x^2, y=y^2, z=z^2)  ]
+#  or
+diam[  ,  c("x","y","z"):=.(x^2, y^2, z^2)  ]
 ```
