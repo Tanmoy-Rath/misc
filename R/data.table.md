@@ -376,8 +376,8 @@ diam[  ,  { m=mean(depth)
 ```R
 dt2 <- as.data.table(iris)
 dt1 <- as.data.table(airquality)
-my_list <- list("iris"=dt2, "airquality"=dt1)
-X <- rbindlist(my_list, fill=TRUE, idcol="my_list")
+mylist <- list("iris"=dt2, "airquality"=dt1)
+X <- rbindlist(mylist, fill=TRUE, idcol="my_list")
 X
         my_list Sepal.Length Sepal.Width Petal.Length Petal.Width Species Ozone Solar.R Wind Temp Month Day
   1:       iris          5.1         3.5          1.4         0.2  setosa    NA      NA   NA   NA    NA  NA
