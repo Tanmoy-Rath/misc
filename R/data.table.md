@@ -406,6 +406,20 @@ set.seed(1024)
 x <- data.frame( rep(letters[1:2],6), c(1,2,3,4,6,7), sample(100,6) )
 names(x) <- c("id","day","value")
 test_dt <- setDT(x)
+test_dt
+    id day value
+ 1:  a   1    22
+ 2:  b   2    98
+ 3:  a   3    35
+ 4:  b   4    37
+ 5:  a   6     3
+ 6:  b   7    72
+ 7:  a   1    22
+ 8:  b   2    98
+ 9:  a   3    35
+10:  b   4    37
+11:  a   6     3
+12:  b   7    72
 
 setkey(test_dt, id, day)
 test_dt[.("a",5),roll=TRUE]
