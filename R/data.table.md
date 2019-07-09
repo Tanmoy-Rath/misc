@@ -477,3 +477,17 @@ data.table::tables()
 5:    test_dt      12    3  0                                              id,day,value      id,day
 Total: 17MB
 ```
+
+
+
+First, you can use setkey(data, NULL) to remove the key.
+
+Second, unique.data.table has a by option which will allow you to specify on the fly which columns to use for comparison (regardless of which key is currently set):
+
+unique(data, by = paste0("C", 1:10))
+
+Third, instead of using setkey for many keys, use setkeyv to pass a character vector:
+
+setkeyv(data, paste0("C", 1:10))
+
+A thorough reading of ?setkey and ?unique.data.table can provide some more details.
