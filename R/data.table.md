@@ -491,3 +491,8 @@ Third, instead of using setkey for many keys, use setkeyv to pass a character ve
 setkeyv(data, paste0("C", 1:10))
 
 A thorough reading of ?setkey and ?unique.data.table can provide some more details.
+
+data.table::merge()
+?`:=`
+?set
+?rbindlist
