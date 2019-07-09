@@ -465,7 +465,7 @@ test_dt[  .("b", c(5,9))  ,  roll=TRUE, rollends=FALSE  ]
 
 
 
-
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>
 ```R
 data.table::tables()
          NAME    NROW NCOL MB                                                      COLS         KEY
