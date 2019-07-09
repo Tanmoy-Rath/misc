@@ -460,3 +460,19 @@ test_dt[  .("b", c(5,9))  ,  roll=TRUE, rollends=FALSE  ]
 1:  b   5    37
 2:  b   9    NA
 ```
+
+
+
+
+
+
+```R
+data.table::tables()
+         NAME    NROW NCOL MB                                                      COLS         KEY
+1: airquality     153    6  0                         Ozone,Solar.R,Wind,Temp,Month,Day            
+2:   diamonds  53,940   10  3                   carat,cut,color,clarity,depth,table,...            
+3:    flights 253,316   11 14            year,month,day,dep_delay,arr_delay,carrier,... origin,dest
+4:       iris     150    5  0 Sepal.Length,Sepal.Width,Petal.Length,Petal.Width,Species            
+5:    test_dt      12    3  0                                              id,day,value      id,day
+Total: 17MB
+```
