@@ -466,7 +466,7 @@ test_dt[  .("b", c(5,9))  ,  roll=TRUE, rollends=FALSE  ]
 
 
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-**Shows all data.table() objects in the environment
+**Shows all data.table() objects in the environment**
 ```R
 data.table::tables()
          NAME    NROW NCOL MB                                                      COLS         KEY
