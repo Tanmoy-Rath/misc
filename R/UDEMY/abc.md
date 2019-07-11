@@ -1,151 +1,203 @@
 ```R
-Lures Example Script
-Error: unexpected symbol in "Lures Example"
+Script: Data cleaning
+Error: unexpected symbol in "Script: Data cleaning"
 
-### Cleaning a standard csv file - LureSales
+### Cleaning your data - Restructuring with tidyr
 
+library(tidyr)
 
-summary(lures)
-   Category           Product              Sales            Profit        
- Length:1001        Length:1001        Min.   :  4.25   Min.   :    2.61  
- Class :character   Class :character   1st Qu.: 27.00   1st Qu.:   11.94  
- Mode  :character   Mode  :character   Median : 51.12   Median :   21.63  
-                                       Mean   : 55.11   Mean   :   68.97  
-                                       3rd Qu.: 76.68   3rd Qu.:   37.86  
-                                       Max.   :174.25   Max.   :32423.40  
-                                       NA's   :1        NA's   :3         
-  FirstName           LastName              Date           
- Length:1001        Length:1001        Min.   :2012-01-05  
- Class :character   Class :character   1st Qu.:2013-06-19  
- Mode  :character   Mode  :character   Median :2014-08-16  
-                                       Mean   :2014-05-29  
-                                       3rd Qu.:2015-06-19  
-                                       Max.   :2016-01-03  
-                                                           
+library(dplyr) # also activate dplyr since it has helpful add on fuctions
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
 
 
-# Converting Category to factor
+# import as csv, make sure to have heading activated
+# if there is no heading R might not recognize all columns
 
-lures$Category <- as.factor(lures$Category)
+bugs = Bug.Frequency # easier to code
 
+head(bugs)
+        region X..10.g X10...20.g X20...30.g X30...40.g X..40.g
+1  Welsh Creek       5         34         54         23       8
+2    River Inn      72         33         28         35       9
+3  Spur Forest      34         65         23         67       2
+4 Hamock Flats      28         23         34         45      11
+5   Gelb Rocks      34         68         23         58       9
 
-# Check the Category column
+# lets redo the header line since the import worked poorly
+names(bugs) <- c("Region", "<10 g", "10-20 g", "20-30 g", "30-40 g", ">40 g")
 
-summary(lures)
-  Category     Product              Sales            Profit          FirstName        
- Lake :368   Length:1001        Min.   :  4.25   Min.   :    2.61   Length:1001       
- Ocean:151   Class :character   1st Qu.: 27.00   1st Qu.:   11.94   Class :character  
- River:481   Mode  :character   Median : 51.12   Median :   21.63   Mode  :character  
- NA's :  1                      Mean   : 55.11   Mean   :   68.97                     
-                                3rd Qu.: 76.68   3rd Qu.:   37.86                     
-                                Max.   :174.25   Max.   :32423.40                     
-                                NA's   :1        NA's   :3                            
-   LastName              Date           
- Length:1001        Min.   :2012-01-05  
- Class :character   1st Qu.:2013-06-19  
- Mode  :character   Median :2014-08-16  
-                    Mean   :2014-05-29  
-                    3rd Qu.:2015-06-19  
-                    Max.   :2016-01-03  
-                                        
+bugs
+        Region <10 g 10-20 g 20-30 g 30-40 g >40 g
+1  Welsh Creek     5      34      54      23     8
+2    River Inn    72      33      28      35     9
+3  Spur Forest    34      65      23      67     2
+4 Hamock Flats    28      23      34      45    11
+5   Gelb Rocks    34      68      23      58     9
 
+?gather
 
-library(tidyr) # unite function
-
-
-lures = unite(lures, col = "Name",
-+               
-+               c("FirstName", "LastName"), sep = " ")
-
-
-# How does the end of the dataset look?
-
-tail(lures) # problem in last observation
-# A tibble: 6 x 6
-  Category Product        Sales Profit Name           Date      
-  <fct   <chr         <dbl <dbl<chr         <date   
-1 River    Steelhead Iron  72.8   12.1 Laura KELLY    2013-06-06
-2 River    Minnow Glitter  32.4   19.4 Laura MITCHELL 2013-06-06
-3 River    Minnow Glitter  91.8   39.4 Mark KELLY     2015-12-19
-4 River    Steelhead Iron  61.6   37.8 Deanra ADAMS   2014-06-20
-5 River    Steelhead Iron  78.4   43.4 Alan COLLINS   2013-10-15
-6 NA       NA              NA     NA   NA KING        2013-10-15
-
-
-lures <- lures[1:1000,]
-
-
-tail(lures)
-# A tibble: 6 x 6
-  Category Product        Sales Profit Name           Date      
-  <fct   <chr         <dbl <dbl<chr         <date   
-1 River    Minnow Glitter  10.8   12.1 Anthony TAYLOR 2013-09-06
-2 River    Steelhead Iron  72.8   12.1 Laura KELLY    2013-06-06
-3 River    Minnow Glitter  32.4   19.4 Laura MITCHELL 2013-06-06
-4 River    Minnow Glitter  91.8   39.4 Mark KELLY     2015-12-19
-5 River    Steelhead Iron  61.6   37.8 Deanra ADAMS   2014-06-20
-6 River    Steelhead Iron  78.4   43.4 Alan COLLINS   2013-10-15
-
-
-# Outlier detection - Boxplot
-
-boxplot(lures$Profit)
-
-
-library(outliers)
-
-
-# Depending on the Boxplot we need to run this several times
-
-lures$Profit <- rm.outlier(lures$Profit,
-+                            
-+                            fill = T, median = T)
-
-
-boxplot(lures$Profit) # Check the column
-
-
-library(Hmisc)
-
-
-lures$Profit <- impute(lures$Profit, median)
-
-
-summary(lures$Profit)
-
- 3 values imputed to 21.6058 
-
-    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-   2.605   11.978   21.606   36.470   37.761 5442.300 
-
-
-lures$Profit <- round(lures$Profit, digits = 2)
-
-
-# Queries on the dataset
-
-
-library(data.table)
-
-lurestable <- data.table(lures)
-
-
-class(lurestable)
-[1] "data.table" "data.frame"
-
-
-# How many instances with a profit above 65$ ?
-
-lurestable[Profit 65, .N]
-[1] 43
+# now we can convert to long form
+gather(data = bugs, key = weight, value = counts, -Region)
+         Region  weight counts
+1   Welsh Creek   <10 g      5
+2     River Inn   <10 g     72
+3   Spur Forest   <10 g     34
+4  Hamock Flats   <10 g     28
+5    Gelb Rocks   <10 g     34
+6   Welsh Creek 10-20 g     34
+7     River Inn 10-20 g     33
+8   Spur Forest 10-20 g     65
+9  Hamock Flats 10-20 g     23
+10   Gelb Rocks 10-20 g     68
+11  Welsh Creek 20-30 g     54
+12    River Inn 20-30 g     28
+13  Spur Forest 20-30 g     23
+14 Hamock Flats 20-30 g     34
+15   Gelb Rocks 20-30 g     23
+16  Welsh Creek 30-40 g     23
+17    River Inn 30-40 g     35
+18  Spur Forest 30-40 g     67
+19 Hamock Flats 30-40 g     45
+20   Gelb Rocks 30-40 g     58
+21  Welsh Creek   >40 g      8
+22    River Inn   >40 g      9
+23  Spur Forest   >40 g      2
+24 Hamock Flats   >40 g     11
+25   Gelb Rocks   >40 g      9
+# we are specifying the dataset, our key are the different weights in one column
+# we put all the counts in 1 column, and we suppress a gathering of Region
 
 
 
-# How much profit by Category ?
+# we can store it as a table
+bugs.table = tbl_df(gather(data = bugs, key = weight, value = counts, -Region))
 
-lurestable[, sum(Profit), by = Category]
-   Category       V1
-1:     Lake 15493.78
-2:    Ocean  5627.03
-3:    River 15348.68
+# we can of course change the order with the arrange function
+arrange(bugs.table, Region)
+# A tibble: 25 x 3
+   Region       weight  counts
+   <fct       <chr   <int>
+ 1 Gelb Rocks   <10 g       34
+ 2 Gelb Rocks   10-20 g     68
+ 3 Gelb Rocks   20-30 g     23
+ 4 Gelb Rocks   30-40 g     58
+ 5 Gelb Rocks   >40 g        9
+ 6 Hamock Flats <10 g       28
+ 7 Hamock Flats 10-20 g     23
+ 8 Hamock Flats 20-30 g     34
+ 9 Hamock Flats 30-40 g     45
+10 Hamock Flats >40 g       11
+# ... with 15 more rows
+
+## alternative with package reshape2
+
+library(reshape2)
+
+Attaching package: ‘reshape2’
+
+The following object is masked from ‘package:tidyr’:
+
+    smiths
+
+
+bugs.melt = melt(data = bugs, measure.vars = c(2:6), # here we use col IDs
++                  variable.name = "weight",
++                  value.name = "counts"); bugs.melt
+         Region  weight counts
+1   Welsh Creek   <10 g      5
+2     River Inn   <10 g     72
+3   Spur Forest   <10 g     34
+4  Hamock Flats   <10 g     28
+5    Gelb Rocks   <10 g     34
+6   Welsh Creek 10-20 g     34
+7     River Inn 10-20 g     33
+8   Spur Forest 10-20 g     65
+9  Hamock Flats 10-20 g     23
+10   Gelb Rocks 10-20 g     68
+11  Welsh Creek 20-30 g     54
+12    River Inn 20-30 g     28
+13  Spur Forest 20-30 g     23
+14 Hamock Flats 20-30 g     34
+15   Gelb Rocks 20-30 g     23
+16  Welsh Creek 30-40 g     23
+17    River Inn 30-40 g     35
+18  Spur Forest 30-40 g     67
+19 Hamock Flats 30-40 g     45
+20   Gelb Rocks 30-40 g     58
+21  Welsh Creek   >40 g      8
+22    River Inn   >40 g      9
+23  Spur Forest   >40 g      2
+24 Hamock Flats   >40 g     11
+25   Gelb Rocks   >40 g      9
+
+## too much information in 1 column
+
+age.sex <- data.frame(
++         name = c("Paul", "Kim", "Nora", "Sue", "Paul", "Kim"),
++         biometrics = c("179m", "173f", "174f", "159f", "188m", "163f"),
++         measurement = rnorm(6)); age.sex
+  name biometrics measurement
+1 Paul       179m   1.1569045
+2  Kim       173f   0.7179864
+3 Nora       174f   1.1045040
+4  Sue       159f  -0.1905366
+5 Paul       188m   0.1516832
+6  Kim       163f   0.6769356
+
+# here the column biometrics contains height in cm and sex at the same time
+# this requires separation in many cases
+
+# we can use separate to split the biometrics column in 2
+separate(data = age.sex, col = biometrics,
++          into = c("height", "sex"), 3)
+  name height sex measurement
+1 Paul    179   m   1.1569045
+2  Kim    173   f   0.7179864
+3 Nora    174   f   1.1045040
+4  Sue    159   f  -0.1905366
+5 Paul    188   m   0.1516832
+6  Kim    163   f   0.6769356
+# number 3 indicates split, pos starts from left, - from right
+
+# What can you do if you have two variables in the same column
+# going from long form to wide form
+
+sports <- data.frame(
++         name = c("Paul", "Paul", "Nora", "Nora", "Kim", "Kim"),
++         performance = c("top", "low", "top", "low", "top", "low"),
++         counts = c(11,3,18,2,9,1)); sports
+  name performance counts
+1 Paul         top     11
+2 Paul         low      3
+3 Nora         top     18
+4 Nora         low      2
+5  Kim         top      9
+6  Kim         low      1
+
+# here we have 2 variables the top and low performance in 1 column
+# how do we split it up?
+
+spread(data=sports, key = performance, value = counts)
+  name low top
+1  Kim   1   9
+2 Nora   2  18
+3 Paul   3  11
+
+## lets check the alternative from the reshape2 package
+
+# the argument names differ a bit, but the function structure looks very similar
+dcast(data = sports, name ~ performance, value.var = "counts" )
+  name low top
+1  Kim   1   9
+2 Nora   2  18
+3 Paul   3  11
 ```
