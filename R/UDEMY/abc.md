@@ -201,3 +201,26 @@ dcast(data = sports, name ~ performance, value.var = "counts" )
 2 Nora   2  18
 3 Paul   3  11
 ```
+
+```R
+I found that running 
+
+reshape2::melt(bugs, id.vars="Region", variable.name="weight", value.name="counts")
+
+does the same as 
+
+gather(data = bugs, key = weight, value = counts, -Region)
+
+or
+
+melt(data = bugs, measure.vars = c(2:6), # here we use col IDs
+     variable.name = "weight",
+     value.name = "counts")
+
+as shown in videos.
+
+
+reshape2::melt(bugs)
+
+also works as desired but with a messege and has default column names.
+```
