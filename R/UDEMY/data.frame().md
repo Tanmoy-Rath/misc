@@ -98,6 +98,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 sapply(mtcars, class)
       mpg       cyl      disp        hp      drat        wt      qsec        vs        am      gear      carb 
 "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" 
+#  my alternative:   vapply(mtcars, class, character(1))
 
 
 # b. Change am, cyl and vs to integer and store the new dataset as newmtc
@@ -116,7 +117,6 @@ newmtc = data.frame(mpg, cyl = as.integer(cyl),
 sapply(newmtc, class)
       mpg       cyl      disp        hp      drat        wt      qsec        vs        am      gear      carb 
 "numeric" "integer" "numeric" "numeric" "numeric" "numeric" "numeric" "integer" "integer" "numeric" "numeric" 
-#  my alternative:   vapply(mtcars, class, character(1))
 
 
 # c. Round the newmtc dataframe to 1 digit
