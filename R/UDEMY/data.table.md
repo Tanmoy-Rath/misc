@@ -369,6 +369,10 @@ diam
 53938:  0.70     SI1     D Very Good  62.8  2757    60 5.66 5.68 3.56
 53939:  0.86     SI2     H   Premium  61.0  2757    58 6.15 6.12 3.74
 53940:  0.75     SI2     D     Ideal  62.2  2757    55 5.83 5.87 3.64
+
+#  setcolorder(diam, sort(names(diam)) )
+#  also works because setcolorder() needs only the column names(or numbers) in required order
+#  but it is a bit slower than the above answer
 ```
 <br/>
 
