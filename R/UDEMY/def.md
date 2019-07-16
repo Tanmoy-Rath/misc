@@ -473,3 +473,6 @@ newdiam[, .N, price 10000 & cut =="Premium"]
 1: FALSE 52133
 2:  TRUE  1807
 ```
+
+<hr>
+
