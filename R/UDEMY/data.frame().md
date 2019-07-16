@@ -98,7 +98,6 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 sapply(mtcars, class)
       mpg       cyl      disp        hp      drat        wt      qsec        vs        am      gear      carb 
 "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" "numeric" 
-#  my alternative:   vapply(mtcars, class, character(1))
 
 
 # b. Change am, cyl and vs to integer and store the new dataset as newmtc
@@ -178,7 +177,7 @@ The following objects are masked from ‘package:base’:
     intersect, setdiff, setequal, union
 
 
-filter(iris, Sepal.Width 3.5, Species =="virginica")
+filter(iris, Sepal.Width > 3.5, Species =="virginica")
   Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
 1          7.2         3.6          6.1         2.5 virginica
 2          7.7         3.8          6.7         2.2 virginica
@@ -191,7 +190,7 @@ filter(iris, Sepal.Width 3.5, Species =="virginica")
 
 # but without the last column Species in the dataframe?
 
-iris[iris$Species == "virginica" & iris$Sepal.Width 3.5, 1:4]
+iris[iris$Species == "virginica" & iris$Sepal.Width > 3.5, 1:4]
     Sepal.Length Sepal.Width Petal.Length Petal.Width
 110          7.2         3.6          6.1         2.5
 118          7.7         3.8          6.7         2.2
@@ -200,7 +199,7 @@ iris[iris$Species == "virginica" & iris$Sepal.Width 3.5, 1:4]
 
 # c. Get the row IDs of the rows matching the 2 filtering criteria provided above
 
-row.names(iris[iris$Species == "virginica" & iris$Sepal.Width 3.5, 1:4])
+row.names(iris[iris$Species == "virginica" & iris$Sepal.Width > 3.5, 1:4])
 [1] "110" "118" "132"
 
 
@@ -313,7 +312,7 @@ attach(diamonds)
 diam.sd = subset(diamonds, clarity == "SI2" & depth >= 70); diam.sd
 # A tibble: 6 x 10
   carat cut   color clarity depth table price     x     y     z
-  <dbl<ord<ord<ord  <dbl<dbl<int<dbl<dbl<dbl>
+  <dbl> <ord> <ord> <ord>   <dbl> <dbl> <int> <dbl> <dbl> <dbl>
 1  1.5  Fair  I     SI2      70.1    58  4328  6.96  6.85  4.84
 2  2    Fair  F     SI2      70.2    57 15351  7.63  7.59  5.34
 3  0.7  Fair  D     SI2      71.6    55  1696  5.47  5.28  3.85
@@ -372,13 +371,13 @@ sum(cut == "Ideal" & carat < 0.21) # diamonds is attached to environment
 
 # b. How many observations of diamonds have a combined x + y + z dimension greater than 40?
 
-sum ((x + y + z) 40)
+sum ((x + y + z) > 40)
 [1] 3
 
 
 # c. How man observations of diamonds have either a price above 10000 or a depth of at least 70?
 
-sum(price 10000 | depth >= 70)
+sum(price > 10000 | depth >= 70)
 [1] 5244
 
 
@@ -392,7 +391,7 @@ sum(price 10000 | depth >= 70)
 diamonds[c(67,982), c(3,9)]
 # A tibble: 2 x 2
   color     y
-  <ord<dbl>
+  <ord> <dbl>
 1 I      4.42
 2 F      5.76
 
@@ -402,7 +401,7 @@ diamonds[c(67,982), c(3,9)]
 diamonds[c(453, 792, 10489), ]
 # A tibble: 3 x 10
   carat cut       color clarity depth table price     x     y     z
-  <dbl<ord    <ord<ord  <dbl<dbl<int<dbl<dbl<dbl>
+  <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <dbl> <dbl>
 1  0.71 Ideal     I     VVS2     60.2    56  2817  5.84  5.89  3.53
 2  0.7  Very Good D     SI1      62.5    55  2862  5.67  5.72  3.56
 3  1.01 Ideal     F     SI2      60      57  4796  6.55  6.51  3.92
@@ -413,7 +412,7 @@ diamonds[c(453, 792, 10489), ]
 head(diamonds[ , c(8,9,10)],10)
 # A tibble: 10 x 3
        x     y     z
-   <dbl<dbl<dbl>
+   <dbl> <dbl> <dbl>
  1  3.95  3.98  2.43
  2  3.89  3.84  2.31
  3  4.05  4.07  2.31
@@ -445,7 +444,7 @@ library(dplyr)
 head(arrange(newdiam, price))
 # A tibble: 6 x 10
   carat cut       color clarity depth table price     x     y     z
-  <dbl<ord    <ord<ord  <dbl<dbl<int<dbl<dbl<dbl>
+  <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <dbl> <dbl>
 1 0.23  Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43
 2 0.21  Premium   E     SI1      59.8    61   326  3.89  3.84  2.31
 3 0.23  Good      E     VS1      56.9    65   327  4.05  4.07  2.31
@@ -459,7 +458,7 @@ head(arrange(newdiam, price))
 head(arrange(newdiam, desc(price)))
 # A tibble: 6 x 10
   carat cut       color clarity depth table price     x     y     z
-  <dbl<ord    <ord<ord  <dbl<dbl<int<dbl<dbl<dbl>
+  <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <dbl> <dbl>
 1  1.12 Premium   J     SI2      60.6    59  2898  6.68  6.61  4.03
 2  0.6  Very Good D     VVS2     60.6    57  2897  5.48  5.51  3.33
 3  0.76 Premium   E     SI1      61.1    58  2897  5.91  5.85  3.59
@@ -473,7 +472,7 @@ head(arrange(newdiam, desc(price)))
 head(arrange(newdiam, desc(price), depth))
 # A tibble: 6 x 10
   carat cut       color clarity depth table price     x     y     z
-  <dbl<ord    <ord<ord  <dbl<dbl<int<dbl<dbl<dbl>
+  <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <dbl> <dbl>
 1  1.12 Premium   J     SI2      60.6    59  2898  6.68  6.61  4.03
 2  0.72 Good      F     VS1      59.4    61  2897  5.82  5.89  3.48
 3  0.6  Very Good D     VVS2     60.6    57  2897  5.48  5.51  3.33
@@ -544,7 +543,7 @@ newdiam2 <- diamonds[1:100, c(7,1)]
 head(newdiam2)
 # A tibble: 6 x 2
   price carat
-  <int<dbl>
+  <int> <dbl>
 1   326 0.23 
 2   326 0.21 
 3   327 0.23 
@@ -568,7 +567,7 @@ newdiam2 <- add_row(newdiam2, price = 336, carat = 0.32)
 tail(newdiam2)
 # A tibble: 6 x 2
   price carat
-  <dbl<dbl>
+  <dbl> <dbl>
 1  2759  0.7 
 2  2759  0.7 
 3  2759  0.96
@@ -589,8 +588,8 @@ tbl_sum(newdiam2)
 glimpse(newdiam2)
 Observations: 101
 Variables: 2
-$ price <dbl326, 326, 327, 334, 335, 336, 336, 337, 337, 338, 339, 340, 342, 344, 345, 345, 348, 351, 351, 35...
-$ carat <dbl0.23, 0.21, 0.23, 0.29, 0.31, 0.24, 0.24, 0.26, 0.22, 0.23, 0.30, 0.23, 0.22, 0.31, 0.20, 0.32, 0...
+$ price <dbl> 326, 326, 327, 334, 335, 336, 336, 337, 337, 338, 339, 340, 342, 344, 345, 345, 348, 351, 351, 35...
+$ carat <dbl> 0.23, 0.21, 0.23, 0.29, 0.31, 0.24, 0.24, 0.26, 0.22, 0.23, 0.30, 0.23, 0.22, 0.31, 0.20, 0.32, 0...
 
 
 # e. Does the tibble have a rowname?
