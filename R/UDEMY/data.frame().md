@@ -116,6 +116,7 @@ newmtc = data.frame(mpg, cyl = as.integer(cyl),
 sapply(newmtc, class)
       mpg       cyl      disp        hp      drat        wt      qsec        vs        am      gear      carb 
 "numeric" "integer" "numeric" "numeric" "numeric" "numeric" "numeric" "integer" "integer" "numeric" "numeric" 
+#  my alternative:   vapply(mtcars, class, character(1))
 
 
 # c. Round the newmtc dataframe to 1 digit
