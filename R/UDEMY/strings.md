@@ -84,9 +84,8 @@ gsub() can work on a vector of strings or just a single string (e.g. a paragraph
 
 ### Regular Expressions
 
-|![](https://github.com/Tanmoy-Rath/misc/blob/master/R/UDEMY/misc/regexp1.jpg)|![](https://github.com/Tanmoy-Rath/misc/blob/master/R/UDEMY/misc/regexp2.jpg)|
+|Syntax|Description|
 |---|---|
-|+++|any character|
 |[:alnum:]|Alphanumeric characters: [:alpha:] and [:digit:]|
 |[:alpha:]|Alphabetic characters: [:lower:] and [:upper:]|
 |[:blank:]|Blank characters: e.g. space, tab|
@@ -99,6 +98,21 @@ gsub() can work on a vector of strings or just a single string (e.g. a paragraph
 |[:space:]|Space characters: tab, newline, vertical tab, form feed, carriage return, space|
 |[:upper:]|Upper-case letters in the current locale|
 |[:xdigit:]|Hexadecimal digits: 0 1 2 3 4 5 6 7 8 9 A B C D E F a b c d e f|
+|---|---|
+|\\d|Digit, 0 …. 9|
+|\\D|Opposite, Not Digit|
+|\\s|Space|
+|\\S|Opposite, Not Space|
+|\\w|Word|
+|---|---|
+|\\W|Opposite, Not Word|
+|\\t|Tabulation|
+|\\n|New line|
+|^|Beginning of the string, first occurrence|
+|$|End of the string, last occurrence|
+|\|Escape special characters, e.g. \\ is "\", \+ is "+"|
+|||Alternation match. e.g. /(e|d)n/ matches "en" and "dn"|
+|• Any character, except \n or line terminator|
 
 
 tolower() and toupper() are used to change cases
