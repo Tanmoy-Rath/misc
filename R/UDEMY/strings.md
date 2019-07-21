@@ -65,8 +65,7 @@ Its return length is same as total number of strings in the input vector of stri
 <hr>
 
 ### gsub()
-gsub() can work on a vector of strings or just a single string (e.g. a paragraph).
-It replaces the pattern strings found with the replacement string. Return result type is same as the input vector type.
+gsub() can work on a vector of strings or just a single string (e.g. a paragraph). It replaces the pattern strings found with the replacement string. Return result type is same as the input vector type. Unmatched strings in input vector are returned as it is.
 
 ```R
 > gsub("my", "**--**", parts, ignore.case=TRUE)
