@@ -86,6 +86,7 @@ gsub() can work on a vector of strings or just a single string (e.g. a paragraph
 
 |![](https://github.com/Tanmoy-Rath/misc/blob/master/R/UDEMY/misc/regexp1.jpg)|![](https://github.com/Tanmoy-Rath/misc/blob/master/R/UDEMY/misc/regexp2.jpg)|
 |---|---|
+|- |any character|
 
 tolower() and toupper() are used to change cases
 ```R
