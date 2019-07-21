@@ -1,3 +1,6 @@
+<details>
+  <summary><b>Input Details...</b>click to expand!!</summary>
+
 ```R
 parts <- c("This is my teststring to explain how substitution with my R Base works",
            "another teststring for My example of gsub and sub",
@@ -20,6 +23,7 @@ whole <- c("This is my teststring to explain how substitution with my R Base wor
 > whole
 [1] "This is my teststring to explain how substitution with my R Base works\n           another teststring for My example of gsub and sub\n           3445 is GReater than 23 - @???!§$\n           Tom coded 11 Java scrips TO MY 23 Python scripts"
 ```
+</details>
 
 <hr>
 
