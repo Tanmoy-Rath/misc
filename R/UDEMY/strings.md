@@ -86,7 +86,20 @@ gsub() can work on a vector of strings or just a single string (e.g. a paragraph
 
 |![](https://github.com/Tanmoy-Rath/misc/blob/master/R/UDEMY/misc/regexp1.jpg)|![](https://github.com/Tanmoy-Rath/misc/blob/master/R/UDEMY/misc/regexp2.jpg)|
 |---|---|
-|- |any character|
+|+++|any character|
+|[:alnum:]|Alphanumeric characters: [:alpha:] and [:digit:]|
+|[:alpha:]|Alphabetic characters: [:lower:] and [:upper:]|
+|[:blank:]|Blank characters: e.g. space, tab|
+|[:cntrl:]|Control characters|
+|[:digit:]|Digits: 0 1 2 3 4 5 6 7 8 9|
+|[:graph:]|Graphical characters: [:alnum:] and [:punct:]|
+|[:lower:]|Lower-case letters in the current locale|
+|[:print:]|Printable characters: [:alnum:], [:punct:] and space|
+|[:punct:]|Punctuation character: ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~|
+|[:space:]|Space characters: tab, newline, vertical tab, form feed, carriage return, space|
+|[:upper:]|Upper-case letters in the current locale|
+|[:xdigit:]|Hexadecimal digits: 0 1 2 3 4 5 6 7 8 9 A B C D E F a b c d e f|
+
 
 tolower() and toupper() are used to change cases
 ```R
