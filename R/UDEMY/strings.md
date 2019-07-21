@@ -28,6 +28,8 @@ whole <- c("This is my teststring to explain how substitution with my R Base wor
 <hr>
 
 ### grep()
+>- selects those strings in input vector of strings, where a match occurs.
+
 grep() works on a **vector of strings**. It returns (with value=TRUE) those strings (as a vector) in the input vector of strings, inside whom the pattern occurs. Otherwise it returns the input vector indices of the strings, inside whom the pattern is found to occur.
 
 ```R
