@@ -71,3 +71,7 @@ It replaces the pattern strings found with the replacement string. Return result
 > gsub("my", "**--**", whole, ignore.case=TRUE)
 [1] "This is **--** teststring to explain how substitution with **--** R Base works\n           another teststring for **--** example of gsub and sub\n           3445 is GReater than 23 - @???!§$\n           Tom coded 11 Java scrips TO **--** 23 Python scripts"
 ```
+
+<hr>
+
+### Regular Expressions
