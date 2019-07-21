@@ -21,5 +21,4 @@ whole <- c("This is my teststring to explain how substitution with my R Base wor
 [1] "This is my teststring to explain how substitution with my R Base works\n           another teststring for My example of gsub and sub\n           3445 is GReater than 23 - @???!§$\n           Tom coded 11 Java scrips TO MY 23 Python scripts"
 ```
 
-grep() works on a **vector of strings**. It returns (with value=TRUE) those strings (as a vector) in the input vector inside which the pattern occurs
-Otherwise it returns the input vector indices of the strings, inside which the pattern is found to occur.
+grep() works on a **vector of strings**. It returns (with value=TRUE) those strings (as a vector) in the input vector inside which the pattern occurs. Otherwise it returns the input vector indices of the strings, inside which the pattern is found to occur.
