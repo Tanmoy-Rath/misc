@@ -38,6 +38,21 @@ grep() works on a **vector of strings**. It returns (with value=TRUE) those stri
 
 > grep("my", parts, ignore.case=TRUE)
 [1] 1 2 4
+
 > grep("my", whole, ignore.case=TRUE)
 [1] 1
 ```
+
+<hr>
+
+grepl() is same as grep(), i.e. works on a vector of strings, but returns boolean results of patterns found.
+Its return length is same as total number of strings in the input vector of strings
+
+```R
+> grepl("my", parts, ignore.case=TRUE)
+[1]  TRUE  TRUE FALSE  TRUE
+
+> grepl("my", whole, ignore.case=TRUE)
+[1] TRUE
+```
+
