@@ -75,3 +75,22 @@ It replaces the pattern strings found with the replacement string. Return result
 <hr>
 
 ### Regular Expressions
+
+```R
+> # changing the cases
+> tolower("Graphs and Histograms")
+[1] "graphs and histograms"
+> toupper("Graphs and Histograms")
+[1] "GRAPHS AND HISTOGRAMS"
+> 
+> # splitting the string in single character values
+> strsplit("Graphs and Histograms", NULL)
+[[1]]
+ [1] "G" "r" "a" "p" "h" "s" " " "a" "n" "d" " " "H" "i" "s" "t" "o" "g" "r" "a" "m" "s"
+
+> 
+> # splitting strings after each space
+> strsplit("Graphs and Histograms", " ")
+[[1]]
+[1] "Graphs"     "and"        "Histograms"
+```
