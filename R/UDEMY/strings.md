@@ -58,7 +58,7 @@ Its return length is same as total number of strings in the input vector of stri
 
 <hr>
 
-gsub() can work on a vector of strings or just a single string(e.g a paragraph).
+gsub() can work on a vector of strings or just a single string (e.g. a paragraph).
 It replaces the pattern strings found with the replacement string.
 
 ```R
