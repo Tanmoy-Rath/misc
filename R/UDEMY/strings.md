@@ -56,3 +56,18 @@ Its return length is same as total number of strings in the input vector of stri
 [1] TRUE
 ```
 
+<hr>
+
+gsub() can work on a vector of strings or just a single string(e.g a paragraph).
+It replaces the pattern strings found with the replacement string.
+
+```R
+> gsub("my", "**--**", parts, ignore.case=TRUE)
+[1] "This is **--** teststring to explain how substitution with **--** R Base works"
+[2] "another teststring for **--** example of gsub and sub"                         
+[3] "3445 is GReater than 23 - @???!§$"                                             
+[4] "Tom coded 11 Java scrips TO **--** 23 Python scripts"                          
+
+> gsub("my", "**--**", whole, ignore.case=TRUE)
+[1] "This is **--** teststring to explain how substitution with **--** R Base works\n           another teststring for **--** example of gsub and sub\n           3445 is GReater than 23 - @???!§$\n           Tom coded 11 Java scrips TO **--** 23 Python scripts"
+```
