@@ -23,7 +23,7 @@ whole <- c("This is my teststring to explain how substitution with my R Base wor
 
 <hr>
 
-grep() works on a **vector of strings**. It returns (with value=TRUE) those strings (as a vector) in the input vector of strings, inside whom the pattern occurs. Otherwise it returns the input vector indices of the strings, inside whom the pattern is found to occur. Return result type is same as the input vector type.
+grep() works on a **vector of strings**. It returns (with value=TRUE) those strings (as a vector) in the input vector of strings, inside whom the pattern occurs. Otherwise it returns the input vector indices of the strings, inside whom the pattern is found to occur.
 
 ```R
 > grep("my", parts, ignore.case=TRUE, value=TRUE)
@@ -59,7 +59,7 @@ Its return length is same as total number of strings in the input vector of stri
 <hr>
 
 gsub() can work on a vector of strings or just a single string (e.g. a paragraph).
-It replaces the pattern strings found with the replacement string.
+It replaces the pattern strings found with the replacement string. Return result type is same as the input vector type.
 
 ```R
 > gsub("my", "**--**", parts, ignore.case=TRUE)
