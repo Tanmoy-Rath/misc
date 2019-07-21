@@ -136,3 +136,5 @@ strsplit() splits the input string based on the given pattern
 [[1]]
 [1] "Graphs"     "and"        "Histograms"
 ```
+
+nchar(), substr(), paste(), paste0(), str_trim()
