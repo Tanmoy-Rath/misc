@@ -76,19 +76,22 @@ It replaces the pattern strings found with the replacement string. Return result
 
 ### Regular Expressions
 
+tolower() and toupper() are used to change cases
 ```R
-> # changing the cases
 > tolower("Graphs and Histograms")
 [1] "graphs and histograms"
+
 > toupper("Graphs and Histograms")
 [1] "GRAPHS AND HISTOGRAMS"
-> 
+```
+
+strsplit() splits the input string based on the given pattern
+```R
 > # splitting the string in single character values
 > strsplit("Graphs and Histograms", NULL)
 [[1]]
  [1] "G" "r" "a" "p" "h" "s" " " "a" "n" "d" " " "H" "i" "s" "t" "o" "g" "r" "a" "m" "s"
 
-> 
 > # splitting strings after each space
 > strsplit("Graphs and Histograms", " ")
 [[1]]
